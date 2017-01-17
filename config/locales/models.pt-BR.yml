@@ -1,0 +1,71 @@
+'pt-BR':
+    activerecord:
+        models:
+            member:
+                one: Usuário
+                other: Usuários
+            admin:
+                one: Administrador
+                other: Administradores
+            category:
+                one: Categoria
+                other: Categorias
+                category: CATEGORIAS
+            ad:
+                one: Anúncio
+                other: Anúncios
+        attributes:
+            member:
+                id: Código
+                created_at: Criado em
+                updated_at: Atualizado em
+                email: E-mail
+                password: Senha
+                password_confirmation: Confirmação de senha
+            admin:
+                id: Código
+                created_at: Criado em
+                updated_at: Atualizado em
+                email: E-mail
+                password: Senha
+                password_confirmation: Confirmação de senha
+                name: Nome
+                role: Tipo de Acesso
+                new_admin: Novo Administrador
+                edit_admin: Editando Administrador
+            category:
+                id: Código
+                created_at: Criado em
+                updated_at: Atualizado em
+                description: Descrição
+                new_category: Nova Categoria
+                edit_category: Editando Categoria
+            ad:
+                id: Código
+                created_at: Criado em
+                updated_at: Atualizado em
+                title: Título
+                description: Descrição
+                member_id: Código do usuário
+                category_id: Código da categoria
+            index:
+                listing_admin: Listando Administradores
+                listing_category: Listando Categorias
+                admin: ADMINISTRADORES
+                name_admin: Nome do Administrador
+                ex_email: "Ex: admin@admin.com"
+                ex_category: "Ex: Animais/Pets"
+        devise:
+                signin: "Por favor, faça login"
+                password: "Senha"
+                remember_me: "Lembrar-me"
+                login: "Entrar"
+        modal:
+                recipient: "Destinatário"
+                subject: "Assunto"
+                message: "Mensagem"
+                close: "Fechar"
+                send: "Enviar"
+                send_to: "Enviar mensagem para:"
+                send_success: "Email enviado com sucesso."
+                send_failed: "Erro ao enviar o Email. Tente novamente."

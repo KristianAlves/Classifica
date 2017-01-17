@@ -1,0 +1,20 @@
+'pt-BR':
+    messages:
+        confirm_with: Você deseja realmente excluir (<b>%{item}</b>)?
+        listing: Listando %{model}
+        editing: Editando %{model}
+        new: Novo %{model}
+        errors: ocorreram...
+        created: Item criado com sucesso
+        updated: Item atualizado com sucesso
+        destroyed: Item excluído com sucesso
+        admin:
+            success_register: O administrador (%{admin_email}) foi cadastrado com sucesso!
+            success_update: O administrador (%{admin_email}) foi atualizado com sucesso!
+            success_destroy: O administrador (%{admin_email}) foi excluído com sucesso!
+            role: Tipo de Acesso
+            ex_role: 0 para Completo ou 1 para Restrito
+        category:
+                success_register: A categoria foi cadastrada com sucesso!
+                success_update: A Categoria foi atualizada com sucesso!
+                success_destroy: A Categoria foi excluída com sucesso!

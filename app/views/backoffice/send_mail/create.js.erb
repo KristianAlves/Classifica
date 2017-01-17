@@ -1,0 +1,11 @@
+$(function(){
+  //Hides de Modal
+  $('#sendMailModal').modal('hide');
+
+  // Set subject and message to empty string
+  $('#message-text').val('');
+$('#subject-text').val('');
+
+  // Show message
+  $.notify('<%= @notify_message %>', "<%= @notify_flag %>")
+});
