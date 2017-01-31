@@ -1,6 +1,6 @@
 //= require bootbox
 //= require bootstrap_sb_admin_base_v2
-//= require notifyjs
+
 
 /* Sobrescreve a data-confirm (Caixa de notificação) */
   $.rails.allowAction = function(element) {

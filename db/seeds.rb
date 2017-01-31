@@ -25,9 +25,8 @@ puts "------Cadastrando as CATEGORIAS...------"
 
 puts "CATEGORIAS Cadastradas com Sucesso!"
 
-######################################3
-
-puts "------ Cadastrando ADMINISTRADOR Padrão... ------"
+######################################
+puts "Cadastrando ADMINISTRADOR Padrão..."
 
       Admin.create!(
             name: "Administrador Padrão",
@@ -38,3 +37,14 @@ puts "------ Cadastrando ADMINISTRADOR Padrão... ------"
       )
 
 puts "ADMINISTRADOR Cadastrado com Sucesso!"
+
+####################################
+puts "Cadastrando MEMBRO Padrão..."
+
+      Member.create!(
+            email: "membro@membro.com",
+            password: "123456",
+            password_confirmation: "123456"
+            )
+
+puts "MEMBRO Cadastrado com Sucesso!"
