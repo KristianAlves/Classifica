@@ -2,3 +2,4 @@
     buttons:
         save: Salvar
         logout: Sair
+        send: Enviar

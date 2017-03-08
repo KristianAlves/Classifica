@@ -1,28 +1,19 @@
-#README
+# SITE PARA TESTES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aqui ficará o código fonte do aplicativo "CLASSIFICA" desenvolvido para estudo de Ruby on Rails.
 
-Things you may want to cover:
+## Dependências do projeto
 
-* Ruby version
+* ImageMagick (https://www.imagemagick.org)
 
-* System dependencies
+```
+sudo apt-get update
+sudo apt-get install imagemagick libmagickwand-dev
+```
 
-* Configuration
+* Graphviz (https://www.graphviz.org) - Apenas para Ambiente de Desenvolvimento
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```
+sudo apt-get update
+sudo apt-get install graphviz
+```

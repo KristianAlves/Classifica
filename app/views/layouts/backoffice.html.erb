@@ -14,8 +14,6 @@
       <%= stylesheet_link_tag    'application', media: 'all' %>
       <%= stylesheet_link_tag    'backoffice', media: 'all' %>
 
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_include_tag 'backoffice' %>
 
       <%= csrf_meta_tags %>
 
@@ -51,13 +49,10 @@
             </div>
             <!-- /#wrapper -->
 
-                <% if notice %>
-                    <%= javascript_tag "$.notify('#{notice}', 'success');" %>
-                <% end %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_include_tag 'backoffice' %>
 
-                <% if alert %>
-                    <%= javascript_tag "$.notify('#{alert}', 'error');" %>
-                <% end %>
+        <%= render partial: 'layouts/shared/notifications' %>
 
 
         </body>

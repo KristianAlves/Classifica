@@ -14,10 +14,6 @@
       <%= stylesheet_link_tag    'site', media: 'all' %>
       <%= stylesheet_link_tag    'site/profile', media: 'all' %>
 
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_include_tag 'site' %>
-      <%= javascript_include_tag 'site/profile' %>
-
       <%= csrf_meta_tags %>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,13 +39,13 @@
                     </a>
                 </li>
                 <li>
-                    <%= link_to "Dashboard", site_profile_dashboard_index_path %>
+                    <%= link_to t('site.dashboard'), site_profile_dashboard_index_path %>
                 </li>
                 <li>
-                    <%= link_to "Meus Anúncios", site_profile_ads_path %>
+                    <%= link_to t('site.my-advertisement'), site_profile_ads_path %>
                 </li>
                 <li>
-                    <%= link_to "Novo Anúncio", new_site_profile_ad_path %>
+                    <%= link_to t('site.new-advertisement'), new_site_profile_ad_path %>
                 </li>
             </ul>
         </div>
@@ -69,9 +65,12 @@
 
     </div>
 
-                    <% if notice %>
-                    <%= javascript_tag "$.notify('#{notice}', 'success');" %>
-                <% end %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_include_tag 'site' %>
+      <%= javascript_include_tag 'site/profile' %>
+      <%= yield :javascripts %>
+
+        <%= render partial: 'layouts/shared/notifications' %>
     <!-- /#wrapper -->
 </body>
 

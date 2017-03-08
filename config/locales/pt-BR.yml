@@ -1,0 +1,9 @@
+'pt-BR':
+    site:
+      title: Título
+      image: Imagem
+      category: Categoria
+      price: Preço
+      dashboard: Dashboard
+      my-advertisement: Meus Anúncios
+      new-advertisement: Novo Anúncio

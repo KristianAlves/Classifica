@@ -66,7 +66,8 @@ task generate_members: :environment do
       5.times do
         Ad.create!(
           title: Faker::Lorem.sentence([2,3,4,5].sample),
-          description: LeroleroGenerator.paragraph([1,2,3].sample),
+          description_short: Faker::Lorem.sentence([2,3].sample),
+          description_md: markdown_fake,
           member: Member.first,
           category: Category.all.sample,
           price: "#{Random.rand(500)}, #{Random.rand(99)}",
@@ -78,7 +79,8 @@ task generate_members: :environment do
       100.times do
         Ad.create!(
           title: Faker::Lorem.sentence([2,3,4,5].sample),
-          description: LeroleroGenerator.paragraph([1,2,3].sample),
+          description_short: Faker::Lorem.sentence([2,3].sample),
+          description_md: markdown_fake,
           member: Member.all.sample,
           category: Category.all.sample,
           finish_date: Date.today + Random.rand(90),
@@ -88,4 +90,9 @@ task generate_members: :environment do
       end
       puts "Anúncios cadastrados com sucesso!"
     end
+
+    def markdown_fake
+      %x(ruby -e "require 'doctor_ipsum';  puts DoctorIpsum::Markdown.entry")
+    end
+
 end

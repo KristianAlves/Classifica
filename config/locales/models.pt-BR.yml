@@ -38,6 +38,8 @@
                 created_at: Criado em
                 updated_at: Atualizado em
                 description: Descrição
+                description_md: Descrição/Markdown
+                description_short: Breve Descrição
                 new_category: Nova Categoria
                 edit_category: Editando Categoria
             ad:
