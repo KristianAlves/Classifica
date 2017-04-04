@@ -7,3 +7,21 @@
       dashboard: Dashboard
       my-advertisement: Meus Anúncios
       new-advertisement: Novo Anúncio
+      my_data: Meus Dados
+      first_name: Primeiro Nome
+      second_name: Segundo Nome
+      forget_password: Esqueceu a senha?
+      sign_in: Login
+      password: Senha
+      remember_me: Lembrar-me
+      enter: Entrar
+      login_with_facebook: Entrar com o Facebook
+      dont_have_account: Não possui uma conta?
+      sign_up_here: Registre-se aqui
+      sign_up: Cadastrar-se
+      password: Senha
+      password_confirmation: Confirmar Senha
+      profile: Perfil
+      logout: Sair
+      login: Entrar
+      registration: Cadastrar-se

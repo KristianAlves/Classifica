@@ -22,7 +22,7 @@
 }
 
 .caption {
-    height: 130px;
+    height: 80px;
     overflow: hidden;
 }
 
@@ -32,6 +32,10 @@
 
 .thumbnail img {
     width: 100%;
+}
+
+.star img {
+    width: 15px;
 }
 
 .ratings {

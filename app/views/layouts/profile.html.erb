@@ -47,6 +47,9 @@
                 <li>
                     <%= link_to t('site.new-advertisement'), new_site_profile_ad_path %>
                 </li>
+                <li>
+                    <%= link_to t('site.my_data'), edit_site_profile_my_datum_path(current_member.id) %>
+                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

@@ -16,21 +16,21 @@
                 <ul class="nav navbar-nav pull-right">
                 <% if member_signed_in? %>
                         <li>
-                            <%= link_to current_member.email, "#" %>
+                            <%= link_to current_member.email, site_profile_dashboard_index_path %>
                         </li>
                         <li>
-                            <%= link_to "Perfil", site_profile_dashboard_index_path  %>
+                            <%= link_to t('site.profile'), site_profile_dashboard_index_path  %>
                         </li>
                         <li>
-                            <%= link_to "Logout", destroy_member_session_path, method: :delete %>
+                            <%= link_to t('site.logout'), destroy_member_session_path, method: :delete %>
                         </li>
 
                 <% else %>
                         <li>
-                            <%= link_to "Login", new_member_session_path %>
+                            <%= link_to t('site.login'), new_member_session_path %>
                         </li>
                         <li>
-                            <%= link_to "Cadastrar-se", new_member_registration_path %>
+                            <%= link_to t('site.registration'), new_member_registration_path %>
                         </li>
                 <% end %>
                 </ul>

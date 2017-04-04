@@ -1,4 +1,9 @@
 'pt-BR':
+    helpers:
+        label:
+            member[profile_member_attributes]:
+                first_name: Primeiro nome
+                second_name: Segundo nome
     activerecord:
         models:
             member:

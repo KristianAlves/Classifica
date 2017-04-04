@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+before_action :store_current_location, :unless => :devise_controller?
+
 #Pundit
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -26,4 +28,11 @@ class ApplicationController < ActionController::Base
         "application"
       end
     end
+
+    private
+        def store_current_location
+          store_location_for(:member, request.url)
+        end
+
+
 end

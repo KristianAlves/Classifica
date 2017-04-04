@@ -14,7 +14,7 @@ task setup: :environment do
     puts %x(rake dev:generate_admins)
     puts %x(rake dev:generate_members)
     puts %x(rake dev:generate_ads)
-
+    puts %x(rake dev:generate_comments)
 
     puts "Setup realizado com sucesso!"
   end
@@ -25,7 +25,7 @@ task setup: :environment do
 
 desc "Cria Administrador Fake"
 task generate_admins: :environment do
-    puts "Cadastrando ADMINISTRADORES"
+  puts "Cadastrando ADMINISTRADORES..."
 
     10.times do
       Admin.create!(
@@ -45,14 +45,20 @@ task generate_admins: :environment do
 
 desc "Cria Membro Fake"
 task generate_members: :environment do
-    puts "Cadastrando MEMBROS"
+  puts "Cadastrando MEMBRO..."
 
     100.times do
-      Member.create!(
+      member = Member.new(
           email: Faker::Internet.email,
           password: "123456",
           password_confirmation: "123456"
         )
+        member.build_profile_member
+
+        member.profile_member.first_name = Faker::Name.first_name
+        member.profile_member.second_name = Faker::Name.last_name
+
+        member.save!
     end
         puts "MEMBROS cadastrados com sucesso!"
   end
@@ -61,7 +67,7 @@ task generate_members: :environment do
 
   desc "Cria Anúncios Fakes"
   task generate_ads: :environment do
-      puts "Cadastrando Anúncios..."
+  puts "Cadastrando ANÚNCIOS..."
 
       5.times do
         Ad.create!(
@@ -95,4 +101,21 @@ task generate_members: :environment do
       %x(ruby -e "require 'doctor_ipsum';  puts DoctorIpsum::Markdown.entry")
     end
 
+#####################
+
+desc "Cria Comentário Fake"
+task generate_comments: :environment do
+  puts "Cadastrando COMENTÁRIOS..."
+
+      Ad.all.each do |ad|
+        (Random.rand(3)).times do
+          Comment.create!(
+            body: Faker::Lorem.paragraph([1,2,3].sample),
+            member:Member.all.sample,
+            ad: ad
+            )
+        end
+    end
+        puts "COMENTÁRIOS cadastrados com sucesso!"
+  end
 end

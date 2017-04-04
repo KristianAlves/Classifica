@@ -3,7 +3,6 @@
         <div class="thumbnail">
             <%= image_tag ad.picture.url(:medium) %>
             <div class="caption">
-
                 <h4
                 class="pull-right"><%= humanized_money_with_symbol(ad.price) %>
                 </h4>
@@ -12,15 +11,9 @@
 
                 <p><%= truncate(ad.description_short, length: 150) %></p>
             </div>
-            <div class="ratings">
-                <p class="pull-right">12 reviews</p>
-                <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                </p>
+            <div class="ratings", style="padding: 5px">
+           <p class="pull-right"><%= ad.rates("quality").count %> Reviews</p>
+          <%= rating_for ad, 'quality', disable_after_rate: true %>
             </div>
         </div>
     </div>
@@ -33,3 +26,4 @@
         </div>
     </div>
 </div>
+

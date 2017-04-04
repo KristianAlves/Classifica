@@ -1,29 +1,71 @@
-<h2>Sign up</h2>
+<div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+        <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title"><%= t('site.sign_up') %></div>
+                            <%= link_to "Login", member_session_path, style:"float:right; font-size: 85%; position: relative; top:-10px" %>
+                        </div>
+                        <div class="panel-body" >
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+                            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal", role:"form"}) do |f| %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                                <div class="form-group">
+                                    <%= f.label :email, class:"col-md-3 control-label" %>
+                                    <div class="col-md-9">
+                                        <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email" %>
+                                    </div>
+                                </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+                                <%= f.fields_for :profile_member do |profile_fields| %>
+                                    <div class="form-group">
+                                        <%= profile_fields.label :first_name, class:"col-md-3 control-label"  %>
+                                        <div class="col-md-9">
+                                            <%= profile_fields.text_field :first_name, class:"form-control", placeholder:t('site.first_name') %>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <%= profile_fields.label :second_name, class:"col-md-3 control-label" %>
+                                        <div class="col-md-9">
+                                            <%= profile_fields.text_field :second_name, class:"form-control", placeholder: t('site.second_name') %>
+                                        </div>
+                                    </div>
+                                <% end %>
+
+                                <div class="form-group">
+                                   <%= f.label :password, class:"col-md-3 control-label"%>
+                                  <div class="col-md-9">
+                                    <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder: t('site.password') %>
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                   <%= f.label :password_confirmation, class:"col-md-3 control-label"%>
+                                  <div class="col-md-9">
+                                    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder: t('site.password_confirmation') %>
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-3 col-md-9">
+                                            <%= f.submit t('site.sign_up'), class:"btn btn-info" %>
+                                    </div>
+                                </div>
+
+                            <% end %>
+                         </div>
+                    </div>
+
+         </div>
+    </div>
+
+
+<% unless devise_error_messages!.blank? %>
+    <% resource.errors.full_messages.each do |message| %>
+        <%= javascript_tag "$.notify( {message: '#{message}'}, {type: 'danger',
+                                            placement: { from: 'top', align: 'center'}});" %>
+    <% end %>
 <% end %>
-
-<%= render "members/shared/links" %>
