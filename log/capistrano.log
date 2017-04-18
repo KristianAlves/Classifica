@@ -1,0 +1,73 @@
+# Logfile created on 2017-04-12 00:32:32 +0000 by logger.rb/54362
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-12 00:32:32 +0000 cap production deploy:initial
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-12 00:33:04 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b9237c2d] Running /usr/bin/env mkdir -p /tmp as deploy@138.197.66.236>
+ DEBUG [b9237c2d] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ce31fed3] Running /usr/bin/env mkdir -p /tmp as deploy@138.197.66.236
+ DEBUG [ce31fed3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ce31fed3] Finished in 2.386 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 100.0%
+  INFO [ef85684d] Running /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh as deploy@138.197.66.236
+ DEBUG [ef85684d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh
+  INFO [ef85684d] Finished in 0.380 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-12 00:35:32 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [36c9d0c1] Running /usr/bin/env mkdir -p /tmp as deploy@138.197.66.236
+ DEBUG [36c9d0c1] Command: /usr/bin/env mkdir -p /tmp
+  INFO [36c9d0c1] Finished in 2.353 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 100.0%
+  INFO [cd6eef9b] Running /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh as deploy@138.197.66.236
+ DEBUG [cd6eef9b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh
+  INFO [cd6eef9b] Finished in 0.376 seconds with exit status 0 (successful).
+  INFO [102c26ad] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@138.197.66.236
+ DEBUG [102c26ad] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [102c26ad] 	614f891ae63e9e97cf0d744127dcca4656206c95	HEAD
+  INFO [102c26ad] Finished in 0.855 seconds with exit status 0 (successful).
+  INFO [cb0ffc54] Running /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases as deploy@138.197.66.236
+ DEBUG [cb0ffc54] Command: /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases
+  INFO [cb0ffc54] Finished in 0.379 seconds with exit status 0 (successful).
+  INFO [dba94139] Running /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets as deploy@138.197.66.236
+ DEBUG [dba94139] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets
+  INFO [dba94139] Finished in 0.375 seconds with exit status 0 (successful).
+  INFO [322bebc3] Running /usr/bin/env mkdir -p /var/www/classifica/shared/config as deploy@138.197.66.236
+ DEBUG [322bebc3] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/config
+  INFO [322bebc3] Finished in 0.363 seconds with exit status 0 (successful).
+ DEBUG [ffa52d8f] Running [ -f /var/www/classifica/shared/config/database.yml ] as deploy@138.197.66.236
+ DEBUG [ffa52d8f] Command: [ -f /var/www/classifica/shared/config/database.yml ]
+ DEBUG [ffa52d8f] Finished in 0.414 seconds with exit status 1 (failed).
+ ERROR linked file /var/www/classifica/shared/config/database.yml does not exist on 138.197.66.236
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-12 00:36:27 +0000 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [8763e56d] Running /usr/bin/env mkdir -p /tmp as deploy@138.197.66.236
+ DEBUG [8763e56d] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8763e56d] Finished in 2.466 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 100.0%
+  INFO [b16bcaa7] Running /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh as deploy@138.197.66.236
+ DEBUG [b16bcaa7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh
+  INFO [b16bcaa7] Finished in 0.381 seconds with exit status 0 (successful).
+  INFO [5fcbd147] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@138.197.66.236
+ DEBUG [5fcbd147] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [5fcbd147] 	614f891ae63e9e97cf0d744127dcca4656206c95	HEAD
+  INFO [5fcbd147] Finished in 0.646 seconds with exit status 0 (successful).
+  INFO [7a359058] Running /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases as deploy@138.197.66.236
+ DEBUG [7a359058] Command: /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases
+  INFO [7a359058] Finished in 0.407 seconds with exit status 0 (successful).
+  INFO [66ae6ccf] Running /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets as deploy@138.197.66.236
+ DEBUG [66ae6ccf] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets
+  INFO [66ae6ccf] Finished in 0.385 seconds with exit status 0 (successful).
+  INFO [8963c125] Running /usr/bin/env mkdir -p /var/www/classifica/shared/config as deploy@138.197.66.236
+ DEBUG [8963c125] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/config
+  INFO [8963c125] Finished in 0.408 seconds with exit status 0 (successful).
+ DEBUG [9ee08381] Running [ -f /var/www/classifica/shared/config/database.yml ] as deploy@138.197.66.236
+ DEBUG [9ee08381] Command: [ -f /var/www/classifica/shared/config/database.yml ]
+ DEBUG [9ee08381] Finished in 0.384 seconds with exit status 1 (failed).
+ ERROR linked file /var/www/classifica/shared/config/database.yml does not exist on 138.197.66.236

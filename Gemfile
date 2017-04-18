@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
-ruby "2.3.1"
 
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use SCSS for stylesheets
@@ -90,8 +91,6 @@ group :development, :test do
   gem 'byebug'
   # gem better Errors
   gem 'better_errors'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 end
 
 group :development do
@@ -107,9 +106,13 @@ gem 'mailcatcher'
   gem "rails-erd"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Gem Capistrano
+  gem 'capistrano', '~> 3.6'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-rvm'
 end
 
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+gem 'mysql2', '~> 0.3.18'
 end
