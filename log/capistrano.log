@@ -935,3 +935,525 @@ While it's not a problem now, it could cause errors if you change the version of
 /usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
  DEBUG [830f2063] 	Tasks: TOP => environment
  DEBUG [830f2063] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-20 21:31:24 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3fc39777] Running [ -d ~/.rvm ] as deploy@138.197.66.236
+ DEBUG [3fc39777] Command: [ -d ~/.rvm ]
+ DEBUG [3fc39777] Finished in 2.281 seconds with exit status 1 (failed).
+ DEBUG [789b87ab] Running [ -d /usr/local/rvm ] as deploy@138.197.66.236
+ DEBUG [789b87ab] Command: [ -d /usr/local/rvm ]
+ DEBUG [789b87ab] Finished in 0.362 seconds with exit status 0 (successful).
+ DEBUG [b9407053] Running /usr/local/rvm/bin/rvm version as deploy@138.197.66.236
+ DEBUG [b9407053] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [b9407053] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [b9407053] Finished in 0.597 seconds with exit status 0 (successful).
+ DEBUG [fdbc212a] Running /usr/local/rvm/bin/rvm current as deploy@138.197.66.236
+ DEBUG [fdbc212a] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [fdbc212a] 	ruby-2.3.4
+ DEBUG [fdbc212a] Finished in 0.632 seconds with exit status 0 (successful).
+ DEBUG [8a78bc96] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@138.197.66.236
+ DEBUG [8a78bc96] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [8a78bc96] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [8a78bc96] Finished in 0.725 seconds with exit status 0 (successful).
+  INFO [816f130d] Running /usr/bin/env mkdir -p /tmp as deploy@138.197.66.236
+ DEBUG [816f130d] Command: /usr/bin/env mkdir -p /tmp
+  INFO [816f130d] Finished in 0.476 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 100.0%
+  INFO [6b9736fc] Running /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh as deploy@138.197.66.236
+ DEBUG [6b9736fc] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh
+  INFO [6b9736fc] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [43f927f4] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@138.197.66.236
+ DEBUG [43f927f4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [43f927f4] 	8d5f8d930e5d7b3b4876a37f2090015a285bbd5e	HEAD
+  INFO [43f927f4] Finished in 0.607 seconds with exit status 0 (successful).
+  INFO [176378bc] Running /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases as deploy@138.197.66.236
+ DEBUG [176378bc] Command: /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases
+  INFO [176378bc] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [0e2ff225] Running /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets as deploy@138.197.66.236
+ DEBUG [0e2ff225] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets
+  INFO [0e2ff225] Finished in 0.369 seconds with exit status 0 (successful).
+  INFO [ef2ec830] Running /usr/bin/env mkdir -p /var/www/classifica/shared/config as deploy@138.197.66.236
+ DEBUG [ef2ec830] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/config
+  INFO [ef2ec830] Finished in 0.353 seconds with exit status 0 (successful).
+ DEBUG [cc5dc98e] Running [ -f /var/www/classifica/shared/config/database.yml ] as deploy@138.197.66.236
+ DEBUG [cc5dc98e] Command: [ -f /var/www/classifica/shared/config/database.yml ]
+ DEBUG [cc5dc98e] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [6d66d9fa] Running [ -f /var/www/classifica/current/REVISION ] as deploy@138.197.66.236
+ DEBUG [6d66d9fa] Command: [ -f /var/www/classifica/current/REVISION ]
+ DEBUG [6d66d9fa] Finished in 0.361 seconds with exit status 1 (failed).
+ DEBUG [41139d49] Running [ -f /var/www/classifica/repo/HEAD ] as deploy@138.197.66.236
+ DEBUG [41139d49] Command: [ -f /var/www/classifica/repo/HEAD ]
+ DEBUG [41139d49] Finished in 0.352 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/classifica/repo
+ DEBUG [c0d9b1d1] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [c0d9b1d1] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [c0d9b1d1] Finished in 0.349 seconds with exit status 0 (successful).
+  INFO [348dd1d2] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@138.197.66.236
+ DEBUG [348dd1d2] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [348dd1d2] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [be9cf927] Running /usr/bin/env git remote update --prune as deploy@138.197.66.236
+ DEBUG [be9cf927] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [be9cf927] 	Fetching origin
+ DEBUG [be9cf927] 	From https://github.com/KristianAlves/classifica
+   10fe150..8d5f8d9  master     -> master
+  INFO [be9cf927] Finished in 0.629 seconds with exit status 0 (successful).
+ DEBUG [4a4bb53a] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [4a4bb53a] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [4a4bb53a] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [bace84db] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170420213133 as deploy@138.197.66.236
+ DEBUG [bace84db] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/classifica/releases/20170420213133 )
+  INFO [bace84db] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [5bb849de] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/classifica/releases/20170420213133 as deploy@138.197.66.236
+ DEBUG [5bb849de] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/classifica/releases/20170420213133 )
+  INFO [5bb849de] Finished in 0.883 seconds with exit status 0 (successful).
+ DEBUG [b73a169e] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [b73a169e] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [b73a169e] Finished in 0.350 seconds with exit status 0 (successful).
+ DEBUG [b10d0c73] Running /usr/bin/env git rev-list --max-count=1 master as deploy@138.197.66.236
+ DEBUG [b10d0c73] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b10d0c73] 	8d5f8d930e5d7b3b4876a37f2090015a285bbd5e
+ DEBUG [b10d0c73] Finished in 0.357 seconds with exit status 0 (successful).
+ DEBUG [355d7ce5] Running if test ! -d /var/www/classifica/releases/20170420213133; then echo "Directory does not exist '/var/www/classifica/releases/20170420213133'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [355d7ce5] Command: if test ! -d /var/www/classifica/releases/20170420213133; then echo "Directory does not exist '/var/www/classifica/releases/20170420213133'" 1>&2; false; fi
+ DEBUG [355d7ce5] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [3dc43325] Running /usr/bin/env echo "8d5f8d930e5d7b3b4876a37f2090015a285bbd5e" >> REVISION as deploy@138.197.66.236
+ DEBUG [3dc43325] Command: cd /var/www/classifica/releases/20170420213133 && /usr/bin/env echo "8d5f8d930e5d7b3b4876a37f2090015a285bbd5e" >> REVISION
+  INFO [3dc43325] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [41a15a2a] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170420213133/config as deploy@138.197.66.236
+ DEBUG [41a15a2a] Command: /usr/bin/env mkdir -p /var/www/classifica/releases/20170420213133/config
+  INFO [41a15a2a] Finished in 0.350 seconds with exit status 0 (successful).
+ DEBUG [4ce01390] Running [ -L /var/www/classifica/releases/20170420213133/config/database.yml ] as deploy@138.197.66.236
+ DEBUG [4ce01390] Command: [ -L /var/www/classifica/releases/20170420213133/config/database.yml ]
+ DEBUG [4ce01390] Finished in 0.348 seconds with exit status 1 (failed).
+ DEBUG [52b7ca5d] Running [ -f /var/www/classifica/releases/20170420213133/config/database.yml ] as deploy@138.197.66.236
+ DEBUG [52b7ca5d] Command: [ -f /var/www/classifica/releases/20170420213133/config/database.yml ]
+ DEBUG [52b7ca5d] Finished in 0.348 seconds with exit status 0 (successful).
+  INFO [75a09719] Running /usr/bin/env rm /var/www/classifica/releases/20170420213133/config/database.yml as deploy@138.197.66.236
+ DEBUG [75a09719] Command: /usr/bin/env rm /var/www/classifica/releases/20170420213133/config/database.yml
+  INFO [75a09719] Finished in 0.364 seconds with exit status 0 (successful).
+  INFO [ccdddc53] Running /usr/bin/env ln -s /var/www/classifica/shared/config/database.yml /var/www/classifica/releases/20170420213133/config/database.yml as deploy@138.197.66.236
+ DEBUG [ccdddc53] Command: /usr/bin/env ln -s /var/www/classifica/shared/config/database.yml /var/www/classifica/releases/20170420213133/config/database.yml
+  INFO [ccdddc53] Finished in 0.366 seconds with exit status 0 (successful).
+  INFO [f66720c2] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170420213133 /var/www/classifica/releases/20170420213133/tmp /var/www/classifica/releases/20170420213133/public as deploy@138.197.66.236
+ DEBUG [f66720c2] Command: /usr/bin/env mkdir -p /var/www/classifica/releases/20170420213133 /var/www/classifica/releases/20170420213133/tmp /var/www/classifica/releases/20170420213133/public
+  INFO [f66720c2] Finished in 0.363 seconds with exit status 0 (successful).
+ DEBUG [cdebb967] Running [ -L /var/www/classifica/releases/20170420213133/log ] as deploy@138.197.66.236
+ DEBUG [cdebb967] Command: [ -L /var/www/classifica/releases/20170420213133/log ]
+ DEBUG [cdebb967] Finished in 0.356 seconds with exit status 1 (failed).
+ DEBUG [4af23ce9] Running [ -d /var/www/classifica/releases/20170420213133/log ] as deploy@138.197.66.236
+ DEBUG [4af23ce9] Command: [ -d /var/www/classifica/releases/20170420213133/log ]
+ DEBUG [4af23ce9] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [b5b9745d] Running /usr/bin/env rm -rf /var/www/classifica/releases/20170420213133/log as deploy@138.197.66.236
+ DEBUG [b5b9745d] Command: /usr/bin/env rm -rf /var/www/classifica/releases/20170420213133/log
+  INFO [b5b9745d] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [78f23cf3] Running /usr/bin/env ln -s /var/www/classifica/shared/log /var/www/classifica/releases/20170420213133/log as deploy@138.197.66.236
+ DEBUG [78f23cf3] Command: /usr/bin/env ln -s /var/www/classifica/shared/log /var/www/classifica/releases/20170420213133/log
+  INFO [78f23cf3] Finished in 0.351 seconds with exit status 0 (successful).
+ DEBUG [b1e1dbe5] Running [ -L /var/www/classifica/releases/20170420213133/tmp/pids ] as deploy@138.197.66.236
+ DEBUG [b1e1dbe5] Command: [ -L /var/www/classifica/releases/20170420213133/tmp/pids ]
+ DEBUG [b1e1dbe5] Finished in 0.359 seconds with exit status 1 (failed).
+ DEBUG [c4f00cf0] Running [ -d /var/www/classifica/releases/20170420213133/tmp/pids ] as deploy@138.197.66.236
+ DEBUG [c4f00cf0] Command: [ -d /var/www/classifica/releases/20170420213133/tmp/pids ]
+ DEBUG [c4f00cf0] Finished in 0.356 seconds with exit status 1 (failed).
+  INFO [66743b5a] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/pids /var/www/classifica/releases/20170420213133/tmp/pids as deploy@138.197.66.236
+ DEBUG [66743b5a] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/pids /var/www/classifica/releases/20170420213133/tmp/pids
+  INFO [66743b5a] Finished in 0.350 seconds with exit status 0 (successful).
+ DEBUG [9d2f4b43] Running [ -L /var/www/classifica/releases/20170420213133/tmp/cache ] as deploy@138.197.66.236
+ DEBUG [9d2f4b43] Command: [ -L /var/www/classifica/releases/20170420213133/tmp/cache ]
+ DEBUG [9d2f4b43] Finished in 0.347 seconds with exit status 1 (failed).
+ DEBUG [f717c76f] Running [ -d /var/www/classifica/releases/20170420213133/tmp/cache ] as deploy@138.197.66.236
+ DEBUG [f717c76f] Command: [ -d /var/www/classifica/releases/20170420213133/tmp/cache ]
+ DEBUG [f717c76f] Finished in 0.371 seconds with exit status 1 (failed).
+  INFO [86655b00] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/cache /var/www/classifica/releases/20170420213133/tmp/cache as deploy@138.197.66.236
+ DEBUG [86655b00] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/cache /var/www/classifica/releases/20170420213133/tmp/cache
+  INFO [86655b00] Finished in 0.349 seconds with exit status 0 (successful).
+ DEBUG [e32ef84b] Running [ -L /var/www/classifica/releases/20170420213133/tmp/sockets ] as deploy@138.197.66.236
+ DEBUG [e32ef84b] Command: [ -L /var/www/classifica/releases/20170420213133/tmp/sockets ]
+ DEBUG [e32ef84b] Finished in 0.348 seconds with exit status 1 (failed).
+ DEBUG [e7f2631a] Running [ -d /var/www/classifica/releases/20170420213133/tmp/sockets ] as deploy@138.197.66.236
+ DEBUG [e7f2631a] Command: [ -d /var/www/classifica/releases/20170420213133/tmp/sockets ]
+ DEBUG [e7f2631a] Finished in 0.354 seconds with exit status 1 (failed).
+  INFO [438da145] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/sockets /var/www/classifica/releases/20170420213133/tmp/sockets as deploy@138.197.66.236
+ DEBUG [438da145] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/sockets /var/www/classifica/releases/20170420213133/tmp/sockets
+  INFO [438da145] Finished in 0.357 seconds with exit status 0 (successful).
+ DEBUG [7bce1584] Running [ -L /var/www/classifica/releases/20170420213133/public/system ] as deploy@138.197.66.236
+ DEBUG [7bce1584] Command: [ -L /var/www/classifica/releases/20170420213133/public/system ]
+ DEBUG [7bce1584] Finished in 0.351 seconds with exit status 1 (failed).
+ DEBUG [b00abe23] Running [ -d /var/www/classifica/releases/20170420213133/public/system ] as deploy@138.197.66.236
+ DEBUG [b00abe23] Command: [ -d /var/www/classifica/releases/20170420213133/public/system ]
+ DEBUG [b00abe23] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [7cfd54b1] Running /usr/bin/env rm -rf /var/www/classifica/releases/20170420213133/public/system as deploy@138.197.66.236
+ DEBUG [7cfd54b1] Command: /usr/bin/env rm -rf /var/www/classifica/releases/20170420213133/public/system
+  INFO [7cfd54b1] Finished in 0.383 seconds with exit status 0 (successful).
+  INFO [6af0a827] Running /usr/bin/env ln -s /var/www/classifica/shared/public/system /var/www/classifica/releases/20170420213133/public/system as deploy@138.197.66.236
+ DEBUG [6af0a827] Command: /usr/bin/env ln -s /var/www/classifica/shared/public/system /var/www/classifica/releases/20170420213133/public/system
+  INFO [6af0a827] Finished in 0.348 seconds with exit status 0 (successful).
+ DEBUG [010d4adc] Running [ -L /var/www/classifica/releases/20170420213133/public/assets ] as deploy@138.197.66.236
+ DEBUG [010d4adc] Command: [ -L /var/www/classifica/releases/20170420213133/public/assets ]
+ DEBUG [010d4adc] Finished in 0.377 seconds with exit status 1 (failed).
+ DEBUG [b005bafb] Running [ -d /var/www/classifica/releases/20170420213133/public/assets ] as deploy@138.197.66.236
+ DEBUG [b005bafb] Command: [ -d /var/www/classifica/releases/20170420213133/public/assets ]
+ DEBUG [b005bafb] Finished in 0.356 seconds with exit status 1 (failed).
+  INFO [3b3eb446] Running /usr/bin/env ln -s /var/www/classifica/shared/public/assets /var/www/classifica/releases/20170420213133/public/assets as deploy@138.197.66.236
+ DEBUG [3b3eb446] Command: /usr/bin/env ln -s /var/www/classifica/shared/public/assets /var/www/classifica/releases/20170420213133/public/assets
+  INFO [3b3eb446] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [eeebb320] Running if test ! -d /var/www/classifica/releases/20170420213133; then echo "Directory does not exist '/var/www/classifica/releases/20170420213133'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [eeebb320] Command: if test ! -d /var/www/classifica/releases/20170420213133; then echo "Directory does not exist '/var/www/classifica/releases/20170420213133'" 1>&2; false; fi
+ DEBUG [eeebb320] Finished in 0.351 seconds with exit status 0 (successful).
+ DEBUG [689f56c4] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/classifica/shared/bundle as deploy@138.197.66.236
+ DEBUG [689f56c4] Command: cd /var/www/classifica/releases/20170420213133 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/classifica/shared/bundle
+ DEBUG [689f56c4] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [689f56c4] 	The following gems are missing
+ DEBUG [689f56c4] 	 * net-ssh (4.1.0)
+ DEBUG [689f56c4] 	 * net-scp (1.2.1)
+ DEBUG [689f56c4] 	 * sshkit (1.13.1)
+ DEBUG [689f56c4] 	 * airbrussh (1.1.2)
+ DEBUG [689f56c4] 	 * coderay (1.1.1)
+ DEBUG [689f56c4] 	 * better_errors (2.1.1)
+ DEBUG [689f56c4] 	 * debug_inspector (0.0.2)
+ DEBUG [689f56c4] 	 * binding_of_caller (0.7.2)
+ DEBUG [689f56c4] 	 * byebug (9.0.6)
+ DEBUG [689f56c4] 	 * capistrano (3.8.0)
+ DEBUG [689f56c4] 	 * capistrano-bundler (1.2.0)
+ DEBUG [689f56c4] 	 * capistrano-rails (1.2.3)
+ DEBUG [689f56c4] 	 * capistrano-rvm (0.1.2)
+ DEBUG [689f56c4] 	 * daemons (1.2.4)
+ DEBUG [689f56c4] 	 * doctor_ipsum (0.3.1)
+ DEBUG [689f56c4] 	 * eventmachine (1.0.9.1)
+ DEBUG [689f56c4] 	 * faker (1.6.6)
+ DEBUG [689f56c4] 	 * rack-protection (1.5.3)
+ DEBUG [689f56c4] 	 * sinatra (1.4.7)
+ DEBUG [689f56c4] 	 * thin (1.5.1)
+ DEBUG [689f56c4] 	 * skinny (0.2.4)
+ DEBUG [689f56c4] 	 * mailcatcher (0.6.5)
+ DEBUG [689f56c4] 	 * spring (2.0.0)
+ DEBUG [689f56c4] 	 * web-console (2.3.0)
+ DEBUG [689f56c4] 	Install missing gems with `bundle install`
+ DEBUG [689f56c4] Finished in 1.206 seconds with exit status 1 (failed).
+  INFO [c1aa87b0] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/classifica/shared/bundle --without development test --deployment --quiet as deploy@138.197.66.236
+ DEBUG [c1aa87b0] Command: cd /var/www/classifica/releases/20170420213133 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/classifica/shared/bundle --without development test --deployment --quiet
+  INFO [c1aa87b0] Finished in 10.257 seconds with exit status 0 (successful).
+ DEBUG [a0c970eb] Running if test ! -d /var/www/classifica/releases/20170420213133; then echo "Directory does not exist '/var/www/classifica/releases/20170420213133'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [a0c970eb] Command: if test ! -d /var/www/classifica/releases/20170420213133; then echo "Directory does not exist '/var/www/classifica/releases/20170420213133'" 1>&2; false; fi
+ DEBUG [a0c970eb] Finished in 0.354 seconds with exit status 0 (successful).
+  INFO [123f7b43] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@138.197.66.236
+ DEBUG [123f7b43] Command: cd /var/www/classifica/releases/20170420213133 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+ DEBUG [123f7b43] 	rake aborted!
+ DEBUG [123f7b43] 	ActiveRecord::AdapterNotSpecified: 'mysql2' database is not configured. Available: ["production", "adapter", "encoding", "reconnect", "database", "pool", "username", "password", "socket"]
+ DEBUG [123f7b43] 	/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/connection_specification.rb:248:in `resolve_symbol_connection'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/connection_specification.rb:231:in `resolve_string_connection'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/connection_specification.rb:213:in `resolve_connection'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/connection_specification.rb:139:in `resolve'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/connection_specification.rb:151:in `block in resolve_all'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/connection_specification.rb:150:in `each'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/connection_specification.rb:150:in `resolve_all'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:69:in `resolve'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/core.rb:46:in `configurations='
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railtie.rb:117:in `block (2 levels) in <class:Railtie>'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/lazy_load_hooks.rb:28:in `block in on_load'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/lazy_load_hooks.rb:27:in `each'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/lazy_load_hooks.rb:27:in `on_load'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railtie.rb:116:in `block in <class:Railtie>'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/initializable.rb:30:in `instance_exec'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/initializable.rb:30:in `run'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/initializable.rb:55:in `block in run_initializers'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/initializable.rb:54:in `run_initializers'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application.rb:352:in `initialize!'
+/var/www/classifica/releases/20170420213133/config/environment.rb:5:in `<top (required)>'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:274:in `require'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:274:in `block in require'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:274:in `require'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application.rb:328:in `require_environment!'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/sprockets-rails-3.2.0/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [123f7b43] 	Tasks: TOP => environment
+ DEBUG [123f7b43] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-20 22:02:10 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [ad2c61ec] Running [ -d ~/.rvm ] as deploy@138.197.66.236
+ DEBUG [ad2c61ec] Command: [ -d ~/.rvm ]
+ DEBUG [ad2c61ec] Finished in 2.311 seconds with exit status 1 (failed).
+ DEBUG [f139e55f] Running [ -d /usr/local/rvm ] as deploy@138.197.66.236
+ DEBUG [f139e55f] Command: [ -d /usr/local/rvm ]
+ DEBUG [f139e55f] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [5576eab0] Running /usr/local/rvm/bin/rvm version as deploy@138.197.66.236
+ DEBUG [5576eab0] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [5576eab0] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [5576eab0] Finished in 0.576 seconds with exit status 0 (successful).
+ DEBUG [ecd36a82] Running /usr/local/rvm/bin/rvm current as deploy@138.197.66.236
+ DEBUG [ecd36a82] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [ecd36a82] 	ruby-2.3.4
+ DEBUG [ecd36a82] Finished in 0.582 seconds with exit status 0 (successful).
+ DEBUG [19e2dfd0] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@138.197.66.236
+ DEBUG [19e2dfd0] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [19e2dfd0] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [19e2dfd0] Finished in 0.733 seconds with exit status 0 (successful).
+  INFO [087058e4] Running /usr/bin/env mkdir -p /tmp as deploy@138.197.66.236
+ DEBUG [087058e4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [087058e4] Finished in 0.357 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 100.0%
+  INFO [e6d24fe3] Running /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh as deploy@138.197.66.236
+ DEBUG [e6d24fe3] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh
+  INFO [e6d24fe3] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [d606180b] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@138.197.66.236
+ DEBUG [d606180b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [d606180b] 	8d5f8d930e5d7b3b4876a37f2090015a285bbd5e	HEAD
+  INFO [d606180b] Finished in 0.604 seconds with exit status 0 (successful).
+  INFO [d2c835c9] Running /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases as deploy@138.197.66.236
+ DEBUG [d2c835c9] Command: /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases
+  INFO [d2c835c9] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [62d85409] Running /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets as deploy@138.197.66.236
+ DEBUG [62d85409] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets
+  INFO [62d85409] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [dbc39fcd] Running /usr/bin/env mkdir -p /var/www/classifica/shared/config as deploy@138.197.66.236
+ DEBUG [dbc39fcd] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/config
+  INFO [dbc39fcd] Finished in 0.350 seconds with exit status 0 (successful).
+ DEBUG [272e5101] Running [ -f /var/www/classifica/shared/config/database.yml ] as deploy@138.197.66.236
+ DEBUG [272e5101] Command: [ -f /var/www/classifica/shared/config/database.yml ]
+ DEBUG [272e5101] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG [5fc1165a] Running [ -f /var/www/classifica/current/REVISION ] as deploy@138.197.66.236
+ DEBUG [5fc1165a] Command: [ -f /var/www/classifica/current/REVISION ]
+ DEBUG [5fc1165a] Finished in 0.354 seconds with exit status 1 (failed).
+ DEBUG [0c91bdc2] Running [ -f /var/www/classifica/repo/HEAD ] as deploy@138.197.66.236
+ DEBUG [0c91bdc2] Command: [ -f /var/www/classifica/repo/HEAD ]
+ DEBUG [0c91bdc2] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/classifica/repo
+ DEBUG [7ed3e0c2] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [7ed3e0c2] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [7ed3e0c2] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [31e32a10] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@138.197.66.236
+ DEBUG [31e32a10] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [31e32a10] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [f2dad2e4] Running /usr/bin/env git remote update --prune as deploy@138.197.66.236
+ DEBUG [f2dad2e4] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f2dad2e4] 	Fetching origin
+  INFO [f2dad2e4] Finished in 0.590 seconds with exit status 0 (successful).
+ DEBUG [10907ac5] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [10907ac5] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [10907ac5] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [f24f191b] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170420220219 as deploy@138.197.66.236
+ DEBUG [f24f191b] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/classifica/releases/20170420220219 )
+  INFO [f24f191b] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [7a2fde8a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/classifica/releases/20170420220219 as deploy@138.197.66.236
+ DEBUG [7a2fde8a] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/classifica/releases/20170420220219 )
+  INFO [7a2fde8a] Finished in 0.772 seconds with exit status 0 (successful).
+ DEBUG [0b82ce54] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [0b82ce54] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [0b82ce54] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [653cce7d] Running /usr/bin/env git rev-list --max-count=1 master as deploy@138.197.66.236
+ DEBUG [653cce7d] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [653cce7d] 	8d5f8d930e5d7b3b4876a37f2090015a285bbd5e
+ DEBUG [653cce7d] Finished in 0.363 seconds with exit status 0 (successful).
+ DEBUG [92f0016d] Running if test ! -d /var/www/classifica/releases/20170420220219; then echo "Directory does not exist '/var/www/classifica/releases/20170420220219'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [92f0016d] Command: if test ! -d /var/www/classifica/releases/20170420220219; then echo "Directory does not exist '/var/www/classifica/releases/20170420220219'" 1>&2; false; fi
+ DEBUG [92f0016d] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [a21475e2] Running /usr/bin/env echo "8d5f8d930e5d7b3b4876a37f2090015a285bbd5e" >> REVISION as deploy@138.197.66.236
+ DEBUG [a21475e2] Command: cd /var/www/classifica/releases/20170420220219 && /usr/bin/env echo "8d5f8d930e5d7b3b4876a37f2090015a285bbd5e" >> REVISION
+  INFO [a21475e2] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [6b773d6c] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170420220219/config as deploy@138.197.66.236
+ DEBUG [6b773d6c] Command: /usr/bin/env mkdir -p /var/www/classifica/releases/20170420220219/config
+  INFO [6b773d6c] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG [70459847] Running [ -L /var/www/classifica/releases/20170420220219/config/database.yml ] as deploy@138.197.66.236
+ DEBUG [70459847] Command: [ -L /var/www/classifica/releases/20170420220219/config/database.yml ]
+ DEBUG [70459847] Finished in 0.353 seconds with exit status 1 (failed).
+ DEBUG [c2af1647] Running [ -f /var/www/classifica/releases/20170420220219/config/database.yml ] as deploy@138.197.66.236
+ DEBUG [c2af1647] Command: [ -f /var/www/classifica/releases/20170420220219/config/database.yml ]
+ DEBUG [c2af1647] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [1e1922e7] Running /usr/bin/env rm /var/www/classifica/releases/20170420220219/config/database.yml as deploy@138.197.66.236
+ DEBUG [1e1922e7] Command: /usr/bin/env rm /var/www/classifica/releases/20170420220219/config/database.yml
+  INFO [1e1922e7] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [05b9c0ff] Running /usr/bin/env ln -s /var/www/classifica/shared/config/database.yml /var/www/classifica/releases/20170420220219/config/database.yml as deploy@138.197.66.236
+ DEBUG [05b9c0ff] Command: /usr/bin/env ln -s /var/www/classifica/shared/config/database.yml /var/www/classifica/releases/20170420220219/config/database.yml
+  INFO [05b9c0ff] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [64332dec] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170420220219 /var/www/classifica/releases/20170420220219/tmp /var/www/classifica/releases/20170420220219/public as deploy@138.197.66.236
+ DEBUG [64332dec] Command: /usr/bin/env mkdir -p /var/www/classifica/releases/20170420220219 /var/www/classifica/releases/20170420220219/tmp /var/www/classifica/releases/20170420220219/public
+  INFO [64332dec] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [003eb4f1] Running [ -L /var/www/classifica/releases/20170420220219/log ] as deploy@138.197.66.236
+ DEBUG [003eb4f1] Command: [ -L /var/www/classifica/releases/20170420220219/log ]
+ DEBUG [003eb4f1] Finished in 0.352 seconds with exit status 1 (failed).
+ DEBUG [a7d2a38c] Running [ -d /var/www/classifica/releases/20170420220219/log ] as deploy@138.197.66.236
+ DEBUG [a7d2a38c] Command: [ -d /var/www/classifica/releases/20170420220219/log ]
+ DEBUG [a7d2a38c] Finished in 0.351 seconds with exit status 0 (successful).
+  INFO [fcb47ae2] Running /usr/bin/env rm -rf /var/www/classifica/releases/20170420220219/log as deploy@138.197.66.236
+ DEBUG [fcb47ae2] Command: /usr/bin/env rm -rf /var/www/classifica/releases/20170420220219/log
+  INFO [fcb47ae2] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [d350b502] Running /usr/bin/env ln -s /var/www/classifica/shared/log /var/www/classifica/releases/20170420220219/log as deploy@138.197.66.236
+ DEBUG [d350b502] Command: /usr/bin/env ln -s /var/www/classifica/shared/log /var/www/classifica/releases/20170420220219/log
+  INFO [d350b502] Finished in 0.364 seconds with exit status 0 (successful).
+ DEBUG [4dc3976a] Running [ -L /var/www/classifica/releases/20170420220219/tmp/pids ] as deploy@138.197.66.236
+ DEBUG [4dc3976a] Command: [ -L /var/www/classifica/releases/20170420220219/tmp/pids ]
+ DEBUG [4dc3976a] Finished in 0.357 seconds with exit status 1 (failed).
+ DEBUG [d89ceea0] Running [ -d /var/www/classifica/releases/20170420220219/tmp/pids ] as deploy@138.197.66.236
+ DEBUG [d89ceea0] Command: [ -d /var/www/classifica/releases/20170420220219/tmp/pids ]
+ DEBUG [d89ceea0] Finished in 0.351 seconds with exit status 1 (failed).
+  INFO [8306a04e] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/pids /var/www/classifica/releases/20170420220219/tmp/pids as deploy@138.197.66.236
+ DEBUG [8306a04e] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/pids /var/www/classifica/releases/20170420220219/tmp/pids
+  INFO [8306a04e] Finished in 0.353 seconds with exit status 0 (successful).
+ DEBUG [9ac4e305] Running [ -L /var/www/classifica/releases/20170420220219/tmp/cache ] as deploy@138.197.66.236
+ DEBUG [9ac4e305] Command: [ -L /var/www/classifica/releases/20170420220219/tmp/cache ]
+ DEBUG [9ac4e305] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [49168a83] Running [ -d /var/www/classifica/releases/20170420220219/tmp/cache ] as deploy@138.197.66.236
+ DEBUG [49168a83] Command: [ -d /var/www/classifica/releases/20170420220219/tmp/cache ]
+ DEBUG [49168a83] Finished in 0.357 seconds with exit status 1 (failed).
+  INFO [82ca2e23] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/cache /var/www/classifica/releases/20170420220219/tmp/cache as deploy@138.197.66.236
+ DEBUG [82ca2e23] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/cache /var/www/classifica/releases/20170420220219/tmp/cache
+  INFO [82ca2e23] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG [3e890934] Running [ -L /var/www/classifica/releases/20170420220219/tmp/sockets ] as deploy@138.197.66.236
+ DEBUG [3e890934] Command: [ -L /var/www/classifica/releases/20170420220219/tmp/sockets ]
+ DEBUG [3e890934] Finished in 0.354 seconds with exit status 1 (failed).
+ DEBUG [b92d8577] Running [ -d /var/www/classifica/releases/20170420220219/tmp/sockets ] as deploy@138.197.66.236
+ DEBUG [b92d8577] Command: [ -d /var/www/classifica/releases/20170420220219/tmp/sockets ]
+ DEBUG [b92d8577] Finished in 0.353 seconds with exit status 1 (failed).
+  INFO [cef20ed8] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/sockets /var/www/classifica/releases/20170420220219/tmp/sockets as deploy@138.197.66.236
+ DEBUG [cef20ed8] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/sockets /var/www/classifica/releases/20170420220219/tmp/sockets
+  INFO [cef20ed8] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [6d1d1549] Running [ -L /var/www/classifica/releases/20170420220219/public/system ] as deploy@138.197.66.236
+ DEBUG [6d1d1549] Command: [ -L /var/www/classifica/releases/20170420220219/public/system ]
+ DEBUG [6d1d1549] Finished in 0.350 seconds with exit status 1 (failed).
+ DEBUG [49947fbf] Running [ -d /var/www/classifica/releases/20170420220219/public/system ] as deploy@138.197.66.236
+ DEBUG [49947fbf] Command: [ -d /var/www/classifica/releases/20170420220219/public/system ]
+ DEBUG [49947fbf] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [e86d6fff] Running /usr/bin/env rm -rf /var/www/classifica/releases/20170420220219/public/system as deploy@138.197.66.236
+ DEBUG [e86d6fff] Command: /usr/bin/env rm -rf /var/www/classifica/releases/20170420220219/public/system
+  INFO [e86d6fff] Finished in 0.390 seconds with exit status 0 (successful).
+  INFO [6112f4b7] Running /usr/bin/env ln -s /var/www/classifica/shared/public/system /var/www/classifica/releases/20170420220219/public/system as deploy@138.197.66.236
+ DEBUG [6112f4b7] Command: /usr/bin/env ln -s /var/www/classifica/shared/public/system /var/www/classifica/releases/20170420220219/public/system
+  INFO [6112f4b7] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG [130d5c5e] Running [ -L /var/www/classifica/releases/20170420220219/public/assets ] as deploy@138.197.66.236
+ DEBUG [130d5c5e] Command: [ -L /var/www/classifica/releases/20170420220219/public/assets ]
+ DEBUG [130d5c5e] Finished in 0.359 seconds with exit status 1 (failed).
+ DEBUG [922787f0] Running [ -d /var/www/classifica/releases/20170420220219/public/assets ] as deploy@138.197.66.236
+ DEBUG [922787f0] Command: [ -d /var/www/classifica/releases/20170420220219/public/assets ]
+ DEBUG [922787f0] Finished in 0.352 seconds with exit status 1 (failed).
+  INFO [e2dc9b2d] Running /usr/bin/env ln -s /var/www/classifica/shared/public/assets /var/www/classifica/releases/20170420220219/public/assets as deploy@138.197.66.236
+ DEBUG [e2dc9b2d] Command: /usr/bin/env ln -s /var/www/classifica/shared/public/assets /var/www/classifica/releases/20170420220219/public/assets
+  INFO [e2dc9b2d] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [250cbe8b] Running if test ! -d /var/www/classifica/releases/20170420220219; then echo "Directory does not exist '/var/www/classifica/releases/20170420220219'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [250cbe8b] Command: if test ! -d /var/www/classifica/releases/20170420220219; then echo "Directory does not exist '/var/www/classifica/releases/20170420220219'" 1>&2; false; fi
+ DEBUG [250cbe8b] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [a5c7b715] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/classifica/shared/bundle as deploy@138.197.66.236
+ DEBUG [a5c7b715] Command: cd /var/www/classifica/releases/20170420220219 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/classifica/shared/bundle
+ DEBUG [a5c7b715] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [a5c7b715] 	The following gems are missing
+ DEBUG [a5c7b715] 	 * net-ssh (4.1.0)
+ DEBUG [a5c7b715] 	 * net-scp (1.2.1)
+ DEBUG [a5c7b715] 	 * sshkit (1.13.1)
+ DEBUG [a5c7b715] 	 * airbrussh (1.1.2)
+ DEBUG [a5c7b715] 	 * coderay (1.1.1)
+ DEBUG [a5c7b715] 	 * better_errors (2.1.1)
+ DEBUG [a5c7b715] 	 * debug_inspector (0.0.2)
+ DEBUG [a5c7b715] 	 * binding_of_caller (0.7.2)
+ DEBUG [a5c7b715] 	 * byebug (9.0.6)
+ DEBUG [a5c7b715] 	 * capistrano (3.8.0)
+ DEBUG [a5c7b715] 	 * capistrano-bundler (1.2.0)
+ DEBUG [a5c7b715] 	 * capistrano-rails (1.2.3)
+ DEBUG [a5c7b715] 	 * capistrano-rvm (0.1.2)
+ DEBUG [a5c7b715] 	 * daemons (1.2.4)
+ DEBUG [a5c7b715] 	 * doctor_ipsum (0.3.1)
+ DEBUG [a5c7b715] 	 * eventmachine (1.0.9.1)
+ DEBUG [a5c7b715] 	 * faker (1.6.6)
+ DEBUG [a5c7b715] 	 * rack-protection (1.5.3)
+ DEBUG [a5c7b715] 	 * sinatra (1.4.7)
+ DEBUG [a5c7b715] 	 * thin (1.5.1)
+ DEBUG [a5c7b715] 	 * skinny (0.2.4)
+ DEBUG [a5c7b715] 	 * mailcatcher (0.6.5)
+ DEBUG [a5c7b715] 	 * spring (2.0.0)
+ DEBUG [a5c7b715] 	 * web-console (2.3.0)
+ DEBUG [a5c7b715] 	Install missing gems with `bundle install`
+ DEBUG [a5c7b715] Finished in 1.157 seconds with exit status 1 (failed).
+  INFO [3e5c4bc9] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/classifica/shared/bundle --without development test --deployment --quiet as deploy@138.197.66.236
+ DEBUG [3e5c4bc9] Command: cd /var/www/classifica/releases/20170420220219 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/classifica/shared/bundle --without development test --deployment --quiet
+  INFO [3e5c4bc9] Finished in 5.171 seconds with exit status 0 (successful).
+ DEBUG [35cf9e17] Running if test ! -d /var/www/classifica/releases/20170420220219; then echo "Directory does not exist '/var/www/classifica/releases/20170420220219'" 1>&2; false; fi as deploy@138.197.66.236
+ DEBUG [35cf9e17] Command: if test ! -d /var/www/classifica/releases/20170420220219; then echo "Directory does not exist '/var/www/classifica/releases/20170420220219'" 1>&2; false; fi
+ DEBUG [35cf9e17] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [1860f5ef] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@138.197.66.236
+ DEBUG [1860f5ef] Command: cd /var/www/classifica/releases/20170420220219 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+ DEBUG [1860f5ef] 	rake aborted!
+ DEBUG [1860f5ef] 	Devise.secret_key was not set. Please add the following to your Devise initializer:
+
+  config.secret_key = '1d658d294f7b59388876cb789583350d0f9a11f997de7048a8c6d2a90067db936c93e7f65d2840c498568494f118c964db74c78691ec8ff353cbd803437c4d07'
+
+Please ensure you restarted your application after installing Devise or setting the key.
+ DEBUG [1860f5ef] 	/var/www/classifica/shared/bundle/ruby/2.3.0/gems/devise-4.2.0/lib/devise/rails/routes.rb:498:in `raise_no_secret_key'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/devise-4.2.0/lib/devise/rails/routes.rb:226:in `devise_for'
+/var/www/classifica/releases/20170420220219/config/routes.rb:30:in `block in <top (required)>'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/routing/route_set.rb:434:in `instance_exec'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/routing/route_set.rb:434:in `eval_block'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/routing/route_set.rb:412:in `draw'
+/var/www/classifica/releases/20170420220219/config/routes.rb:1:in `<top (required)>'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:268:in `load'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:268:in `block in load'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:268:in `load'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application/routes_reloader.rb:40:in `each'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/file_update_checker.rb:75:in `execute'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application/routes_reloader.rb:27:in `updater'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/initializable.rb:30:in `instance_exec'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/initializable.rb:30:in `run'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/initializable.rb:55:in `block in run_initializers'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/initializable.rb:54:in `run_initializers'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application.rb:352:in `initialize!'
+/var/www/classifica/releases/20170420220219/config/environment.rb:5:in `<top (required)>'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:274:in `require'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:274:in `block in require'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/dependencies.rb:274:in `require'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application.rb:328:in `require_environment!'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/railties-4.2.5/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/sprockets-rails-3.2.0/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/var/www/classifica/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [1860f5ef] 	Tasks: TOP => environment
+ DEBUG [1860f5ef] 	(See full trace by running task with --trace)
