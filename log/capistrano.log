@@ -2529,3 +2529,575 @@ I, [2017-04-21T14:48:11.731625 #22893]  INFO -- : Writing /var/www/classifica/re
   INFO [dfbb901b] Running /usr/bin/env echo "Branch master (at 9098bff5dba734ab00894857ff7af88a7f422aa9) deployed as release 20170421144510 by vagrant" >> /var/www/classifica/revisions.log as deploy@107.170.38.156
  DEBUG [dfbb901b] Command: cd /var/www/classifica/releases && /usr/bin/env echo "Branch master (at 9098bff5dba734ab00894857ff7af88a7f422aa9) deployed as release 20170421144510 by vagrant" >> /var/www/classifica/revisions.log
   INFO [dfbb901b] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-21 16:51:57 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3bff35cb] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [3bff35cb] Command: [ -d ~/.rvm ]
+ DEBUG [3bff35cb] Finished in 2.406 seconds with exit status 1 (failed).
+ DEBUG [3ec53da6] Running [ -d /usr/local/rvm ] as deploy@107.170.38.156
+ DEBUG [3ec53da6] Command: [ -d /usr/local/rvm ]
+ DEBUG [3ec53da6] Finished in 0.357 seconds with exit status 0 (successful).
+ DEBUG [57d85f9c] Running /usr/local/rvm/bin/rvm version as deploy@107.170.38.156
+ DEBUG [57d85f9c] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [57d85f9c] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [57d85f9c] Finished in 0.648 seconds with exit status 0 (successful).
+ DEBUG [46612e93] Running /usr/local/rvm/bin/rvm current as deploy@107.170.38.156
+ DEBUG [46612e93] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [46612e93] 	ruby-2.3.4
+ DEBUG [46612e93] Finished in 0.655 seconds with exit status 0 (successful).
+ DEBUG [b9181d0e] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@107.170.38.156
+ DEBUG [b9181d0e] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [b9181d0e] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [b9181d0e] Finished in 0.956 seconds with exit status 0 (successful).
+  INFO [d4f74876] Running /usr/bin/env mkdir -p /tmp as deploy@107.170.38.156
+ DEBUG [d4f74876] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d4f74876] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 100.0%
+  INFO [0d0c7846] Running /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh as deploy@107.170.38.156
+ DEBUG [0d0c7846] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh
+  INFO [0d0c7846] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [e091d3e6] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@107.170.38.156
+ DEBUG [e091d3e6] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [e091d3e6] 	d5d9e125a88659f4c05bd8f8935c047504a42e74	HEAD
+  INFO [e091d3e6] Finished in 0.821 seconds with exit status 0 (successful).
+  INFO [f919e859] Running /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases as deploy@107.170.38.156
+ DEBUG [f919e859] Command: /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases
+  INFO [f919e859] Finished in 0.368 seconds with exit status 0 (successful).
+  INFO [e494356e] Running /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets as deploy@107.170.38.156
+ DEBUG [e494356e] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets
+  INFO [e494356e] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [55758212] Running /usr/bin/env mkdir -p /var/www/classifica/shared/config as deploy@107.170.38.156
+ DEBUG [55758212] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/config
+  INFO [55758212] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [97fb5eea] Running [ -f /var/www/classifica/shared/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [97fb5eea] Command: [ -f /var/www/classifica/shared/config/database.yml ]
+ DEBUG [97fb5eea] Finished in 0.365 seconds with exit status 0 (successful).
+ DEBUG [6c046494] Running [ -f /var/www/classifica/shared/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [6c046494] Command: [ -f /var/www/classifica/shared/config/secrets.yml ]
+ DEBUG [6c046494] Finished in 0.367 seconds with exit status 0 (successful).
+ DEBUG [15b75f77] Running [ -f /var/www/classifica/current/REVISION ] as deploy@107.170.38.156
+ DEBUG [15b75f77] Command: [ -f /var/www/classifica/current/REVISION ]
+ DEBUG [15b75f77] Finished in 0.370 seconds with exit status 0 (successful).
+ DEBUG [ff7adf71] Running /usr/bin/env cat /var/www/classifica/current/REVISION 2>/dev/null as deploy@107.170.38.156
+ DEBUG [ff7adf71] Command: /usr/bin/env cat /var/www/classifica/current/REVISION 2>/dev/null
+ DEBUG [ff7adf71] 	9098bff5dba734ab00894857ff7af88a7f422aa9
+ DEBUG [ff7adf71] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG [d3193eac] Running [ -f /var/www/classifica/repo/HEAD ] as deploy@107.170.38.156
+ DEBUG [d3193eac] Command: [ -f /var/www/classifica/repo/HEAD ]
+ DEBUG [d3193eac] Finished in 0.354 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/classifica/repo
+ DEBUG [8c442b46] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [8c442b46] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [8c442b46] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [1e3f07a4] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@107.170.38.156
+ DEBUG [1e3f07a4] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [1e3f07a4] Finished in 0.367 seconds with exit status 0 (successful).
+  INFO [941a739b] Running /usr/bin/env git remote update --prune as deploy@107.170.38.156
+ DEBUG [941a739b] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [941a739b] 	Fetching origin
+ DEBUG [941a739b] 	From https://github.com/KristianAlves/classifica
+   9098bff..d5d9e12  master     -> master
+  INFO [941a739b] Finished in 0.720 seconds with exit status 0 (successful).
+ DEBUG [03206752] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [03206752] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [03206752] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [fda6e9ef] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170421165207 as deploy@107.170.38.156
+ DEBUG [fda6e9ef] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/classifica/releases/20170421165207 )
+  INFO [fda6e9ef] Finished in 0.371 seconds with exit status 0 (successful).
+  INFO [1f9ef2e2] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/classifica/releases/20170421165207 as deploy@107.170.38.156
+ DEBUG [1f9ef2e2] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/classifica/releases/20170421165207 )
+  INFO [1f9ef2e2] Finished in 0.706 seconds with exit status 0 (successful).
+ DEBUG [49b30bcc] Running if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [49b30bcc] Command: if test ! -d /var/www/classifica/repo; then echo "Directory does not exist '/var/www/classifica/repo'" 1>&2; false; fi
+ DEBUG [49b30bcc] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [6585acf6] Running /usr/bin/env git rev-list --max-count=1 master as deploy@107.170.38.156
+ DEBUG [6585acf6] Command: cd /var/www/classifica/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6585acf6] 	d5d9e125a88659f4c05bd8f8935c047504a42e74
+ DEBUG [6585acf6] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [0f88fe39] Running if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [0f88fe39] Command: if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi
+ DEBUG [0f88fe39] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [4f96b44f] Running /usr/bin/env echo "d5d9e125a88659f4c05bd8f8935c047504a42e74" >> REVISION as deploy@107.170.38.156
+ DEBUG [4f96b44f] Command: cd /var/www/classifica/releases/20170421165207 && /usr/bin/env echo "d5d9e125a88659f4c05bd8f8935c047504a42e74" >> REVISION
+  INFO [4f96b44f] Finished in 0.363 seconds with exit status 0 (successful).
+  INFO [196a9383] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170421165207/config as deploy@107.170.38.156
+ DEBUG [196a9383] Command: /usr/bin/env mkdir -p /var/www/classifica/releases/20170421165207/config
+  INFO [196a9383] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [03133e9e] Running [ -L /var/www/classifica/releases/20170421165207/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [03133e9e] Command: [ -L /var/www/classifica/releases/20170421165207/config/database.yml ]
+ DEBUG [03133e9e] Finished in 0.360 seconds with exit status 1 (failed).
+ DEBUG [afd43d64] Running [ -f /var/www/classifica/releases/20170421165207/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [afd43d64] Command: [ -f /var/www/classifica/releases/20170421165207/config/database.yml ]
+ DEBUG [afd43d64] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [f9580add] Running /usr/bin/env rm /var/www/classifica/releases/20170421165207/config/database.yml as deploy@107.170.38.156
+ DEBUG [f9580add] Command: /usr/bin/env rm /var/www/classifica/releases/20170421165207/config/database.yml
+  INFO [f9580add] Finished in 0.371 seconds with exit status 0 (successful).
+  INFO [c91806dd] Running /usr/bin/env ln -s /var/www/classifica/shared/config/database.yml /var/www/classifica/releases/20170421165207/config/database.yml as deploy@107.170.38.156
+ DEBUG [c91806dd] Command: /usr/bin/env ln -s /var/www/classifica/shared/config/database.yml /var/www/classifica/releases/20170421165207/config/database.yml
+  INFO [c91806dd] Finished in 0.353 seconds with exit status 0 (successful).
+ DEBUG [8db228cf] Running [ -L /var/www/classifica/releases/20170421165207/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [8db228cf] Command: [ -L /var/www/classifica/releases/20170421165207/config/secrets.yml ]
+ DEBUG [8db228cf] Finished in 0.367 seconds with exit status 1 (failed).
+ DEBUG [22b23e32] Running [ -f /var/www/classifica/releases/20170421165207/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [22b23e32] Command: [ -f /var/www/classifica/releases/20170421165207/config/secrets.yml ]
+ DEBUG [22b23e32] Finished in 0.368 seconds with exit status 0 (successful).
+  INFO [d79663bd] Running /usr/bin/env rm /var/www/classifica/releases/20170421165207/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [d79663bd] Command: /usr/bin/env rm /var/www/classifica/releases/20170421165207/config/secrets.yml
+  INFO [d79663bd] Finished in 0.382 seconds with exit status 0 (successful).
+  INFO [3dcbe33d] Running /usr/bin/env ln -s /var/www/classifica/shared/config/secrets.yml /var/www/classifica/releases/20170421165207/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [3dcbe33d] Command: /usr/bin/env ln -s /var/www/classifica/shared/config/secrets.yml /var/www/classifica/releases/20170421165207/config/secrets.yml
+  INFO [3dcbe33d] Finished in 0.354 seconds with exit status 0 (successful).
+  INFO [070b067d] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170421165207 /var/www/classifica/releases/20170421165207/tmp /var/www/classifica/releases/20170421165207/public as deploy@107.170.38.156
+ DEBUG [070b067d] Command: /usr/bin/env mkdir -p /var/www/classifica/releases/20170421165207 /var/www/classifica/releases/20170421165207/tmp /var/www/classifica/releases/20170421165207/public
+  INFO [070b067d] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [abe30717] Running [ -L /var/www/classifica/releases/20170421165207/log ] as deploy@107.170.38.156
+ DEBUG [abe30717] Command: [ -L /var/www/classifica/releases/20170421165207/log ]
+ DEBUG [abe30717] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [f7ffc467] Running [ -d /var/www/classifica/releases/20170421165207/log ] as deploy@107.170.38.156
+ DEBUG [f7ffc467] Command: [ -d /var/www/classifica/releases/20170421165207/log ]
+ DEBUG [f7ffc467] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [67e15d12] Running /usr/bin/env rm -rf /var/www/classifica/releases/20170421165207/log as deploy@107.170.38.156
+ DEBUG [67e15d12] Command: /usr/bin/env rm -rf /var/www/classifica/releases/20170421165207/log
+  INFO [67e15d12] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO [620e67cd] Running /usr/bin/env ln -s /var/www/classifica/shared/log /var/www/classifica/releases/20170421165207/log as deploy@107.170.38.156
+ DEBUG [620e67cd] Command: /usr/bin/env ln -s /var/www/classifica/shared/log /var/www/classifica/releases/20170421165207/log
+  INFO [620e67cd] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG [2c9f82dd] Running [ -L /var/www/classifica/releases/20170421165207/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [2c9f82dd] Command: [ -L /var/www/classifica/releases/20170421165207/tmp/pids ]
+ DEBUG [2c9f82dd] Finished in 0.360 seconds with exit status 1 (failed).
+ DEBUG [4f8c140b] Running [ -d /var/www/classifica/releases/20170421165207/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [4f8c140b] Command: [ -d /var/www/classifica/releases/20170421165207/tmp/pids ]
+ DEBUG [4f8c140b] Finished in 0.378 seconds with exit status 1 (failed).
+  INFO [17cebbe3] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/pids /var/www/classifica/releases/20170421165207/tmp/pids as deploy@107.170.38.156
+ DEBUG [17cebbe3] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/pids /var/www/classifica/releases/20170421165207/tmp/pids
+  INFO [17cebbe3] Finished in 0.373 seconds with exit status 0 (successful).
+ DEBUG [b2c2c779] Running [ -L /var/www/classifica/releases/20170421165207/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [b2c2c779] Command: [ -L /var/www/classifica/releases/20170421165207/tmp/cache ]
+ DEBUG [b2c2c779] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [1a4bba51] Running [ -d /var/www/classifica/releases/20170421165207/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [1a4bba51] Command: [ -d /var/www/classifica/releases/20170421165207/tmp/cache ]
+ DEBUG [1a4bba51] Finished in 0.357 seconds with exit status 1 (failed).
+  INFO [461086e5] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/cache /var/www/classifica/releases/20170421165207/tmp/cache as deploy@107.170.38.156
+ DEBUG [461086e5] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/cache /var/www/classifica/releases/20170421165207/tmp/cache
+  INFO [461086e5] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [f3198bb3] Running [ -L /var/www/classifica/releases/20170421165207/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [f3198bb3] Command: [ -L /var/www/classifica/releases/20170421165207/tmp/sockets ]
+ DEBUG [f3198bb3] Finished in 0.365 seconds with exit status 1 (failed).
+ DEBUG [75bb4499] Running [ -d /var/www/classifica/releases/20170421165207/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [75bb4499] Command: [ -d /var/www/classifica/releases/20170421165207/tmp/sockets ]
+ DEBUG [75bb4499] Finished in 0.366 seconds with exit status 1 (failed).
+  INFO [c62152c5] Running /usr/bin/env ln -s /var/www/classifica/shared/tmp/sockets /var/www/classifica/releases/20170421165207/tmp/sockets as deploy@107.170.38.156
+ DEBUG [c62152c5] Command: /usr/bin/env ln -s /var/www/classifica/shared/tmp/sockets /var/www/classifica/releases/20170421165207/tmp/sockets
+  INFO [c62152c5] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG [73989055] Running [ -L /var/www/classifica/releases/20170421165207/public/system ] as deploy@107.170.38.156
+ DEBUG [73989055] Command: [ -L /var/www/classifica/releases/20170421165207/public/system ]
+ DEBUG [73989055] Finished in 0.360 seconds with exit status 1 (failed).
+ DEBUG [eb1a053e] Running [ -d /var/www/classifica/releases/20170421165207/public/system ] as deploy@107.170.38.156
+ DEBUG [eb1a053e] Command: [ -d /var/www/classifica/releases/20170421165207/public/system ]
+ DEBUG [eb1a053e] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [866c73a7] Running /usr/bin/env rm -rf /var/www/classifica/releases/20170421165207/public/system as deploy@107.170.38.156
+ DEBUG [866c73a7] Command: /usr/bin/env rm -rf /var/www/classifica/releases/20170421165207/public/system
+  INFO [866c73a7] Finished in 0.363 seconds with exit status 0 (successful).
+  INFO [3ac13a32] Running /usr/bin/env ln -s /var/www/classifica/shared/public/system /var/www/classifica/releases/20170421165207/public/system as deploy@107.170.38.156
+ DEBUG [3ac13a32] Command: /usr/bin/env ln -s /var/www/classifica/shared/public/system /var/www/classifica/releases/20170421165207/public/system
+  INFO [3ac13a32] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [de3beef1] Running [ -L /var/www/classifica/releases/20170421165207/public/assets ] as deploy@107.170.38.156
+ DEBUG [de3beef1] Command: [ -L /var/www/classifica/releases/20170421165207/public/assets ]
+ DEBUG [de3beef1] Finished in 0.370 seconds with exit status 1 (failed).
+ DEBUG [1746439d] Running [ -d /var/www/classifica/releases/20170421165207/public/assets ] as deploy@107.170.38.156
+ DEBUG [1746439d] Command: [ -d /var/www/classifica/releases/20170421165207/public/assets ]
+ DEBUG [1746439d] Finished in 0.382 seconds with exit status 1 (failed).
+  INFO [81c52e6a] Running /usr/bin/env ln -s /var/www/classifica/shared/public/assets /var/www/classifica/releases/20170421165207/public/assets as deploy@107.170.38.156
+ DEBUG [81c52e6a] Command: /usr/bin/env ln -s /var/www/classifica/shared/public/assets /var/www/classifica/releases/20170421165207/public/assets
+  INFO [81c52e6a] Finished in 0.363 seconds with exit status 0 (successful).
+ DEBUG [91ebe0e1] Running if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [91ebe0e1] Command: if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi
+ DEBUG [91ebe0e1] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [8bb7547f] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/classifica/shared/bundle as deploy@107.170.38.156
+ DEBUG [8bb7547f] Command: cd /var/www/classifica/releases/20170421165207 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/classifica/shared/bundle
+ DEBUG [8bb7547f] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [8bb7547f] 	The following gems are missing
+ DEBUG [8bb7547f] 	 * net-ssh (4.1.0)
+ DEBUG [8bb7547f] 	 * net-scp (1.2.1)
+ DEBUG [8bb7547f] 	 * sshkit (1.13.1)
+ DEBUG [8bb7547f] 	 * airbrussh (1.1.2)
+ DEBUG [8bb7547f] 	 * coderay (1.1.1)
+ DEBUG [8bb7547f] 	 * better_errors (2.1.1)
+ DEBUG [8bb7547f] 	 * debug_inspector (0.0.2)
+ DEBUG [8bb7547f] 	 * binding_of_caller (0.7.2)
+ DEBUG [8bb7547f] 	 * byebug (9.0.6)
+ DEBUG [8bb7547f] 	 * capistrano (3.8.0)
+ DEBUG [8bb7547f] 	 * capistrano-bundler (1.2.0)
+ DEBUG [8bb7547f] 	 * capistrano-rails (1.2.3)
+ DEBUG [8bb7547f] 	 * capistrano-rvm (0.1.2)
+ DEBUG [8bb7547f] 	 * daemons (1.2.4)
+ DEBUG [8bb7547f] 	 * doctor_ipsum (0.3.1)
+ DEBUG [8bb7547f] 	 * eventmachine (1.0.9.1)
+ DEBUG [8bb7547f] 	 * faker (1.6.6)
+ DEBUG [8bb7547f] 	 * rack-protection (1.5.3)
+ DEBUG [8bb7547f] 	 * sinatra (1.4.7)
+ DEBUG [8bb7547f] 	 * thin (1.5.1)
+ DEBUG [8bb7547f] 	 * skinny (0.2.4)
+ DEBUG [8bb7547f] 	 * mailcatcher (0.6.5)
+ DEBUG [8bb7547f] 	 * spring (2.0.0)
+ DEBUG [8bb7547f] 	 * web-console (2.3.0)
+ DEBUG [8bb7547f] 	Install missing gems with `bundle install`
+ DEBUG [8bb7547f] Finished in 1.424 seconds with exit status 1 (failed).
+  INFO [dfc5fc8d] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/classifica/shared/bundle --without development test --deployment --quiet as deploy@107.170.38.156
+ DEBUG [dfc5fc8d] Command: cd /var/www/classifica/releases/20170421165207 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/classifica/shared/bundle --without development test --deployment --quiet
+  INFO [dfc5fc8d] Finished in 8.797 seconds with exit status 0 (successful).
+ DEBUG [7e50af63] Running if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [7e50af63] Command: if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi
+ DEBUG [7e50af63] Finished in 0.370 seconds with exit status 0 (successful).
+  INFO [937a9444] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@107.170.38.156
+ DEBUG [937a9444] Command: cd /var/www/classifica/releases/20170421165207 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+  INFO [937a9444] Finished in 6.382 seconds with exit status 0 (successful).
+ DEBUG [f11ea4e4] Running if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [f11ea4e4] Command: if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi
+ DEBUG [f11ea4e4] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [02490603] Running /usr/bin/env mkdir -p /var/www/classifica/releases/20170421165207/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [02490603] Command: cd /var/www/classifica/releases/20170421165207 && /usr/bin/env mkdir -p /var/www/classifica/releases/20170421165207/assets_manifest_backup
+  INFO [02490603] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [b847afc8] Running /usr/bin/env ls /var/www/classifica/releases/20170421165207/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [b847afc8] Command: cd /var/www/classifica/releases/20170421165207 && /usr/bin/env ls /var/www/classifica/releases/20170421165207/public/assets/.sprockets-manifest*
+ DEBUG [b847afc8] 	/var/www/classifica/releases/20170421165207/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [b847afc8] Finished in 0.363 seconds with exit status 0 (successful).
+ DEBUG [5c349207] Running /usr/bin/env ls /var/www/classifica/releases/20170421165207/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [5c349207] Command: cd /var/www/classifica/releases/20170421165207 && /usr/bin/env ls /var/www/classifica/releases/20170421165207/public/assets/.sprockets-manifest*
+ DEBUG [5c349207] 	/var/www/classifica/releases/20170421165207/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [5c349207] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [020b8cbb] Running /usr/bin/env cp /var/www/classifica/releases/20170421165207/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/classifica/releases/20170421165207/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [020b8cbb] Command: cd /var/www/classifica/releases/20170421165207 && /usr/bin/env cp /var/www/classifica/releases/20170421165207/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/classifica/releases/20170421165207/assets_manifest_backup
+  INFO [020b8cbb] Finished in 0.368 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [4a1e0cc1] Running if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [4a1e0cc1] Command: if test ! -d /var/www/classifica/releases/20170421165207; then echo "Directory does not exist '/var/www/classifica/releases/20170421165207'" 1>&2; false; fi
+ DEBUG [4a1e0cc1] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [33725877] Running /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate as deploy@107.170.38.156
+ DEBUG [33725877] Command: cd /var/www/classifica/releases/20170421165207 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate )
+  INFO [33725877] Finished in 5.595 seconds with exit status 0 (successful).
+  INFO [5909ec1a] Running /usr/bin/env ln -s /var/www/classifica/releases/20170421165207 /var/www/classifica/releases/current as deploy@107.170.38.156
+ DEBUG [5909ec1a] Command: /usr/bin/env ln -s /var/www/classifica/releases/20170421165207 /var/www/classifica/releases/current
+  INFO [5909ec1a] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [89b75155] Running /usr/bin/env mv /var/www/classifica/releases/current /var/www/classifica as deploy@107.170.38.156
+ DEBUG [89b75155] Command: /usr/bin/env mv /var/www/classifica/releases/current /var/www/classifica
+  INFO [89b75155] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG [7e88f53a] Running /usr/bin/env ls -x /var/www/classifica/releases as deploy@107.170.38.156
+ DEBUG [7e88f53a] Command: /usr/bin/env ls -x /var/www/classifica/releases
+ DEBUG [7e88f53a] 	20170421144510	20170421165207
+ DEBUG [7e88f53a] Finished in 0.377 seconds with exit status 0 (successful).
+ DEBUG [69608697] Running if test ! -d /var/www/classifica/releases; then echo "Directory does not exist '/var/www/classifica/releases'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [69608697] Command: if test ! -d /var/www/classifica/releases; then echo "Directory does not exist '/var/www/classifica/releases'" 1>&2; false; fi
+ DEBUG [69608697] Finished in 0.366 seconds with exit status 0 (successful).
+  INFO [613490bc] Running /usr/bin/env echo "Branch master (at d5d9e125a88659f4c05bd8f8935c047504a42e74) deployed as release 20170421165207 by vagrant" >> /var/www/classifica/revisions.log as deploy@107.170.38.156
+ DEBUG [613490bc] Command: cd /var/www/classifica/releases && /usr/bin/env echo "Branch master (at d5d9e125a88659f4c05bd8f8935c047504a42e74) deployed as release 20170421165207 by vagrant" >> /var/www/classifica/revisions.log
+  INFO [613490bc] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-21 17:27:32 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [405a9c7f] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [405a9c7f] Command: [ -d ~/.rvm ]
+ DEBUG [405a9c7f] Finished in 2.371 seconds with exit status 1 (failed).
+ DEBUG [5e33842b] Running [ -d /usr/local/rvm ] as deploy@107.170.38.156
+ DEBUG [5e33842b] Command: [ -d /usr/local/rvm ]
+ DEBUG [5e33842b] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [b20f22ed] Running /usr/local/rvm/bin/rvm version as deploy@107.170.38.156
+ DEBUG [b20f22ed] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [b20f22ed] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [b20f22ed] Finished in 0.609 seconds with exit status 0 (successful).
+ DEBUG [b1ac2074] Running /usr/local/rvm/bin/rvm current as deploy@107.170.38.156
+ DEBUG [b1ac2074] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [b1ac2074] 	ruby-2.3.4
+ DEBUG [b1ac2074] Finished in 0.701 seconds with exit status 0 (successful).
+ DEBUG [e5f1cccb] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@107.170.38.156
+ DEBUG [e5f1cccb] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [e5f1cccb] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [e5f1cccb] Finished in 0.803 seconds with exit status 0 (successful).
+  INFO [a944cb6e] Running /usr/bin/env mkdir -p /tmp as deploy@107.170.38.156
+ DEBUG [a944cb6e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a944cb6e] Finished in 0.357 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 100.0%
+  INFO [1e1f6914] Running /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh as deploy@107.170.38.156
+ DEBUG [1e1f6914] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh
+  INFO [1e1f6914] Finished in 0.364 seconds with exit status 0 (successful).
+  INFO [cea549af] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@107.170.38.156
+ DEBUG [cea549af] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [cea549af] 	d5d9e125a88659f4c05bd8f8935c047504a42e74	HEAD
+  INFO [cea549af] Finished in 0.761 seconds with exit status 0 (successful).
+  INFO [9203f5aa] Running /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases as deploy@107.170.38.156
+ DEBUG [9203f5aa] Command: /usr/bin/env mkdir -p /var/www/classifica/shared /var/www/classifica/releases
+  INFO [9203f5aa] Finished in 0.383 seconds with exit status 0 (successful).
+  INFO [50a46db8] Running /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets as deploy@107.170.38.156
+ DEBUG [50a46db8] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/log /var/www/classifica/shared/tmp/pids /var/www/classifica/shared/tmp/cache /var/www/classifica/shared/tmp/sockets /var/www/classifica/shared/public/system /var/www/classifica/shared/public/assets
+  INFO [50a46db8] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [da99489c] Running /usr/bin/env mkdir -p /var/www/classifica/shared/config as deploy@107.170.38.156
+ DEBUG [da99489c] Command: /usr/bin/env mkdir -p /var/www/classifica/shared/config
+  INFO [da99489c] Finished in 0.369 seconds with exit status 0 (successful).
+ DEBUG [eb2bde6b] Running [ -f /var/www/classifica/shared/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [eb2bde6b] Command: [ -f /var/www/classifica/shared/config/database.yml ]
+ DEBUG [eb2bde6b] Finished in 0.359 seconds with exit status 1 (failed).
+ ERROR linked file /var/www/classifica/shared/config/database.yml does not exist on 107.170.38.156
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-21 17:28:42 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [920ebff7] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [920ebff7] Command: [ -d ~/.rvm ]
+ DEBUG [920ebff7] Finished in 2.298 seconds with exit status 1 (failed).
+ DEBUG [ea05e9c7] Running [ -d /usr/local/rvm ] as deploy@107.170.38.156
+ DEBUG [ea05e9c7] Command: [ -d /usr/local/rvm ]
+ DEBUG [ea05e9c7] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [ff97a44f] Running /usr/local/rvm/bin/rvm version as deploy@107.170.38.156
+ DEBUG [ff97a44f] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [ff97a44f] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [ff97a44f] Finished in 0.711 seconds with exit status 0 (successful).
+ DEBUG [c5efa875] Running /usr/local/rvm/bin/rvm current as deploy@107.170.38.156
+ DEBUG [c5efa875] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [c5efa875] 	ruby-2.3.4
+ DEBUG [c5efa875] Finished in 0.723 seconds with exit status 0 (successful).
+ DEBUG [f1dbf6f4] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@107.170.38.156
+ DEBUG [f1dbf6f4] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [f1dbf6f4] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [f1dbf6f4] Finished in 0.834 seconds with exit status 0 (successful).
+  INFO [f0941b3b] Running /usr/bin/env mkdir -p /tmp as deploy@107.170.38.156
+ DEBUG [f0941b3b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f0941b3b] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Classifica-production-vagrant.sh 100.0%
+  INFO [7644b05c] Running /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh as deploy@107.170.38.156
+ DEBUG [7644b05c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Classifica-production-vagrant.sh
+  INFO [7644b05c] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [f26b514a] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@107.170.38.156
+ DEBUG [f26b514a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [f26b514a] 	d5d9e125a88659f4c05bd8f8935c047504a42e74	HEAD
+  INFO [f26b514a] Finished in 0.681 seconds with exit status 0 (successful).
+  INFO [af12135c] Running /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases as deploy@107.170.38.156
+ DEBUG [af12135c] Command: /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases
+  INFO [af12135c] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [76b45c0a] Running /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets as deploy@107.170.38.156
+ DEBUG [76b45c0a] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets
+  INFO [76b45c0a] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [f7e8c195] Running /usr/bin/env mkdir -p /var/www/kristian/shared/config as deploy@107.170.38.156
+ DEBUG [f7e8c195] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/config
+  INFO [f7e8c195] Finished in 0.369 seconds with exit status 0 (successful).
+ DEBUG [0d72a7b9] Running [ -f /var/www/kristian/shared/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [0d72a7b9] Command: [ -f /var/www/kristian/shared/config/database.yml ]
+ DEBUG [0d72a7b9] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [8ff49cf6] Running [ -f /var/www/kristian/shared/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [8ff49cf6] Command: [ -f /var/www/kristian/shared/config/secrets.yml ]
+ DEBUG [8ff49cf6] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [6aba822d] Running [ -f /var/www/kristian/current/REVISION ] as deploy@107.170.38.156
+ DEBUG [6aba822d] Command: [ -f /var/www/kristian/current/REVISION ]
+ DEBUG [6aba822d] Finished in 0.356 seconds with exit status 1 (failed).
+ DEBUG [87ca1613] Running [ -f /var/www/kristian/repo/HEAD ] as deploy@107.170.38.156
+ DEBUG [87ca1613] Command: [ -f /var/www/kristian/repo/HEAD ]
+ DEBUG [87ca1613] Finished in 0.351 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/kristian/repo
+ DEBUG [f206e5b7] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [f206e5b7] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [f206e5b7] Finished in 0.374 seconds with exit status 0 (successful).
+  INFO [cbf335a6] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@107.170.38.156
+ DEBUG [cbf335a6] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [cbf335a6] Finished in 0.371 seconds with exit status 0 (successful).
+  INFO [94dca51f] Running /usr/bin/env git remote update --prune as deploy@107.170.38.156
+ DEBUG [94dca51f] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [94dca51f] 	Fetching origin
+  INFO [94dca51f] Finished in 0.679 seconds with exit status 0 (successful).
+ DEBUG [71c3d9d2] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [71c3d9d2] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [71c3d9d2] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [3c209138] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170421172852 as deploy@107.170.38.156
+ DEBUG [3c209138] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/kristian/releases/20170421172852 )
+  INFO [3c209138] Finished in 0.375 seconds with exit status 0 (successful).
+  INFO [5d33a510] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170421172852 as deploy@107.170.38.156
+ DEBUG [5d33a510] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170421172852 )
+  INFO [5d33a510] Finished in 0.729 seconds with exit status 0 (successful).
+ DEBUG [5bb97083] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [5bb97083] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [5bb97083] Finished in 0.370 seconds with exit status 0 (successful).
+ DEBUG [3579e138] Running /usr/bin/env git rev-list --max-count=1 master as deploy@107.170.38.156
+ DEBUG [3579e138] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Classifica-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [3579e138] 	d5d9e125a88659f4c05bd8f8935c047504a42e74
+ DEBUG [3579e138] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG [93d02512] Running if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [93d02512] Command: if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi
+ DEBUG [93d02512] Finished in 0.365 seconds with exit status 0 (successful).
+  INFO [79daa8bf] Running /usr/bin/env echo "d5d9e125a88659f4c05bd8f8935c047504a42e74" >> REVISION as deploy@107.170.38.156
+ DEBUG [79daa8bf] Command: cd /var/www/kristian/releases/20170421172852 && /usr/bin/env echo "d5d9e125a88659f4c05bd8f8935c047504a42e74" >> REVISION
+  INFO [79daa8bf] Finished in 0.369 seconds with exit status 0 (successful).
+  INFO [2bc557a3] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170421172852/config as deploy@107.170.38.156
+ DEBUG [2bc557a3] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170421172852/config
+  INFO [2bc557a3] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [6f7025ed] Running [ -L /var/www/kristian/releases/20170421172852/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [6f7025ed] Command: [ -L /var/www/kristian/releases/20170421172852/config/database.yml ]
+ DEBUG [6f7025ed] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [f25ee1bd] Running [ -f /var/www/kristian/releases/20170421172852/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [f25ee1bd] Command: [ -f /var/www/kristian/releases/20170421172852/config/database.yml ]
+ DEBUG [f25ee1bd] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [82639e17] Running /usr/bin/env rm /var/www/kristian/releases/20170421172852/config/database.yml as deploy@107.170.38.156
+ DEBUG [82639e17] Command: /usr/bin/env rm /var/www/kristian/releases/20170421172852/config/database.yml
+  INFO [82639e17] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO [4506f301] Running /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170421172852/config/database.yml as deploy@107.170.38.156
+ DEBUG [4506f301] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170421172852/config/database.yml
+  INFO [4506f301] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [f176c18c] Running [ -L /var/www/kristian/releases/20170421172852/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [f176c18c] Command: [ -L /var/www/kristian/releases/20170421172852/config/secrets.yml ]
+ DEBUG [f176c18c] Finished in 0.365 seconds with exit status 1 (failed).
+ DEBUG [3934aec7] Running [ -f /var/www/kristian/releases/20170421172852/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [3934aec7] Command: [ -f /var/www/kristian/releases/20170421172852/config/secrets.yml ]
+ DEBUG [3934aec7] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [bc6047b2] Running /usr/bin/env rm /var/www/kristian/releases/20170421172852/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [bc6047b2] Command: /usr/bin/env rm /var/www/kristian/releases/20170421172852/config/secrets.yml
+  INFO [bc6047b2] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [5b6e4d03] Running /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170421172852/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [5b6e4d03] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170421172852/config/secrets.yml
+  INFO [5b6e4d03] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [19d0204a] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170421172852 /var/www/kristian/releases/20170421172852/tmp /var/www/kristian/releases/20170421172852/public as deploy@107.170.38.156
+ DEBUG [19d0204a] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170421172852 /var/www/kristian/releases/20170421172852/tmp /var/www/kristian/releases/20170421172852/public
+  INFO [19d0204a] Finished in 0.375 seconds with exit status 0 (successful).
+ DEBUG [006d17c7] Running [ -L /var/www/kristian/releases/20170421172852/log ] as deploy@107.170.38.156
+ DEBUG [006d17c7] Command: [ -L /var/www/kristian/releases/20170421172852/log ]
+ DEBUG [006d17c7] Finished in 0.384 seconds with exit status 1 (failed).
+ DEBUG [e1fbf04e] Running [ -d /var/www/kristian/releases/20170421172852/log ] as deploy@107.170.38.156
+ DEBUG [e1fbf04e] Command: [ -d /var/www/kristian/releases/20170421172852/log ]
+ DEBUG [e1fbf04e] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [c568d68b] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170421172852/log as deploy@107.170.38.156
+ DEBUG [c568d68b] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170421172852/log
+  INFO [c568d68b] Finished in 0.373 seconds with exit status 0 (successful).
+  INFO [23f0eac4] Running /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170421172852/log as deploy@107.170.38.156
+ DEBUG [23f0eac4] Command: /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170421172852/log
+  INFO [23f0eac4] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [6c9f014b] Running [ -L /var/www/kristian/releases/20170421172852/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [6c9f014b] Command: [ -L /var/www/kristian/releases/20170421172852/tmp/pids ]
+ DEBUG [6c9f014b] Finished in 0.358 seconds with exit status 1 (failed).
+ DEBUG [39a2dc5b] Running [ -d /var/www/kristian/releases/20170421172852/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [39a2dc5b] Command: [ -d /var/www/kristian/releases/20170421172852/tmp/pids ]
+ DEBUG [39a2dc5b] Finished in 0.376 seconds with exit status 1 (failed).
+  INFO [c32af4f5] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170421172852/tmp/pids as deploy@107.170.38.156
+ DEBUG [c32af4f5] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170421172852/tmp/pids
+  INFO [c32af4f5] Finished in 0.374 seconds with exit status 0 (successful).
+ DEBUG [006d6d13] Running [ -L /var/www/kristian/releases/20170421172852/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [006d6d13] Command: [ -L /var/www/kristian/releases/20170421172852/tmp/cache ]
+ DEBUG [006d6d13] Finished in 0.359 seconds with exit status 1 (failed).
+ DEBUG [d80262b7] Running [ -d /var/www/kristian/releases/20170421172852/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [d80262b7] Command: [ -d /var/www/kristian/releases/20170421172852/tmp/cache ]
+ DEBUG [d80262b7] Finished in 0.357 seconds with exit status 1 (failed).
+  INFO [4a764f8d] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170421172852/tmp/cache as deploy@107.170.38.156
+ DEBUG [4a764f8d] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170421172852/tmp/cache
+  INFO [4a764f8d] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [545c5bd8] Running [ -L /var/www/kristian/releases/20170421172852/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [545c5bd8] Command: [ -L /var/www/kristian/releases/20170421172852/tmp/sockets ]
+ DEBUG [545c5bd8] Finished in 0.353 seconds with exit status 1 (failed).
+ DEBUG [873e8673] Running [ -d /var/www/kristian/releases/20170421172852/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [873e8673] Command: [ -d /var/www/kristian/releases/20170421172852/tmp/sockets ]
+ DEBUG [873e8673] Finished in 0.367 seconds with exit status 1 (failed).
+  INFO [dcd0ef29] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170421172852/tmp/sockets as deploy@107.170.38.156
+ DEBUG [dcd0ef29] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170421172852/tmp/sockets
+  INFO [dcd0ef29] Finished in 0.376 seconds with exit status 0 (successful).
+ DEBUG [ee7f7459] Running [ -L /var/www/kristian/releases/20170421172852/public/system ] as deploy@107.170.38.156
+ DEBUG [ee7f7459] Command: [ -L /var/www/kristian/releases/20170421172852/public/system ]
+ DEBUG [ee7f7459] Finished in 0.357 seconds with exit status 1 (failed).
+ DEBUG [77ada0e3] Running [ -d /var/www/kristian/releases/20170421172852/public/system ] as deploy@107.170.38.156
+ DEBUG [77ada0e3] Command: [ -d /var/www/kristian/releases/20170421172852/public/system ]
+ DEBUG [77ada0e3] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [d7864852] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170421172852/public/system as deploy@107.170.38.156
+ DEBUG [d7864852] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170421172852/public/system
+  INFO [d7864852] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [aad6702b] Running /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170421172852/public/system as deploy@107.170.38.156
+ DEBUG [aad6702b] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170421172852/public/system
+  INFO [aad6702b] Finished in 0.365 seconds with exit status 0 (successful).
+ DEBUG [ec129def] Running [ -L /var/www/kristian/releases/20170421172852/public/assets ] as deploy@107.170.38.156
+ DEBUG [ec129def] Command: [ -L /var/www/kristian/releases/20170421172852/public/assets ]
+ DEBUG [ec129def] Finished in 0.362 seconds with exit status 1 (failed).
+ DEBUG [4879325c] Running [ -d /var/www/kristian/releases/20170421172852/public/assets ] as deploy@107.170.38.156
+ DEBUG [4879325c] Command: [ -d /var/www/kristian/releases/20170421172852/public/assets ]
+ DEBUG [4879325c] Finished in 0.358 seconds with exit status 1 (failed).
+  INFO [06a0253b] Running /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170421172852/public/assets as deploy@107.170.38.156
+ DEBUG [06a0253b] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170421172852/public/assets
+  INFO [06a0253b] Finished in 0.373 seconds with exit status 0 (successful).
+ DEBUG [abfc2b60] Running if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [abfc2b60] Command: if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi
+ DEBUG [abfc2b60] Finished in 0.368 seconds with exit status 0 (successful).
+ DEBUG [f902f2b3] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle as deploy@107.170.38.156
+ DEBUG [f902f2b3] Command: cd /var/www/kristian/releases/20170421172852 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle
+ DEBUG [f902f2b3] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [f902f2b3] 	The following gems are missing
+ DEBUG [f902f2b3] 	 * net-ssh (4.1.0)
+ DEBUG [f902f2b3] 	 * net-scp (1.2.1)
+ DEBUG [f902f2b3] 	 * sshkit (1.13.1)
+ DEBUG [f902f2b3] 	 * airbrussh (1.1.2)
+ DEBUG [f902f2b3] 	 * coderay (1.1.1)
+ DEBUG [f902f2b3] 	 * better_errors (2.1.1)
+ DEBUG [f902f2b3] 	 * debug_inspector (0.0.2)
+ DEBUG [f902f2b3] 	 * binding_of_caller (0.7.2)
+ DEBUG [f902f2b3] 	 * byebug (9.0.6)
+ DEBUG [f902f2b3] 	 * capistrano (3.8.0)
+ DEBUG [f902f2b3] 	 * capistrano-bundler (1.2.0)
+ DEBUG [f902f2b3] 	 * capistrano-rails (1.2.3)
+ DEBUG [f902f2b3] 	 * capistrano-rvm (0.1.2)
+ DEBUG [f902f2b3] 	 * daemons (1.2.4)
+ DEBUG [f902f2b3] 	 * eventmachine (1.0.9.1)
+ DEBUG [f902f2b3] 	 * rack-protection (1.5.3)
+ DEBUG [f902f2b3] 	 * sinatra (1.4.7)
+ DEBUG [f902f2b3] 	 * thin (1.5.1)
+ DEBUG [f902f2b3] 	 * skinny (0.2.4)
+ DEBUG [f902f2b3] 	 * mailcatcher (0.6.5)
+ DEBUG [f902f2b3] 	 * spring (2.0.0)
+ DEBUG [f902f2b3] 	 * web-console (2.3.0)
+ DEBUG [f902f2b3] 	Install missing gems with `bundle install`
+ DEBUG [f902f2b3] Finished in 1.276 seconds with exit status 1 (failed).
+  INFO [712b29b0] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet as deploy@107.170.38.156
+ DEBUG [712b29b0] Command: cd /var/www/kristian/releases/20170421172852 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet
+  INFO [712b29b0] Finished in 7.617 seconds with exit status 0 (successful).
+ DEBUG [fe7302d9] Running if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [fe7302d9] Command: if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi
+ DEBUG [fe7302d9] Finished in 0.387 seconds with exit status 0 (successful).
+  INFO [e615b15f] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@107.170.38.156
+ DEBUG [e615b15f] Command: cd /var/www/kristian/releases/20170421172852 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+  INFO [e615b15f] Finished in 46.496 seconds with exit status 0 (successful).
+ DEBUG [23c7ca88] Running if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [23c7ca88] Command: if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi
+ DEBUG [23c7ca88] Finished in 0.372 seconds with exit status 0 (successful).
+  INFO [11676fda] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170421172852/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [11676fda] Command: cd /var/www/kristian/releases/20170421172852 && /usr/bin/env mkdir -p /var/www/kristian/releases/20170421172852/assets_manifest_backup
+  INFO [11676fda] Finished in 0.393 seconds with exit status 0 (successful).
+ DEBUG [26e7805d] Running /usr/bin/env ls /var/www/kristian/releases/20170421172852/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [26e7805d] Command: cd /var/www/kristian/releases/20170421172852 && /usr/bin/env ls /var/www/kristian/releases/20170421172852/public/assets/.sprockets-manifest*
+ DEBUG [26e7805d] 	/var/www/kristian/releases/20170421172852/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [26e7805d] Finished in 0.368 seconds with exit status 0 (successful).
+ DEBUG [9eb66b92] Running /usr/bin/env ls /var/www/kristian/releases/20170421172852/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [9eb66b92] Command: cd /var/www/kristian/releases/20170421172852 && /usr/bin/env ls /var/www/kristian/releases/20170421172852/public/assets/.sprockets-manifest*
+ DEBUG [9eb66b92] 	/var/www/kristian/releases/20170421172852/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [9eb66b92] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [ee7e1464] Running /usr/bin/env cp /var/www/kristian/releases/20170421172852/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170421172852/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [ee7e1464] Command: cd /var/www/kristian/releases/20170421172852 && /usr/bin/env cp /var/www/kristian/releases/20170421172852/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170421172852/assets_manifest_backup
+  INFO [ee7e1464] Finished in 0.390 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [55dafb35] Running if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [55dafb35] Command: if test ! -d /var/www/kristian/releases/20170421172852; then echo "Directory does not exist '/var/www/kristian/releases/20170421172852'" 1>&2; false; fi
+ DEBUG [55dafb35] Finished in 0.366 seconds with exit status 0 (successful).
+  INFO [4c26e385] Running /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate as deploy@107.170.38.156
+ DEBUG [4c26e385] Command: cd /var/www/kristian/releases/20170421172852 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate )
+  INFO [4c26e385] Finished in 5.171 seconds with exit status 0 (successful).
+  INFO [11ebbd45] Running /usr/bin/env ln -s /var/www/kristian/releases/20170421172852 /var/www/kristian/releases/current as deploy@107.170.38.156
+ DEBUG [11ebbd45] Command: /usr/bin/env ln -s /var/www/kristian/releases/20170421172852 /var/www/kristian/releases/current
+  INFO [11ebbd45] Finished in 0.375 seconds with exit status 0 (successful).
+  INFO [e83fb24f] Running /usr/bin/env mv /var/www/kristian/releases/current /var/www/kristian as deploy@107.170.38.156
+ DEBUG [e83fb24f] Command: /usr/bin/env mv /var/www/kristian/releases/current /var/www/kristian
+  INFO [e83fb24f] Finished in 0.362 seconds with exit status 0 (successful).
+ DEBUG [4952328f] Running /usr/bin/env ls -x /var/www/kristian/releases as deploy@107.170.38.156
+ DEBUG [4952328f] Command: /usr/bin/env ls -x /var/www/kristian/releases
+ DEBUG [4952328f] 	20170421144510	20170421165207	20170421172852
+ DEBUG [4952328f] Finished in 0.385 seconds with exit status 0 (successful).
+ DEBUG [23832d9f] Running if test ! -d /var/www/kristian/releases; then echo "Directory does not exist '/var/www/kristian/releases'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [23832d9f] Command: if test ! -d /var/www/kristian/releases; then echo "Directory does not exist '/var/www/kristian/releases'" 1>&2; false; fi
+ DEBUG [23832d9f] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [c98427fa] Running /usr/bin/env echo "Branch master (at d5d9e125a88659f4c05bd8f8935c047504a42e74) deployed as release 20170421172852 by vagrant" >> /var/www/kristian/revisions.log as deploy@107.170.38.156
+ DEBUG [c98427fa] Command: cd /var/www/kristian/releases && /usr/bin/env echo "Branch master (at d5d9e125a88659f4c05bd8f8935c047504a42e74) deployed as release 20170421172852 by vagrant" >> /var/www/kristian/revisions.log
+  INFO [c98427fa] Finished in 0.378 seconds with exit status 0 (successful).

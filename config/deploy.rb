@@ -5,7 +5,7 @@ set :application, "Classifica"
 set :repo_url, "https://github.com/KristianAlves/classifica.git"
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www/classifica'
+set :deploy_to, '/var/www/kristian'
 set :branch, 'master'
 
 # Default value for keep_releases is 5
@@ -37,3 +37,11 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
+after 'deploy:publishing', 'deploy:restart'
+
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:start'
+    invoke 'unicorn:stop
+  end
+end
