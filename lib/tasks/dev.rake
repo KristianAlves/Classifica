@@ -7,7 +7,11 @@ task setup: :environment do
     puts "Executando o setup para desenvolvimento"
 
     puts "Apagando Banco de Dados...#{%x(rake db:drop)}"
-    puts "Apagando Imagens de Public/System... #{%x(rm -rf #{images_path})}"
+
+    if Rails.env.development?
+      puts "Apagando Imagens de Public/System... #{%x(rm -rf #{images_path})}"
+    end
+
     puts "Criando Banco de Dados... #{%x(rake db:create)}"
     puts "Migrando Banco de Dados... #{%x(rake db:migrate)}"
     puts %x(rake db:seed)

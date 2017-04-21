@@ -36,6 +36,10 @@ gem 'kaminari-i18n'
 gem "rails-erd"
 # A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
 gem 'ratyrate'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
+  # Markdown Lorem Ipsum generator
+  gem 'doctor_ipsum'
 
 
 source 'https://rails-assets.org' do
@@ -96,10 +100,6 @@ end
 group :development do
   #Catches mail and serves it through a dream
 gem 'mailcatcher'
-  # A library for generating fake data such as names, addresses, and phone numbers.
-  gem 'faker'
-  # Markdown Lorem Ipsum generator
-  gem 'doctor_ipsum'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   #Generate Entity-Relationship Diagrams for Rails applications
