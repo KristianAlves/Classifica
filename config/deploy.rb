@@ -42,6 +42,6 @@ after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
     invoke 'unicorn:start'
-    invoke 'unicorn:stop
+    invoke 'unicorn:stop'
   end
 end
