@@ -3682,3 +3682,8 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO [07a57aa4] Running /usr/bin/env echo "Branch master (at bf327101c6b56c12d903dd898e3e561c905c6ee6) deployed as release 20170421182533 by vagrant" >> /var/www/kristian/revisions.log as deploy@107.170.38.156
  DEBUG [07a57aa4] Command: cd /var/www/kristian/releases && /usr/bin/env echo "Branch master (at bf327101c6b56c12d903dd898e3e561c905c6ee6) deployed as release 20170421182533 by vagrant" >> /var/www/kristian/revisions.log
   INFO [07a57aa4] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-22 09:26:28 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [0963a670] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [0963a670] Command: [ -d ~/.rvm ]
