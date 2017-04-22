@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.8.0"
 
-set :application, "Classifica"
+set :application, "Kristian"
 set :repo_url, "https://github.com/KristianAlves/classifica.git"
 
 # Default deploy_to directory is /var/www/my_app_name
@@ -41,7 +41,7 @@ after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:start'
     invoke 'unicorn:stop'
+    invoke 'unicorn:start'
   end
 end

@@ -5,8 +5,8 @@ require "capistrano/setup"
 require "capistrano/deploy"
 require 'capistrano3/unicorn'
 
-require 'capistrano/bundler'
-require 'capistrano/rails'
+require "capistrano/bundler"
+require "capistrano/rails"
 
 # Load the SCM plugin appropriate to your project:
 #

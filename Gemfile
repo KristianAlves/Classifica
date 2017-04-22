@@ -111,10 +111,10 @@ gem 'mailcatcher'
   gem 'capistrano-bundler', '~> 1.2'
   gem 'capistrano-rails', '~> 1.2'
   gem 'capistrano-rvm'
-  gem "capistrano3-unicorn"
+  gem 'capistrano3-unicorn'
 end
 
 group :production do
   gem 'mysql2', '~> 0.3.18'
-  gem "unicorn"
+  gem 'unicorn'
 end
