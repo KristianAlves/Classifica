@@ -10,6 +10,16 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  # Devise Config
+  config.action_mailer.default_url_options = { host: 'kristian.com.br' }
+
+  # Mailgun Config
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+  api_key: Rails.application.secrets.MAILGUN_SECRET_API_KEY,
+  domain: 'mail.kristian.com.br',
+  }
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
