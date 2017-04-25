@@ -1,6 +1,8 @@
 # SITE PARA TESTES
 
 Aqui ficará o código fonte do aplicativo "CLASSIFICA" desenvolvido para estudo de Ruby on Rails.
+### Site em produção: (https://kristian.com.br)
+
 
 ## Dependências do projeto
 
