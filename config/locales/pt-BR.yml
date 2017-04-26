@@ -25,3 +25,7 @@
       logout: Sair
       login: Entrar
       registration: Cadastrar-se
+      forgot: Esqueceu a sua senha?
+      send_instructions: Envie-me a instrução para redefinir minha senha
+      change: Altere a sua senha
+      change_my_password: Alterar minha senha

@@ -5524,3 +5524,296 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO [42977824] Running /usr/local/rvm/bin/rvm default do bundle exec unicorn -c /var/www/kristian/current/config/unicorn/production.rb -E deployment -D  as deploy@107.170.38.156
  DEBUG [42977824] Command: cd /var/www/kristian/current && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec unicorn -c /var/www/kristian/current/config/unicorn/production.rb -E deployment -D  )
   INFO [42977824] Finished in 4.914 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-04-25 23:27:23 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3a6cb664] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [3a6cb664] Command: [ -d ~/.rvm ]
+ DEBUG [3a6cb664] Finished in 2.309 seconds with exit status 1 (failed).
+ DEBUG [d8c83e23] Running [ -d /usr/local/rvm ] as deploy@107.170.38.156
+ DEBUG [d8c83e23] Command: [ -d /usr/local/rvm ]
+ DEBUG [d8c83e23] Finished in 0.369 seconds with exit status 0 (successful).
+ DEBUG [f7769ca2] Running /usr/local/rvm/bin/rvm version as deploy@107.170.38.156
+ DEBUG [f7769ca2] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [f7769ca2] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [f7769ca2] Finished in 0.677 seconds with exit status 0 (successful).
+ DEBUG [973503fb] Running /usr/local/rvm/bin/rvm current as deploy@107.170.38.156
+ DEBUG [973503fb] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [973503fb] 	ruby-2.3.4
+ DEBUG [973503fb] Finished in 0.674 seconds with exit status 0 (successful).
+ DEBUG [ee9b1290] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@107.170.38.156
+ DEBUG [ee9b1290] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [ee9b1290] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [ee9b1290] Finished in 0.789 seconds with exit status 0 (successful).
+  INFO [731f151b] Running /usr/bin/env mkdir -p /tmp as deploy@107.170.38.156
+ DEBUG [731f151b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [731f151b] Finished in 0.378 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 100.0%
+  INFO [0d0ca72f] Running /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh as deploy@107.170.38.156
+ DEBUG [0d0ca72f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh
+  INFO [0d0ca72f] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [be829c70] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@107.170.38.156
+ DEBUG [be829c70] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [be829c70] 	436daff0987a611496658628b12ee8aa4cf5de6a	HEAD
+  INFO [be829c70] Finished in 0.708 seconds with exit status 0 (successful).
+  INFO [687c55d8] Running /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases as deploy@107.170.38.156
+ DEBUG [687c55d8] Command: /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases
+  INFO [687c55d8] Finished in 0.367 seconds with exit status 0 (successful).
+  INFO [22ca493a] Running /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets as deploy@107.170.38.156
+ DEBUG [22ca493a] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets
+  INFO [22ca493a] Finished in 0.367 seconds with exit status 0 (successful).
+  INFO [37f92ac4] Running /usr/bin/env mkdir -p /var/www/kristian/shared/config as deploy@107.170.38.156
+ DEBUG [37f92ac4] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/config
+  INFO [37f92ac4] Finished in 0.377 seconds with exit status 0 (successful).
+ DEBUG [c0bcb569] Running [ -f /var/www/kristian/shared/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [c0bcb569] Command: [ -f /var/www/kristian/shared/config/database.yml ]
+ DEBUG [c0bcb569] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [2b6d97f5] Running [ -f /var/www/kristian/shared/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [2b6d97f5] Command: [ -f /var/www/kristian/shared/config/secrets.yml ]
+ DEBUG [2b6d97f5] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [a8036636] Running [ -f /var/www/kristian/current/REVISION ] as deploy@107.170.38.156
+ DEBUG [a8036636] Command: [ -f /var/www/kristian/current/REVISION ]
+ DEBUG [a8036636] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [af75848d] Running /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null as deploy@107.170.38.156
+ DEBUG [af75848d] Command: /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null
+ DEBUG [af75848d] 	70a5346ec4216b6db4bd5db05632d7f4049e5146
+ DEBUG [af75848d] Finished in 0.383 seconds with exit status 0 (successful).
+ DEBUG [f1d2a557] Running [ -f /var/www/kristian/repo/HEAD ] as deploy@107.170.38.156
+ DEBUG [f1d2a557] Command: [ -f /var/www/kristian/repo/HEAD ]
+ DEBUG [f1d2a557] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/kristian/repo
+ DEBUG [d8fa0d53] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [d8fa0d53] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [d8fa0d53] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [83ca8dd0] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@107.170.38.156
+ DEBUG [83ca8dd0] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [83ca8dd0] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [ba843c25] Running /usr/bin/env git remote update --prune as deploy@107.170.38.156
+ DEBUG [ba843c25] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ba843c25] 	Fetching origin
+ DEBUG [ba843c25] 	From https://github.com/KristianAlves/classifica
+   70a5346..436daff  master     -> master
+  INFO [ba843c25] Finished in 0.669 seconds with exit status 0 (successful).
+ DEBUG [590e080c] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [590e080c] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [590e080c] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [c8db5a0d] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170425232733 as deploy@107.170.38.156
+ DEBUG [c8db5a0d] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/kristian/releases/20170425232733 )
+  INFO [c8db5a0d] Finished in 0.366 seconds with exit status 0 (successful).
+  INFO [b4a07fe9] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170425232733 as deploy@107.170.38.156
+ DEBUG [b4a07fe9] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170425232733 )
+  INFO [b4a07fe9] Finished in 0.761 seconds with exit status 0 (successful).
+ DEBUG [4815230a] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [4815230a] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [4815230a] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [ddb7a42f] Running /usr/bin/env git rev-list --max-count=1 master as deploy@107.170.38.156
+ DEBUG [ddb7a42f] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [ddb7a42f] 	436daff0987a611496658628b12ee8aa4cf5de6a
+ DEBUG [ddb7a42f] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [dd5b13c3] Running if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [dd5b13c3] Command: if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi
+ DEBUG [dd5b13c3] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [ca55e8c1] Running /usr/bin/env echo "436daff0987a611496658628b12ee8aa4cf5de6a" >> REVISION as deploy@107.170.38.156
+ DEBUG [ca55e8c1] Command: cd /var/www/kristian/releases/20170425232733 && /usr/bin/env echo "436daff0987a611496658628b12ee8aa4cf5de6a" >> REVISION
+  INFO [ca55e8c1] Finished in 0.370 seconds with exit status 0 (successful).
+  INFO [9968bdc7] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170425232733/config as deploy@107.170.38.156
+ DEBUG [9968bdc7] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170425232733/config
+  INFO [9968bdc7] Finished in 0.364 seconds with exit status 0 (successful).
+ DEBUG [b619e93a] Running [ -L /var/www/kristian/releases/20170425232733/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [b619e93a] Command: [ -L /var/www/kristian/releases/20170425232733/config/database.yml ]
+ DEBUG [b619e93a] Finished in 0.353 seconds with exit status 1 (failed).
+ DEBUG [98899f1d] Running [ -f /var/www/kristian/releases/20170425232733/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [98899f1d] Command: [ -f /var/www/kristian/releases/20170425232733/config/database.yml ]
+ DEBUG [98899f1d] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [0688ad26] Running /usr/bin/env rm /var/www/kristian/releases/20170425232733/config/database.yml as deploy@107.170.38.156
+ DEBUG [0688ad26] Command: /usr/bin/env rm /var/www/kristian/releases/20170425232733/config/database.yml
+  INFO [0688ad26] Finished in 0.374 seconds with exit status 0 (successful).
+  INFO [ecd88861] Running /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170425232733/config/database.yml as deploy@107.170.38.156
+ DEBUG [ecd88861] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170425232733/config/database.yml
+  INFO [ecd88861] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [91bcd236] Running [ -L /var/www/kristian/releases/20170425232733/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [91bcd236] Command: [ -L /var/www/kristian/releases/20170425232733/config/secrets.yml ]
+ DEBUG [91bcd236] Finished in 0.358 seconds with exit status 1 (failed).
+ DEBUG [5a6ddf69] Running [ -f /var/www/kristian/releases/20170425232733/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [5a6ddf69] Command: [ -f /var/www/kristian/releases/20170425232733/config/secrets.yml ]
+ DEBUG [5a6ddf69] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO [ed4e50d2] Running /usr/bin/env rm /var/www/kristian/releases/20170425232733/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [ed4e50d2] Command: /usr/bin/env rm /var/www/kristian/releases/20170425232733/config/secrets.yml
+  INFO [ed4e50d2] Finished in 0.364 seconds with exit status 0 (successful).
+  INFO [73873d79] Running /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170425232733/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [73873d79] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170425232733/config/secrets.yml
+  INFO [73873d79] Finished in 0.373 seconds with exit status 0 (successful).
+  INFO [3b09d9c3] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170425232733 /var/www/kristian/releases/20170425232733/tmp /var/www/kristian/releases/20170425232733/public as deploy@107.170.38.156
+ DEBUG [3b09d9c3] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170425232733 /var/www/kristian/releases/20170425232733/tmp /var/www/kristian/releases/20170425232733/public
+  INFO [3b09d9c3] Finished in 0.377 seconds with exit status 0 (successful).
+ DEBUG [5ca82798] Running [ -L /var/www/kristian/releases/20170425232733/log ] as deploy@107.170.38.156
+ DEBUG [5ca82798] Command: [ -L /var/www/kristian/releases/20170425232733/log ]
+ DEBUG [5ca82798] Finished in 0.359 seconds with exit status 1 (failed).
+ DEBUG [15075cf4] Running [ -d /var/www/kristian/releases/20170425232733/log ] as deploy@107.170.38.156
+ DEBUG [15075cf4] Command: [ -d /var/www/kristian/releases/20170425232733/log ]
+ DEBUG [15075cf4] Finished in 0.354 seconds with exit status 0 (successful).
+  INFO [dbcfbb6c] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170425232733/log as deploy@107.170.38.156
+ DEBUG [dbcfbb6c] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170425232733/log
+  INFO [dbcfbb6c] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [b5140021] Running /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170425232733/log as deploy@107.170.38.156
+ DEBUG [b5140021] Command: /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170425232733/log
+  INFO [b5140021] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [db921174] Running [ -L /var/www/kristian/releases/20170425232733/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [db921174] Command: [ -L /var/www/kristian/releases/20170425232733/tmp/pids ]
+ DEBUG [db921174] Finished in 0.371 seconds with exit status 1 (failed).
+ DEBUG [705e3f66] Running [ -d /var/www/kristian/releases/20170425232733/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [705e3f66] Command: [ -d /var/www/kristian/releases/20170425232733/tmp/pids ]
+ DEBUG [705e3f66] Finished in 0.370 seconds with exit status 1 (failed).
+  INFO [dc2642eb] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170425232733/tmp/pids as deploy@107.170.38.156
+ DEBUG [dc2642eb] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170425232733/tmp/pids
+  INFO [dc2642eb] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [4e109b69] Running [ -L /var/www/kristian/releases/20170425232733/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [4e109b69] Command: [ -L /var/www/kristian/releases/20170425232733/tmp/cache ]
+ DEBUG [4e109b69] Finished in 0.349 seconds with exit status 1 (failed).
+ DEBUG [f0a6149c] Running [ -d /var/www/kristian/releases/20170425232733/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [f0a6149c] Command: [ -d /var/www/kristian/releases/20170425232733/tmp/cache ]
+ DEBUG [f0a6149c] Finished in 0.360 seconds with exit status 1 (failed).
+  INFO [c9fe6b9f] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170425232733/tmp/cache as deploy@107.170.38.156
+ DEBUG [c9fe6b9f] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170425232733/tmp/cache
+  INFO [c9fe6b9f] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [86ebdad6] Running [ -L /var/www/kristian/releases/20170425232733/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [86ebdad6] Command: [ -L /var/www/kristian/releases/20170425232733/tmp/sockets ]
+ DEBUG [86ebdad6] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [a9e0e939] Running [ -d /var/www/kristian/releases/20170425232733/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [a9e0e939] Command: [ -d /var/www/kristian/releases/20170425232733/tmp/sockets ]
+ DEBUG [a9e0e939] Finished in 0.373 seconds with exit status 1 (failed).
+  INFO [e5918e2d] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170425232733/tmp/sockets as deploy@107.170.38.156
+ DEBUG [e5918e2d] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170425232733/tmp/sockets
+  INFO [e5918e2d] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [35d06947] Running [ -L /var/www/kristian/releases/20170425232733/public/system ] as deploy@107.170.38.156
+ DEBUG [35d06947] Command: [ -L /var/www/kristian/releases/20170425232733/public/system ]
+ DEBUG [35d06947] Finished in 0.383 seconds with exit status 1 (failed).
+ DEBUG [83c7d37c] Running [ -d /var/www/kristian/releases/20170425232733/public/system ] as deploy@107.170.38.156
+ DEBUG [83c7d37c] Command: [ -d /var/www/kristian/releases/20170425232733/public/system ]
+ DEBUG [83c7d37c] Finished in 0.373 seconds with exit status 0 (successful).
+  INFO [d2b829da] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170425232733/public/system as deploy@107.170.38.156
+ DEBUG [d2b829da] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170425232733/public/system
+  INFO [d2b829da] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [95912fa1] Running /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170425232733/public/system as deploy@107.170.38.156
+ DEBUG [95912fa1] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170425232733/public/system
+  INFO [95912fa1] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [b5b82e5e] Running [ -L /var/www/kristian/releases/20170425232733/public/assets ] as deploy@107.170.38.156
+ DEBUG [b5b82e5e] Command: [ -L /var/www/kristian/releases/20170425232733/public/assets ]
+ DEBUG [b5b82e5e] Finished in 0.364 seconds with exit status 1 (failed).
+ DEBUG [d3aa37e7] Running [ -d /var/www/kristian/releases/20170425232733/public/assets ] as deploy@107.170.38.156
+ DEBUG [d3aa37e7] Command: [ -d /var/www/kristian/releases/20170425232733/public/assets ]
+ DEBUG [d3aa37e7] Finished in 0.360 seconds with exit status 1 (failed).
+  INFO [e1874265] Running /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170425232733/public/assets as deploy@107.170.38.156
+ DEBUG [e1874265] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170425232733/public/assets
+  INFO [e1874265] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [293785e1] Running if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [293785e1] Command: if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi
+ DEBUG [293785e1] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [c0856ac3] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle as deploy@107.170.38.156
+ DEBUG [c0856ac3] Command: cd /var/www/kristian/releases/20170425232733 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle
+ DEBUG [c0856ac3] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [c0856ac3] 	The following gems are missing
+ DEBUG [c0856ac3] 	 * net-ssh (4.1.0)
+ DEBUG [c0856ac3] 	 * net-scp (1.2.1)
+ DEBUG [c0856ac3] 	 * sshkit (1.13.1)
+ DEBUG [c0856ac3] 	 * airbrussh (1.1.2)
+ DEBUG [c0856ac3] 	 * coderay (1.1.1)
+ DEBUG [c0856ac3] 	 * better_errors (2.1.1)
+ DEBUG [c0856ac3] 	 * debug_inspector (0.0.2)
+ DEBUG [c0856ac3] 	 * binding_of_caller (0.7.2)
+ DEBUG [c0856ac3] 	 * byebug (9.0.6)
+ DEBUG [c0856ac3] 	 * capistrano (3.8.0)
+ DEBUG [c0856ac3] 	 * capistrano-bundler (1.2.0)
+ DEBUG [c0856ac3] 	 * capistrano-rails (1.2.3)
+ DEBUG [c0856ac3] 	 * capistrano-rvm (0.1.2)
+ DEBUG [c0856ac3] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [c0856ac3] 	 * daemons (1.2.4)
+ DEBUG [c0856ac3] 	 * eventmachine (1.0.9.1)
+ DEBUG [c0856ac3] 	 * rack-protection (1.5.3)
+ DEBUG [c0856ac3] 	 * sinatra (1.4.7)
+ DEBUG [c0856ac3] 	 * thin (1.5.1)
+ DEBUG [c0856ac3] 	 * skinny (0.2.4)
+ DEBUG [c0856ac3] 	 * mailcatcher (0.6.5)
+ DEBUG [c0856ac3] 	 * spring (2.0.0)
+ DEBUG [c0856ac3] 	 * web-console (2.3.0)
+ DEBUG [c0856ac3] 	Install missing gems with `bundle install`
+ DEBUG [c0856ac3] Finished in 1.202 seconds with exit status 1 (failed).
+  INFO [643dec53] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet as deploy@107.170.38.156
+ DEBUG [643dec53] Command: cd /var/www/kristian/releases/20170425232733 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet
+  INFO [643dec53] Finished in 5.702 seconds with exit status 0 (successful).
+ DEBUG [3b6bdc5c] Running if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [3b6bdc5c] Command: if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi
+ DEBUG [3b6bdc5c] Finished in 0.354 seconds with exit status 0 (successful).
+  INFO [396af337] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@107.170.38.156
+ DEBUG [396af337] Command: cd /var/www/kristian/releases/20170425232733 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+  INFO [396af337] Finished in 4.790 seconds with exit status 0 (successful).
+ DEBUG [66419b34] Running if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [66419b34] Command: if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi
+ DEBUG [66419b34] Finished in 0.366 seconds with exit status 0 (successful).
+  INFO [8e31de4a] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170425232733/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [8e31de4a] Command: cd /var/www/kristian/releases/20170425232733 && /usr/bin/env mkdir -p /var/www/kristian/releases/20170425232733/assets_manifest_backup
+  INFO [8e31de4a] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [911a12ae] Running /usr/bin/env ls /var/www/kristian/releases/20170425232733/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [911a12ae] Command: cd /var/www/kristian/releases/20170425232733 && /usr/bin/env ls /var/www/kristian/releases/20170425232733/public/assets/.sprockets-manifest*
+ DEBUG [911a12ae] 	/var/www/kristian/releases/20170425232733/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [911a12ae] Finished in 0.363 seconds with exit status 0 (successful).
+ DEBUG [233b4f26] Running /usr/bin/env ls /var/www/kristian/releases/20170425232733/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [233b4f26] Command: cd /var/www/kristian/releases/20170425232733 && /usr/bin/env ls /var/www/kristian/releases/20170425232733/public/assets/.sprockets-manifest*
+ DEBUG [233b4f26] 	/var/www/kristian/releases/20170425232733/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [233b4f26] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [8d1d6527] Running /usr/bin/env cp /var/www/kristian/releases/20170425232733/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170425232733/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [8d1d6527] Command: cd /var/www/kristian/releases/20170425232733 && /usr/bin/env cp /var/www/kristian/releases/20170425232733/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170425232733/assets_manifest_backup
+  INFO [8d1d6527] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [67323f70] Running if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [67323f70] Command: if test ! -d /var/www/kristian/releases/20170425232733; then echo "Directory does not exist '/var/www/kristian/releases/20170425232733'" 1>&2; false; fi
+ DEBUG [67323f70] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [735fe3c0] Running /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate as deploy@107.170.38.156
+ DEBUG [735fe3c0] Command: cd /var/www/kristian/releases/20170425232733 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate )
+  INFO [735fe3c0] Finished in 4.002 seconds with exit status 0 (successful).
+  INFO [831806b2] Running /usr/bin/env ln -s /var/www/kristian/releases/20170425232733 /var/www/kristian/releases/current as deploy@107.170.38.156
+ DEBUG [831806b2] Command: /usr/bin/env ln -s /var/www/kristian/releases/20170425232733 /var/www/kristian/releases/current
+  INFO [831806b2] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [bbcfc573] Running /usr/bin/env mv /var/www/kristian/releases/current /var/www/kristian as deploy@107.170.38.156
+ DEBUG [bbcfc573] Command: /usr/bin/env mv /var/www/kristian/releases/current /var/www/kristian
+  INFO [bbcfc573] Finished in 0.353 seconds with exit status 0 (successful).
+ DEBUG [a29376e1] Running if test ! -d /var/www/kristian/current; then echo "Directory does not exist '/var/www/kristian/current'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [a29376e1] Command: if test ! -d /var/www/kristian/current; then echo "Directory does not exist '/var/www/kristian/current'" 1>&2; false; fi
+ DEBUG [a29376e1] Finished in 0.368 seconds with exit status 0 (successful).
+ DEBUG [b02e2618] Running [ -e /var/www/kristian/current/tmp/pids/unicorn.pid ] as deploy@107.170.38.156
+ DEBUG [b02e2618] Command: [ -e /var/www/kristian/current/tmp/pids/unicorn.pid ]
+ DEBUG [b02e2618] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [de115244] Running kill -0 `cat /var/www/kristian/current/tmp/pids/unicorn.pid` as deploy@107.170.38.156
+ DEBUG [de115244] Command: kill -0 `cat /var/www/kristian/current/tmp/pids/unicorn.pid`
+ DEBUG [de115244] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO stopping unicorn...
+  INFO [da83f6e0] Running /usr/bin/env kill -s QUIT `cat /var/www/kristian/current/tmp/pids/unicorn.pid` as deploy@107.170.38.156
+ DEBUG [da83f6e0] Command: cd /var/www/kristian/current && /usr/bin/env kill -s QUIT `cat /var/www/kristian/current/tmp/pids/unicorn.pid`
+  INFO [da83f6e0] Finished in 0.374 seconds with exit status 0 (successful).
+ DEBUG [2d59fbd5] Running if test ! -d /var/www/kristian/current; then echo "Directory does not exist '/var/www/kristian/current'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [2d59fbd5] Command: if test ! -d /var/www/kristian/current; then echo "Directory does not exist '/var/www/kristian/current'" 1>&2; false; fi
+ DEBUG [2d59fbd5] Finished in 0.380 seconds with exit status 0 (successful).
+ DEBUG [9f9e9622] Running [ -e /var/www/kristian/current/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/kristian/current/tmp/pids/unicorn.pid` as deploy@107.170.38.156
+ DEBUG [9f9e9622] Command: [ -e /var/www/kristian/current/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/kristian/current/tmp/pids/unicorn.pid`
+ DEBUG [9f9e9622] Finished in 0.370 seconds with exit status 1 (failed).
+  INFO [b14f3335] Running /usr/local/rvm/bin/rvm default do bundle exec unicorn -c /var/www/kristian/current/config/unicorn/production.rb -E deployment -D  as deploy@107.170.38.156
+ DEBUG [b14f3335] Command: cd /var/www/kristian/current && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec unicorn -c /var/www/kristian/current/config/unicorn/production.rb -E deployment -D  )
+  INFO [b14f3335] Finished in 4.714 seconds with exit status 0 (successful).
+ DEBUG [4a674e72] Running /usr/bin/env ls -x /var/www/kristian/releases as deploy@107.170.38.156
+ DEBUG [4a674e72] Command: /usr/bin/env ls -x /var/www/kristian/releases
+ DEBUG [4a674e72] 	20170422125830	20170422133457	20170422133724	20170422134959	20170425231953
+20170425232733
+ DEBUG [4a674e72] Finished in 0.363 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 107.170.38.156
+  INFO [303d4448] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170422125830 as deploy@107.170.38.156
+ DEBUG [303d4448] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170422125830
+  INFO [303d4448] Finished in 0.423 seconds with exit status 0 (successful).
+ DEBUG [03f533d5] Running if test ! -d /var/www/kristian/releases; then echo "Directory does not exist '/var/www/kristian/releases'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [03f533d5] Command: if test ! -d /var/www/kristian/releases; then echo "Directory does not exist '/var/www/kristian/releases'" 1>&2; false; fi
+ DEBUG [03f533d5] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [250bf288] Running /usr/bin/env echo "Branch master (at 436daff0987a611496658628b12ee8aa4cf5de6a) deployed as release 20170425232733 by vagrant" >> /var/www/kristian/revisions.log as deploy@107.170.38.156
+ DEBUG [250bf288] Command: cd /var/www/kristian/releases && /usr/bin/env echo "Branch master (at 436daff0987a611496658628b12ee8aa4cf5de6a) deployed as release 20170425232733 by vagrant" >> /var/www/kristian/revisions.log
+  INFO [250bf288] Finished in 0.360 seconds with exit status 0 (successful).

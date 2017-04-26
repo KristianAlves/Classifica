@@ -7,6 +7,7 @@ en:
       send_instructions: "Você receberá um e-mail com instruções sobre como confirmar seu endereço de e-mail em alguns minutos."
       send_paranoid_instructions: "Se o seu endereço de e-mail existir em nosso banco de dados, você receberá um e-mail com instruções sobre como confirmar seu endereço de e-mail em poucos minutos."
 
+
     failure:
       already_authenticated: "Você já está inscrito."
       inactive: "Sua conta ainda não está ativada."
