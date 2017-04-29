@@ -1,5 +1,17 @@
 <div class="thumbnail">
    <%= image_tag @ad.picture.url(:large),  class:"img-responsive" %>
+
+        <% if member_signed_in? %>
+            <div class="text-right">
+              <%= link_to t('site.buy'), site_cart_index_path, class:"btn btn-success btn-block btn-lg"  %>
+            </div>
+        <% else %>
+            <div class="text-right">
+                <%= link_to "Faça login para comprar", new_member_session_path, class:"btn btn-success btn-block btn-lg"  %>
+            </div>
+        <% end %>
+
+
     <div class="caption-full">
         <h4 class="pull-right"><%= humanized_money_with_symbol(@ad.price) %></h4>
         <h4><a href="#"><%= @ad.title %></a>

@@ -15,11 +15,13 @@ Rails.application.routes.draw do
   namespace :site do
   get 'home', to: 'home#index'
   get 'search', to: 'search#ads'
+  get 'cart/index'
 
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :ads, only: [:index, :edit, :update, :new, :create]
       resources :my_data, only: [:edit, :update]
+      resources :cart, only: [:index]
     end
 
     resources :ad_details, only: [:index, :show]
