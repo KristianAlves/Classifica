@@ -1,5 +1,8 @@
 class Ad < ActiveRecord::Base
 
+  # Statuses
+    enum status:[:active, :processing, :sold]
+
   # Constants
   QTT_PER_PAGE = 6
 
@@ -42,9 +45,6 @@ class Ad < ActiveRecord::Base
   # Paperclip
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.jpg"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
-
-
-
 
   # gem money-rails
   monetize :price_cents

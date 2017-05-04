@@ -3,7 +3,11 @@
 
         <% if member_signed_in? %>
             <div class="text-right">
-              <%= link_to t('site.buy'), site_cart_index_path, class:"btn btn-success btn-block btn-lg"  %>
+            <%= form_tag(site_cart_index_path) do %>
+                <%= hidden_field_tag :ad_id, @ad.id %>
+                <%= submit_tag t('site.buy'), class: "btn btn-success btn-block btn-lg",
+                                                data: { confirm: "Deseja realmente comprar este produto?"} %>
+            <% end %>
             </div>
         <% else %>
             <div class="text-right">

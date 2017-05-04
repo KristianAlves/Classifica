@@ -52,12 +52,22 @@
                             <%= link_to t('site.registration'), new_member_registration_path %>
                         </li>
                 <% end %>
-            <li>
+
+        <li>
+            <% if member_signed_in? %>
                 <%= link_to site_cart_index_path do%>
                     <i class="fa fa-shopping-cart  fa-fw"></i>
                     <%= t('site.cart') %>
                 <% end %>
-            </li>
+            <% else %>
+                <%= link_to new_member_session_path do%>
+                    <i class="fa fa-shopping-cart  fa-fw"></i>
+                    <%= t('site.cart') %>
+                <% end %>
+            <% end %>
+        </li>
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -38,6 +38,8 @@ gem 'ratyrate'
 gem 'faker'
 # Markdown Lorem Ipsum generator
 gem 'doctor_ipsum'
+# Pagseguro Gem
+gem "pagseguro-oficial", "~> 2.5.0"
 
 
 source 'https://rails-assets.org' do
@@ -89,6 +91,8 @@ group :development do
   # gem better Errors
   gem 'better_errors'
   gem "binding_of_caller"
+# Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
+gem 'rack-cors', :require => 'rack/cors'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

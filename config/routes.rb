@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   get 'backoffice', to: 'backoffice/dashboard#index'
 
 
+  namespace :checkout do
+    resources :payments, only: [:create]
+    resources :notifications, only: [:create]
+  end
+
   namespace :backoffice do
     resources :send_mail, only: [:edit, :create]
     resources :categories, except: [:show, :destroy]
@@ -15,18 +20,18 @@ Rails.application.routes.draw do
   namespace :site do
   get 'home', to: 'home#index'
   get 'search', to: 'search#ads'
-  get 'cart/index'
+  #get 'cart/index'
 
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :ads, only: [:index, :edit, :update, :new, :create]
       resources :my_data, only: [:edit, :update]
-      resources :cart, only: [:index]
     end
 
     resources :ad_details, only: [:index, :show]
     resources :categories, only: [:show]
     resources :comments, only: [:create]
+    resources :cart, except: [:show]
   end
 
   devise_for :admins, :skip => [:registrations]
