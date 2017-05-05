@@ -7,6 +7,7 @@ class Site::CartController < SiteController
    @ads = Ad.where(member: current_member)
    @carts = Cart.where(buyer: current_member)
    @sum_of_products = @carts.total
+   @item_of_cart = @carts.item
   end
 
   def create

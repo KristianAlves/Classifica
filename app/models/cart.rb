@@ -5,4 +5,8 @@ class Cart < ActiveRecord::Base
   def self.total
     self.sum(:amount)
   end
+
+  def self.item
+    self.count(:ad_id)
+  end
 end
