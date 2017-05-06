@@ -9055,3 +9055,1547 @@ FOREIGN KEY (`buyer_id`)
 
 == 20170501180206 CreateCarts: migrating ======================================
 -- create_table(:carts)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-05-05 23:12:56 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [2ce43615] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [2ce43615] Command: [ -d ~/.rvm ]
+ DEBUG [2ce43615] Finished in 2.472 seconds with exit status 1 (failed).
+ DEBUG [ce430406] Running [ -d /usr/local/rvm ] as deploy@107.170.38.156
+ DEBUG [ce430406] Command: [ -d /usr/local/rvm ]
+ DEBUG [ce430406] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [97144e44] Running /usr/local/rvm/bin/rvm version as deploy@107.170.38.156
+ DEBUG [97144e44] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [97144e44] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [97144e44] Finished in 0.780 seconds with exit status 0 (successful).
+ DEBUG [bc42f0d8] Running /usr/local/rvm/bin/rvm current as deploy@107.170.38.156
+ DEBUG [bc42f0d8] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [bc42f0d8] 	ruby-2.3.4
+ DEBUG [bc42f0d8] Finished in 0.772 seconds with exit status 0 (successful).
+ DEBUG [3b31c4ea] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@107.170.38.156
+ DEBUG [3b31c4ea] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [3b31c4ea] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [3b31c4ea] Finished in 0.873 seconds with exit status 0 (successful).
+  INFO [fd1d55ad] Running /usr/bin/env mkdir -p /tmp as deploy@107.170.38.156
+ DEBUG [fd1d55ad] Command: /usr/bin/env mkdir -p /tmp
+  INFO [fd1d55ad] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 100.0%
+  INFO [ca6a39cb] Running /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh as deploy@107.170.38.156
+ DEBUG [ca6a39cb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh
+  INFO [ca6a39cb] Finished in 0.351 seconds with exit status 0 (successful).
+  INFO [1beb2594] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@107.170.38.156
+ DEBUG [1beb2594] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [1beb2594] 	d513fed290ca03ef0f4f1a4597e0b53956611c14	HEAD
+  INFO [1beb2594] Finished in 0.602 seconds with exit status 0 (successful).
+  INFO [05f66375] Running /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases as deploy@107.170.38.156
+ DEBUG [05f66375] Command: /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases
+  INFO [05f66375] Finished in 0.365 seconds with exit status 0 (successful).
+  INFO [c23c710f] Running /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets as deploy@107.170.38.156
+ DEBUG [c23c710f] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets
+  INFO [c23c710f] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [f1a8a3cc] Running /usr/bin/env mkdir -p /var/www/kristian/shared/config as deploy@107.170.38.156
+ DEBUG [f1a8a3cc] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/config
+  INFO [f1a8a3cc] Finished in 0.374 seconds with exit status 0 (successful).
+ DEBUG [80f16faf] Running [ -f /var/www/kristian/shared/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [80f16faf] Command: [ -f /var/www/kristian/shared/config/database.yml ]
+ DEBUG [80f16faf] Finished in 0.369 seconds with exit status 0 (successful).
+ DEBUG [12ee49ec] Running [ -f /var/www/kristian/shared/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [12ee49ec] Command: [ -f /var/www/kristian/shared/config/secrets.yml ]
+ DEBUG [12ee49ec] Finished in 0.349 seconds with exit status 0 (successful).
+ DEBUG [1d15370a] Running [ -f /var/www/kristian/current/REVISION ] as deploy@107.170.38.156
+ DEBUG [1d15370a] Command: [ -f /var/www/kristian/current/REVISION ]
+ DEBUG [1d15370a] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [beec088d] Running /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null as deploy@107.170.38.156
+ DEBUG [beec088d] Command: /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null
+ DEBUG [beec088d] 	5f0aa6ba8e2b85ee740ecfe4fa933f23421daa60
+ DEBUG [beec088d] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [c473a1dc] Running [ -f /var/www/kristian/repo/HEAD ] as deploy@107.170.38.156
+ DEBUG [c473a1dc] Command: [ -f /var/www/kristian/repo/HEAD ]
+ DEBUG [c473a1dc] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/kristian/repo
+ DEBUG [6dc4c9bf] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [6dc4c9bf] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [6dc4c9bf] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [e1c29c93] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@107.170.38.156
+ DEBUG [e1c29c93] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [e1c29c93] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [f13b03f2] Running /usr/bin/env git remote update --prune as deploy@107.170.38.156
+ DEBUG [f13b03f2] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f13b03f2] 	Fetching origin
+ DEBUG [f13b03f2] 	From https://github.com/KristianAlves/classifica
+   cd8bb7b..d513fed  master     -> master
+  INFO [f13b03f2] Finished in 2.886 seconds with exit status 0 (successful).
+ DEBUG [bc0b57d1] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [bc0b57d1] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [bc0b57d1] Finished in 0.376 seconds with exit status 0 (successful).
+  INFO [dc7c4ae5] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231306 as deploy@107.170.38.156
+ DEBUG [dc7c4ae5] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231306 )
+  INFO [dc7c4ae5] Finished in 0.388 seconds with exit status 0 (successful).
+  INFO [3555c2ce] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170505231306 as deploy@107.170.38.156
+ DEBUG [3555c2ce] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170505231306 )
+  INFO [3555c2ce] Finished in 0.877 seconds with exit status 0 (successful).
+ DEBUG [ee77b798] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [ee77b798] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [ee77b798] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG [6e3be63b] Running /usr/bin/env git rev-list --max-count=1 master as deploy@107.170.38.156
+ DEBUG [6e3be63b] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6e3be63b] 	d513fed290ca03ef0f4f1a4597e0b53956611c14
+ DEBUG [6e3be63b] Finished in 0.370 seconds with exit status 0 (successful).
+ DEBUG [7d31d9fb] Running if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [7d31d9fb] Command: if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi
+ DEBUG [7d31d9fb] Finished in 0.354 seconds with exit status 0 (successful).
+  INFO [23fe4ce6] Running /usr/bin/env echo "d513fed290ca03ef0f4f1a4597e0b53956611c14" >> REVISION as deploy@107.170.38.156
+ DEBUG [23fe4ce6] Command: cd /var/www/kristian/releases/20170505231306 && /usr/bin/env echo "d513fed290ca03ef0f4f1a4597e0b53956611c14" >> REVISION
+  INFO [23fe4ce6] Finished in 0.365 seconds with exit status 0 (successful).
+  INFO [04ca8a76] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231306/config as deploy@107.170.38.156
+ DEBUG [04ca8a76] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231306/config
+  INFO [04ca8a76] Finished in 0.351 seconds with exit status 0 (successful).
+ DEBUG [94bc88e6] Running [ -L /var/www/kristian/releases/20170505231306/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [94bc88e6] Command: [ -L /var/www/kristian/releases/20170505231306/config/database.yml ]
+ DEBUG [94bc88e6] Finished in 0.374 seconds with exit status 1 (failed).
+ DEBUG [44852a6e] Running [ -f /var/www/kristian/releases/20170505231306/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [44852a6e] Command: [ -f /var/www/kristian/releases/20170505231306/config/database.yml ]
+ DEBUG [44852a6e] Finished in 0.365 seconds with exit status 0 (successful).
+  INFO [8a02a88c] Running /usr/bin/env rm /var/www/kristian/releases/20170505231306/config/database.yml as deploy@107.170.38.156
+ DEBUG [8a02a88c] Command: /usr/bin/env rm /var/www/kristian/releases/20170505231306/config/database.yml
+  INFO [8a02a88c] Finished in 0.374 seconds with exit status 0 (successful).
+  INFO [4c8e881a] Running /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170505231306/config/database.yml as deploy@107.170.38.156
+ DEBUG [4c8e881a] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170505231306/config/database.yml
+  INFO [4c8e881a] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [208e35ae] Running [ -L /var/www/kristian/releases/20170505231306/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [208e35ae] Command: [ -L /var/www/kristian/releases/20170505231306/config/secrets.yml ]
+ DEBUG [208e35ae] Finished in 0.349 seconds with exit status 1 (failed).
+ DEBUG [29d12f5f] Running [ -f /var/www/kristian/releases/20170505231306/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [29d12f5f] Command: [ -f /var/www/kristian/releases/20170505231306/config/secrets.yml ]
+ DEBUG [29d12f5f] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [01c67b64] Running /usr/bin/env rm /var/www/kristian/releases/20170505231306/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [01c67b64] Command: /usr/bin/env rm /var/www/kristian/releases/20170505231306/config/secrets.yml
+  INFO [01c67b64] Finished in 0.355 seconds with exit status 0 (successful).
+  INFO [17fbd14c] Running /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170505231306/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [17fbd14c] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170505231306/config/secrets.yml
+  INFO [17fbd14c] Finished in 0.383 seconds with exit status 0 (successful).
+  INFO [e8ce1856] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231306 /var/www/kristian/releases/20170505231306/tmp /var/www/kristian/releases/20170505231306/public as deploy@107.170.38.156
+ DEBUG [e8ce1856] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231306 /var/www/kristian/releases/20170505231306/tmp /var/www/kristian/releases/20170505231306/public
+  INFO [e8ce1856] Finished in 0.372 seconds with exit status 0 (successful).
+ DEBUG [e19f9737] Running [ -L /var/www/kristian/releases/20170505231306/log ] as deploy@107.170.38.156
+ DEBUG [e19f9737] Command: [ -L /var/www/kristian/releases/20170505231306/log ]
+ DEBUG [e19f9737] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [611ad2a3] Running [ -d /var/www/kristian/releases/20170505231306/log ] as deploy@107.170.38.156
+ DEBUG [611ad2a3] Command: [ -d /var/www/kristian/releases/20170505231306/log ]
+ DEBUG [611ad2a3] Finished in 0.373 seconds with exit status 0 (successful).
+  INFO [b44c85b4] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170505231306/log as deploy@107.170.38.156
+ DEBUG [b44c85b4] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170505231306/log
+  INFO [b44c85b4] Finished in 0.383 seconds with exit status 0 (successful).
+  INFO [14dee6ed] Running /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170505231306/log as deploy@107.170.38.156
+ DEBUG [14dee6ed] Command: /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170505231306/log
+  INFO [14dee6ed] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [98fe0bb7] Running [ -L /var/www/kristian/releases/20170505231306/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [98fe0bb7] Command: [ -L /var/www/kristian/releases/20170505231306/tmp/pids ]
+ DEBUG [98fe0bb7] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [b32aa70c] Running [ -d /var/www/kristian/releases/20170505231306/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [b32aa70c] Command: [ -d /var/www/kristian/releases/20170505231306/tmp/pids ]
+ DEBUG [b32aa70c] Finished in 0.352 seconds with exit status 1 (failed).
+  INFO [972b2f3c] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170505231306/tmp/pids as deploy@107.170.38.156
+ DEBUG [972b2f3c] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170505231306/tmp/pids
+  INFO [972b2f3c] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [78c8bd21] Running [ -L /var/www/kristian/releases/20170505231306/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [78c8bd21] Command: [ -L /var/www/kristian/releases/20170505231306/tmp/cache ]
+ DEBUG [78c8bd21] Finished in 0.352 seconds with exit status 1 (failed).
+ DEBUG [5abbce16] Running [ -d /var/www/kristian/releases/20170505231306/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [5abbce16] Command: [ -d /var/www/kristian/releases/20170505231306/tmp/cache ]
+ DEBUG [5abbce16] Finished in 0.368 seconds with exit status 1 (failed).
+  INFO [065b236a] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170505231306/tmp/cache as deploy@107.170.38.156
+ DEBUG [065b236a] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170505231306/tmp/cache
+  INFO [065b236a] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [e51969cf] Running [ -L /var/www/kristian/releases/20170505231306/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [e51969cf] Command: [ -L /var/www/kristian/releases/20170505231306/tmp/sockets ]
+ DEBUG [e51969cf] Finished in 0.362 seconds with exit status 1 (failed).
+ DEBUG [ad383cb1] Running [ -d /var/www/kristian/releases/20170505231306/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [ad383cb1] Command: [ -d /var/www/kristian/releases/20170505231306/tmp/sockets ]
+ DEBUG [ad383cb1] Finished in 0.358 seconds with exit status 1 (failed).
+  INFO [7936fbea] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170505231306/tmp/sockets as deploy@107.170.38.156
+ DEBUG [7936fbea] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170505231306/tmp/sockets
+  INFO [7936fbea] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [0979d671] Running [ -L /var/www/kristian/releases/20170505231306/public/system ] as deploy@107.170.38.156
+ DEBUG [0979d671] Command: [ -L /var/www/kristian/releases/20170505231306/public/system ]
+ DEBUG [0979d671] Finished in 0.357 seconds with exit status 1 (failed).
+ DEBUG [30b63b2d] Running [ -d /var/www/kristian/releases/20170505231306/public/system ] as deploy@107.170.38.156
+ DEBUG [30b63b2d] Command: [ -d /var/www/kristian/releases/20170505231306/public/system ]
+ DEBUG [30b63b2d] Finished in 0.362 seconds with exit status 1 (failed).
+  INFO [0814c077] Running /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170505231306/public/system as deploy@107.170.38.156
+ DEBUG [0814c077] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170505231306/public/system
+  INFO [0814c077] Finished in 0.365 seconds with exit status 0 (successful).
+ DEBUG [006f0db3] Running [ -L /var/www/kristian/releases/20170505231306/public/assets ] as deploy@107.170.38.156
+ DEBUG [006f0db3] Command: [ -L /var/www/kristian/releases/20170505231306/public/assets ]
+ DEBUG [006f0db3] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [8ba4f7dc] Running [ -d /var/www/kristian/releases/20170505231306/public/assets ] as deploy@107.170.38.156
+ DEBUG [8ba4f7dc] Command: [ -d /var/www/kristian/releases/20170505231306/public/assets ]
+ DEBUG [8ba4f7dc] Finished in 0.363 seconds with exit status 1 (failed).
+  INFO [100f0bdf] Running /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170505231306/public/assets as deploy@107.170.38.156
+ DEBUG [100f0bdf] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170505231306/public/assets
+  INFO [100f0bdf] Finished in 0.369 seconds with exit status 0 (successful).
+ DEBUG [d15a0f99] Running if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [d15a0f99] Command: if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi
+ DEBUG [d15a0f99] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [45f5230f] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle as deploy@107.170.38.156
+ DEBUG [45f5230f] Command: cd /var/www/kristian/releases/20170505231306 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle
+ DEBUG [45f5230f] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [45f5230f] 	The following gems are missing
+ DEBUG [45f5230f] 	 * net-ssh (4.1.0)
+ DEBUG [45f5230f] 	 * net-scp (1.2.1)
+ DEBUG [45f5230f] 	 * sshkit (1.13.1)
+ DEBUG [45f5230f] 	 * airbrussh (1.1.2)
+ DEBUG [45f5230f] 	 * coderay (1.1.1)
+ DEBUG [45f5230f] 	 * better_errors (2.1.1)
+ DEBUG [45f5230f] 	 * debug_inspector (0.0.2)
+ DEBUG [45f5230f] 	 * binding_of_caller (0.7.2)
+ DEBUG [45f5230f] 	 * byebug (9.0.6)
+ DEBUG [45f5230f] 	 * capistrano (3.8.0)
+ DEBUG [45f5230f] 	 * capistrano-bundler (1.2.0)
+ DEBUG [45f5230f] 	 * capistrano-rails (1.2.3)
+ DEBUG [45f5230f] 	 * capistrano-rvm (0.1.2)
+ DEBUG [45f5230f] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [45f5230f] 	 * daemons (1.2.4)
+ DEBUG [45f5230f] 	 * eventmachine (1.0.9.1)
+ DEBUG [45f5230f] 	 * rack-protection (1.5.3)
+ DEBUG [45f5230f] 	 * sinatra (1.4.7)
+ DEBUG [45f5230f] 	 * thin (1.5.1)
+ DEBUG [45f5230f] 	 * skinny (0.2.4)
+ DEBUG [45f5230f] 	 * mailcatcher (0.6.5)
+ DEBUG [45f5230f] 	 * rack-cors (0.4.1)
+ DEBUG [45f5230f] 	 * spring (2.0.0)
+ DEBUG [45f5230f] 	 * web-console (2.3.0)
+ DEBUG [45f5230f] 	Install missing gems with `bundle install`
+ DEBUG [45f5230f] Finished in 1.462 seconds with exit status 1 (failed).
+  INFO [63e87b13] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet as deploy@107.170.38.156
+ DEBUG [63e87b13] Command: cd /var/www/kristian/releases/20170505231306 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet
+  INFO [63e87b13] Finished in 7.376 seconds with exit status 0 (successful).
+ DEBUG [9dce35ba] Running if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [9dce35ba] Command: if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi
+ DEBUG [9dce35ba] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [2cac439a] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@107.170.38.156
+ DEBUG [2cac439a] Command: cd /var/www/kristian/releases/20170505231306 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+  INFO [2cac439a] Finished in 6.032 seconds with exit status 0 (successful).
+ DEBUG [231bad67] Running if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [231bad67] Command: if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi
+ DEBUG [231bad67] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [a346babf] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231306/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [a346babf] Command: cd /var/www/kristian/releases/20170505231306 && /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231306/assets_manifest_backup
+  INFO [a346babf] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG [e614373a] Running /usr/bin/env ls /var/www/kristian/releases/20170505231306/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [e614373a] Command: cd /var/www/kristian/releases/20170505231306 && /usr/bin/env ls /var/www/kristian/releases/20170505231306/public/assets/.sprockets-manifest*
+ DEBUG [e614373a] 	/var/www/kristian/releases/20170505231306/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [e614373a] Finished in 0.364 seconds with exit status 0 (successful).
+ DEBUG [f6e309ce] Running /usr/bin/env ls /var/www/kristian/releases/20170505231306/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [f6e309ce] Command: cd /var/www/kristian/releases/20170505231306 && /usr/bin/env ls /var/www/kristian/releases/20170505231306/public/assets/.sprockets-manifest*
+ DEBUG [f6e309ce] 	/var/www/kristian/releases/20170505231306/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [f6e309ce] Finished in 0.365 seconds with exit status 0 (successful).
+  INFO [a7392b84] Running /usr/bin/env cp /var/www/kristian/releases/20170505231306/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170505231306/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [a7392b84] Command: cd /var/www/kristian/releases/20170505231306 && /usr/bin/env cp /var/www/kristian/releases/20170505231306/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170505231306/assets_manifest_backup
+  INFO [a7392b84] Finished in 0.366 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [b767dcc8] Running if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [b767dcc8] Command: if test ! -d /var/www/kristian/releases/20170505231306; then echo "Directory does not exist '/var/www/kristian/releases/20170505231306'" 1>&2; false; fi
+ DEBUG [b767dcc8] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [72e960bf] Running /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate as deploy@107.170.38.156
+ DEBUG [72e960bf] Command: cd /var/www/kristian/releases/20170505231306 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [72e960bf] 	rake aborted!
+ DEBUG [72e960bf] 	StandardError: An error has occurred, all later migrations canceled:
+
+Index name 'index_carts_on_ad_id' on table 'carts' already exists
+ DEBUG [72e960bf] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:939:in `add_index_options'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:52:in `index_in_create'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:25:in `block in visit_TableDefinition'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:25:in `each'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:25:in `map'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:25:in `visit_TableDefinition'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_creation.rb:14:in `accept'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:208:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:468:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:665:in `block in method_missing'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `block in say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:654:in `method_missing'
+/var/www/kristian/releases/20170505231306/db/migrate/20170501180206_create_carts.rb:3:in `change'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:608:in `exec_migration'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:592:in `block (2 levels) in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:591:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:292:in `with_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:590:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:768:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:998:in `block in execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:1046:in `ddl_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:997:in `execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:959:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `each'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [72e960bf] 	ArgumentError: Index name 'index_carts_on_ad_id' on table 'carts' already exists
+ DEBUG [72e960bf] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:939:in `add_index_options'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:52:in `index_in_create'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:25:in `block in visit_TableDefinition'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:25:in `each'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:25:in `map'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:25:in `visit_TableDefinition'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_creation.rb:14:in `accept'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:208:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:468:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:665:in `block in method_missing'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `block in say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:654:in `method_missing'
+/var/www/kristian/releases/20170505231306/db/migrate/20170501180206_create_carts.rb:3:in `change'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:608:in `exec_migration'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:592:in `block (2 levels) in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:591:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:292:in `with_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:590:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:768:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:998:in `block in execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:1046:in `ddl_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:997:in `execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:959:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `each'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [72e960bf] 	Tasks: TOP => db:migrate
+ DEBUG [72e960bf] 	(See full trace by running task with --trace)
+ DEBUG [72e960bf] 	== 20170501180206 CreateCarts: migrating ======================================
+-- create_table(:carts)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-05-05 23:15:55 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [772a05d3] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [772a05d3] Command: [ -d ~/.rvm ]
+ DEBUG [772a05d3] Finished in 2.366 seconds with exit status 1 (failed).
+ DEBUG [5cce11c9] Running [ -d /usr/local/rvm ] as deploy@107.170.38.156
+ DEBUG [5cce11c9] Command: [ -d /usr/local/rvm ]
+ DEBUG [5cce11c9] Finished in 0.377 seconds with exit status 0 (successful).
+ DEBUG [c2e2a401] Running /usr/local/rvm/bin/rvm version as deploy@107.170.38.156
+ DEBUG [c2e2a401] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [c2e2a401] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [c2e2a401] Finished in 0.669 seconds with exit status 0 (successful).
+ DEBUG [6103aa07] Running /usr/local/rvm/bin/rvm current as deploy@107.170.38.156
+ DEBUG [6103aa07] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [6103aa07] 	ruby-2.3.4
+ DEBUG [6103aa07] Finished in 0.752 seconds with exit status 0 (successful).
+ DEBUG [dedcedce] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@107.170.38.156
+ DEBUG [dedcedce] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [dedcedce] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [dedcedce] Finished in 0.911 seconds with exit status 0 (successful).
+  INFO [0a895718] Running /usr/bin/env mkdir -p /tmp as deploy@107.170.38.156
+ DEBUG [0a895718] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0a895718] Finished in 0.357 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 100.0%
+  INFO [56222ddf] Running /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh as deploy@107.170.38.156
+ DEBUG [56222ddf] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh
+  INFO [56222ddf] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [adae0b52] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@107.170.38.156
+ DEBUG [adae0b52] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [adae0b52] 	d513fed290ca03ef0f4f1a4597e0b53956611c14	HEAD
+  INFO [adae0b52] Finished in 0.730 seconds with exit status 0 (successful).
+  INFO [ba427d63] Running /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases as deploy@107.170.38.156
+ DEBUG [ba427d63] Command: /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases
+  INFO [ba427d63] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [7fb1f655] Running /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets as deploy@107.170.38.156
+ DEBUG [7fb1f655] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets
+  INFO [7fb1f655] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [a543acf4] Running /usr/bin/env mkdir -p /var/www/kristian/shared/config as deploy@107.170.38.156
+ DEBUG [a543acf4] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/config
+  INFO [a543acf4] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [abebadc7] Running [ -f /var/www/kristian/shared/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [abebadc7] Command: [ -f /var/www/kristian/shared/config/database.yml ]
+ DEBUG [abebadc7] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [8542674f] Running [ -f /var/www/kristian/shared/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [8542674f] Command: [ -f /var/www/kristian/shared/config/secrets.yml ]
+ DEBUG [8542674f] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [4a6847c4] Running [ -f /var/www/kristian/current/REVISION ] as deploy@107.170.38.156
+ DEBUG [4a6847c4] Command: [ -f /var/www/kristian/current/REVISION ]
+ DEBUG [4a6847c4] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [f81b4635] Running /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null as deploy@107.170.38.156
+ DEBUG [f81b4635] Command: /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null
+ DEBUG [f81b4635] 	5f0aa6ba8e2b85ee740ecfe4fa933f23421daa60
+ DEBUG [f81b4635] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [0f753f71] Running [ -f /var/www/kristian/repo/HEAD ] as deploy@107.170.38.156
+ DEBUG [0f753f71] Command: [ -f /var/www/kristian/repo/HEAD ]
+ DEBUG [0f753f71] Finished in 0.354 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/kristian/repo
+ DEBUG [6b8eb786] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [6b8eb786] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [6b8eb786] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [78418de5] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@107.170.38.156
+ DEBUG [78418de5] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [78418de5] Finished in 0.363 seconds with exit status 0 (successful).
+  INFO [32ac5219] Running /usr/bin/env git remote update --prune as deploy@107.170.38.156
+ DEBUG [32ac5219] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [32ac5219] 	Fetching origin
+  INFO [32ac5219] Finished in 0.582 seconds with exit status 0 (successful).
+ DEBUG [689a06a9] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [689a06a9] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [689a06a9] Finished in 0.365 seconds with exit status 0 (successful).
+  INFO [7b2b4d29] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231605 as deploy@107.170.38.156
+ DEBUG [7b2b4d29] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231605 )
+  INFO [7b2b4d29] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [6232d8bd] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170505231605 as deploy@107.170.38.156
+ DEBUG [6232d8bd] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170505231605 )
+  INFO [6232d8bd] Finished in 1.050 seconds with exit status 0 (successful).
+ DEBUG [2937cdac] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [2937cdac] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [2937cdac] Finished in 0.362 seconds with exit status 0 (successful).
+ DEBUG [15b26655] Running /usr/bin/env git rev-list --max-count=1 master as deploy@107.170.38.156
+ DEBUG [15b26655] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [15b26655] 	d513fed290ca03ef0f4f1a4597e0b53956611c14
+ DEBUG [15b26655] Finished in 0.362 seconds with exit status 0 (successful).
+ DEBUG [d0c6614e] Running if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [d0c6614e] Command: if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi
+ DEBUG [d0c6614e] Finished in 0.368 seconds with exit status 0 (successful).
+  INFO [14daa2dd] Running /usr/bin/env echo "d513fed290ca03ef0f4f1a4597e0b53956611c14" >> REVISION as deploy@107.170.38.156
+ DEBUG [14daa2dd] Command: cd /var/www/kristian/releases/20170505231605 && /usr/bin/env echo "d513fed290ca03ef0f4f1a4597e0b53956611c14" >> REVISION
+  INFO [14daa2dd] Finished in 0.375 seconds with exit status 0 (successful).
+  INFO [a45a05b8] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231605/config as deploy@107.170.38.156
+ DEBUG [a45a05b8] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231605/config
+  INFO [a45a05b8] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [ff4a2af8] Running [ -L /var/www/kristian/releases/20170505231605/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [ff4a2af8] Command: [ -L /var/www/kristian/releases/20170505231605/config/database.yml ]
+ DEBUG [ff4a2af8] Finished in 0.358 seconds with exit status 1 (failed).
+ DEBUG [70aaad9d] Running [ -f /var/www/kristian/releases/20170505231605/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [70aaad9d] Command: [ -f /var/www/kristian/releases/20170505231605/config/database.yml ]
+ DEBUG [70aaad9d] Finished in 0.369 seconds with exit status 0 (successful).
+  INFO [268fd6f0] Running /usr/bin/env rm /var/www/kristian/releases/20170505231605/config/database.yml as deploy@107.170.38.156
+ DEBUG [268fd6f0] Command: /usr/bin/env rm /var/www/kristian/releases/20170505231605/config/database.yml
+  INFO [268fd6f0] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [f2deb203] Running /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170505231605/config/database.yml as deploy@107.170.38.156
+ DEBUG [f2deb203] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170505231605/config/database.yml
+  INFO [f2deb203] Finished in 0.354 seconds with exit status 0 (successful).
+ DEBUG [eb417953] Running [ -L /var/www/kristian/releases/20170505231605/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [eb417953] Command: [ -L /var/www/kristian/releases/20170505231605/config/secrets.yml ]
+ DEBUG [eb417953] Finished in 0.360 seconds with exit status 1 (failed).
+ DEBUG [6e11eb37] Running [ -f /var/www/kristian/releases/20170505231605/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [6e11eb37] Command: [ -f /var/www/kristian/releases/20170505231605/config/secrets.yml ]
+ DEBUG [6e11eb37] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [4f30cbe5] Running /usr/bin/env rm /var/www/kristian/releases/20170505231605/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [4f30cbe5] Command: /usr/bin/env rm /var/www/kristian/releases/20170505231605/config/secrets.yml
+  INFO [4f30cbe5] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [b2ca7134] Running /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170505231605/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [b2ca7134] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170505231605/config/secrets.yml
+  INFO [b2ca7134] Finished in 0.365 seconds with exit status 0 (successful).
+  INFO [0bc52a2f] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231605 /var/www/kristian/releases/20170505231605/tmp /var/www/kristian/releases/20170505231605/public as deploy@107.170.38.156
+ DEBUG [0bc52a2f] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231605 /var/www/kristian/releases/20170505231605/tmp /var/www/kristian/releases/20170505231605/public
+  INFO [0bc52a2f] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [786c334b] Running [ -L /var/www/kristian/releases/20170505231605/log ] as deploy@107.170.38.156
+ DEBUG [786c334b] Command: [ -L /var/www/kristian/releases/20170505231605/log ]
+ DEBUG [786c334b] Finished in 0.361 seconds with exit status 1 (failed).
+ DEBUG [622443af] Running [ -d /var/www/kristian/releases/20170505231605/log ] as deploy@107.170.38.156
+ DEBUG [622443af] Command: [ -d /var/www/kristian/releases/20170505231605/log ]
+ DEBUG [622443af] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO [875bcf23] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170505231605/log as deploy@107.170.38.156
+ DEBUG [875bcf23] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170505231605/log
+  INFO [875bcf23] Finished in 0.380 seconds with exit status 0 (successful).
+  INFO [8f6b43b8] Running /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170505231605/log as deploy@107.170.38.156
+ DEBUG [8f6b43b8] Command: /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170505231605/log
+  INFO [8f6b43b8] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [e7541934] Running [ -L /var/www/kristian/releases/20170505231605/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [e7541934] Command: [ -L /var/www/kristian/releases/20170505231605/tmp/pids ]
+ DEBUG [e7541934] Finished in 0.364 seconds with exit status 1 (failed).
+ DEBUG [141ae457] Running [ -d /var/www/kristian/releases/20170505231605/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [141ae457] Command: [ -d /var/www/kristian/releases/20170505231605/tmp/pids ]
+ DEBUG [141ae457] Finished in 0.355 seconds with exit status 1 (failed).
+  INFO [277926d6] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170505231605/tmp/pids as deploy@107.170.38.156
+ DEBUG [277926d6] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170505231605/tmp/pids
+  INFO [277926d6] Finished in 0.378 seconds with exit status 0 (successful).
+ DEBUG [96cf1b9f] Running [ -L /var/www/kristian/releases/20170505231605/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [96cf1b9f] Command: [ -L /var/www/kristian/releases/20170505231605/tmp/cache ]
+ DEBUG [96cf1b9f] Finished in 0.364 seconds with exit status 1 (failed).
+ DEBUG [920265d4] Running [ -d /var/www/kristian/releases/20170505231605/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [920265d4] Command: [ -d /var/www/kristian/releases/20170505231605/tmp/cache ]
+ DEBUG [920265d4] Finished in 0.367 seconds with exit status 1 (failed).
+  INFO [9c9860fd] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170505231605/tmp/cache as deploy@107.170.38.156
+ DEBUG [9c9860fd] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170505231605/tmp/cache
+  INFO [9c9860fd] Finished in 0.378 seconds with exit status 0 (successful).
+ DEBUG [05321f96] Running [ -L /var/www/kristian/releases/20170505231605/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [05321f96] Command: [ -L /var/www/kristian/releases/20170505231605/tmp/sockets ]
+ DEBUG [05321f96] Finished in 0.370 seconds with exit status 1 (failed).
+ DEBUG [7dc1aafb] Running [ -d /var/www/kristian/releases/20170505231605/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [7dc1aafb] Command: [ -d /var/www/kristian/releases/20170505231605/tmp/sockets ]
+ DEBUG [7dc1aafb] Finished in 0.357 seconds with exit status 1 (failed).
+  INFO [0243ab70] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170505231605/tmp/sockets as deploy@107.170.38.156
+ DEBUG [0243ab70] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170505231605/tmp/sockets
+  INFO [0243ab70] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG [7cce61f3] Running [ -L /var/www/kristian/releases/20170505231605/public/system ] as deploy@107.170.38.156
+ DEBUG [7cce61f3] Command: [ -L /var/www/kristian/releases/20170505231605/public/system ]
+ DEBUG [7cce61f3] Finished in 0.371 seconds with exit status 1 (failed).
+ DEBUG [0fbd1fd3] Running [ -d /var/www/kristian/releases/20170505231605/public/system ] as deploy@107.170.38.156
+ DEBUG [0fbd1fd3] Command: [ -d /var/www/kristian/releases/20170505231605/public/system ]
+ DEBUG [0fbd1fd3] Finished in 0.371 seconds with exit status 1 (failed).
+  INFO [9bc390b7] Running /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170505231605/public/system as deploy@107.170.38.156
+ DEBUG [9bc390b7] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170505231605/public/system
+  INFO [9bc390b7] Finished in 0.369 seconds with exit status 0 (successful).
+ DEBUG [cbec4d81] Running [ -L /var/www/kristian/releases/20170505231605/public/assets ] as deploy@107.170.38.156
+ DEBUG [cbec4d81] Command: [ -L /var/www/kristian/releases/20170505231605/public/assets ]
+ DEBUG [cbec4d81] Finished in 0.355 seconds with exit status 1 (failed).
+ DEBUG [a33aa9c7] Running [ -d /var/www/kristian/releases/20170505231605/public/assets ] as deploy@107.170.38.156
+ DEBUG [a33aa9c7] Command: [ -d /var/www/kristian/releases/20170505231605/public/assets ]
+ DEBUG [a33aa9c7] Finished in 0.359 seconds with exit status 1 (failed).
+  INFO [be224939] Running /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170505231605/public/assets as deploy@107.170.38.156
+ DEBUG [be224939] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170505231605/public/assets
+  INFO [be224939] Finished in 0.351 seconds with exit status 0 (successful).
+ DEBUG [e4bdcae8] Running if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [e4bdcae8] Command: if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi
+ DEBUG [e4bdcae8] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [1f351c75] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle as deploy@107.170.38.156
+ DEBUG [1f351c75] Command: cd /var/www/kristian/releases/20170505231605 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle
+ DEBUG [1f351c75] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [1f351c75] 	The following gems are missing
+ DEBUG [1f351c75] 	 * net-ssh (4.1.0)
+ DEBUG [1f351c75] 	 * net-scp (1.2.1)
+ DEBUG [1f351c75] 	 * sshkit (1.13.1)
+ DEBUG [1f351c75] 	 * airbrussh (1.1.2)
+ DEBUG [1f351c75] 	 * coderay (1.1.1)
+ DEBUG [1f351c75] 	 * better_errors (2.1.1)
+ DEBUG [1f351c75] 	 * debug_inspector (0.0.2)
+ DEBUG [1f351c75] 	 * binding_of_caller (0.7.2)
+ DEBUG [1f351c75] 	 * byebug (9.0.6)
+ DEBUG [1f351c75] 	 * capistrano (3.8.0)
+ DEBUG [1f351c75] 	 * capistrano-bundler (1.2.0)
+ DEBUG [1f351c75] 	 * capistrano-rails (1.2.3)
+ DEBUG [1f351c75] 	 * capistrano-rvm (0.1.2)
+ DEBUG [1f351c75] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [1f351c75] 	 * daemons (1.2.4)
+ DEBUG [1f351c75] 	 * eventmachine (1.0.9.1)
+ DEBUG [1f351c75] 	 * rack-protection (1.5.3)
+ DEBUG [1f351c75] 	 * sinatra (1.4.7)
+ DEBUG [1f351c75] 	 * thin (1.5.1)
+ DEBUG [1f351c75] 	 * skinny (0.2.4)
+ DEBUG [1f351c75] 	 * mailcatcher (0.6.5)
+ DEBUG [1f351c75] 	 * rack-cors (0.4.1)
+ DEBUG [1f351c75] 	 * spring (2.0.0)
+ DEBUG [1f351c75] 	 * web-console (2.3.0)
+ DEBUG [1f351c75] 	Install missing gems with `bundle install`
+ DEBUG [1f351c75] Finished in 1.769 seconds with exit status 1 (failed).
+  INFO [0083ac0f] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet as deploy@107.170.38.156
+ DEBUG [0083ac0f] Command: cd /var/www/kristian/releases/20170505231605 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet
+  INFO [0083ac0f] Finished in 8.286 seconds with exit status 0 (successful).
+ DEBUG [d09156d6] Running if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [d09156d6] Command: if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi
+ DEBUG [d09156d6] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [9982b2ef] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@107.170.38.156
+ DEBUG [9982b2ef] Command: cd /var/www/kristian/releases/20170505231605 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+  INFO [9982b2ef] Finished in 6.702 seconds with exit status 0 (successful).
+ DEBUG [f50676c3] Running if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [f50676c3] Command: if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi
+ DEBUG [f50676c3] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [f4393727] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231605/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [f4393727] Command: cd /var/www/kristian/releases/20170505231605 && /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231605/assets_manifest_backup
+  INFO [f4393727] Finished in 0.369 seconds with exit status 0 (successful).
+ DEBUG [cd3ca56f] Running /usr/bin/env ls /var/www/kristian/releases/20170505231605/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [cd3ca56f] Command: cd /var/www/kristian/releases/20170505231605 && /usr/bin/env ls /var/www/kristian/releases/20170505231605/public/assets/.sprockets-manifest*
+ DEBUG [cd3ca56f] 	/var/www/kristian/releases/20170505231605/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [cd3ca56f] Finished in 0.364 seconds with exit status 0 (successful).
+ DEBUG [f66ce285] Running /usr/bin/env ls /var/www/kristian/releases/20170505231605/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [f66ce285] Command: cd /var/www/kristian/releases/20170505231605 && /usr/bin/env ls /var/www/kristian/releases/20170505231605/public/assets/.sprockets-manifest*
+ DEBUG [f66ce285] 	/var/www/kristian/releases/20170505231605/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [f66ce285] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [51191cac] Running /usr/bin/env cp /var/www/kristian/releases/20170505231605/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170505231605/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [51191cac] Command: cd /var/www/kristian/releases/20170505231605 && /usr/bin/env cp /var/www/kristian/releases/20170505231605/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170505231605/assets_manifest_backup
+  INFO [51191cac] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [59d2fa3f] Running if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [59d2fa3f] Command: if test ! -d /var/www/kristian/releases/20170505231605; then echo "Directory does not exist '/var/www/kristian/releases/20170505231605'" 1>&2; false; fi
+ DEBUG [59d2fa3f] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [c73a8f28] Running /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate as deploy@107.170.38.156
+ DEBUG [c73a8f28] Command: cd /var/www/kristian/releases/20170505231605 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [c73a8f28] 	rake aborted!
+ DEBUG [c73a8f28] 	ActiveRecord::NoDatabaseError: Unknown database 'classifica'
+ DEBUG [c73a8f28] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `rescue in mysql2_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:10:in `mysql2_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:87:in `connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:916:in `initialize'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `new'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [c73a8f28] 	Mysql2::Error: Unknown database 'classifica'
+ DEBUG [c73a8f28] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:70:in `connect'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:70:in `initialize'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:87:in `connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:916:in `initialize'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `new'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [c73a8f28] 	Tasks: TOP => db:migrate
+ DEBUG [c73a8f28] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-05-05 23:17:24 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [0c4b53b7] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [0c4b53b7] Command: [ -d ~/.rvm ]
+ DEBUG [0c4b53b7] Finished in 2.368 seconds with exit status 1 (failed).
+ DEBUG [a8dd1b66] Running [ -d /usr/local/rvm ] as deploy@107.170.38.156
+ DEBUG [a8dd1b66] Command: [ -d /usr/local/rvm ]
+ DEBUG [a8dd1b66] Finished in 0.361 seconds with exit status 0 (successful).
+ DEBUG [d65ad0b4] Running /usr/local/rvm/bin/rvm version as deploy@107.170.38.156
+ DEBUG [d65ad0b4] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [d65ad0b4] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [d65ad0b4] Finished in 0.779 seconds with exit status 0 (successful).
+ DEBUG [87f3ce7e] Running /usr/local/rvm/bin/rvm current as deploy@107.170.38.156
+ DEBUG [87f3ce7e] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [87f3ce7e] 	ruby-2.3.4
+ DEBUG [87f3ce7e] Finished in 0.835 seconds with exit status 0 (successful).
+ DEBUG [6a1be8f0] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@107.170.38.156
+ DEBUG [6a1be8f0] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [6a1be8f0] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [6a1be8f0] Finished in 1.057 seconds with exit status 0 (successful).
+  INFO [c1cf03a2] Running /usr/bin/env mkdir -p /tmp as deploy@107.170.38.156
+ DEBUG [c1cf03a2] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c1cf03a2] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 100.0%
+  INFO [079e6a42] Running /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh as deploy@107.170.38.156
+ DEBUG [079e6a42] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh
+  INFO [079e6a42] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [684c3cd4] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@107.170.38.156
+ DEBUG [684c3cd4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [684c3cd4] 	d513fed290ca03ef0f4f1a4597e0b53956611c14	HEAD
+  INFO [684c3cd4] Finished in 0.690 seconds with exit status 0 (successful).
+  INFO [cc8df2ee] Running /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases as deploy@107.170.38.156
+ DEBUG [cc8df2ee] Command: /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases
+  INFO [cc8df2ee] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO [1fd3b8b1] Running /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets as deploy@107.170.38.156
+ DEBUG [1fd3b8b1] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets
+  INFO [1fd3b8b1] Finished in 0.369 seconds with exit status 0 (successful).
+  INFO [47d2db9c] Running /usr/bin/env mkdir -p /var/www/kristian/shared/config as deploy@107.170.38.156
+ DEBUG [47d2db9c] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/config
+  INFO [47d2db9c] Finished in 0.365 seconds with exit status 0 (successful).
+ DEBUG [679f9747] Running [ -f /var/www/kristian/shared/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [679f9747] Command: [ -f /var/www/kristian/shared/config/database.yml ]
+ DEBUG [679f9747] Finished in 0.366 seconds with exit status 0 (successful).
+ DEBUG [8a84ce83] Running [ -f /var/www/kristian/shared/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [8a84ce83] Command: [ -f /var/www/kristian/shared/config/secrets.yml ]
+ DEBUG [8a84ce83] Finished in 0.353 seconds with exit status 0 (successful).
+ DEBUG [6d84e3dc] Running [ -f /var/www/kristian/current/REVISION ] as deploy@107.170.38.156
+ DEBUG [6d84e3dc] Command: [ -f /var/www/kristian/current/REVISION ]
+ DEBUG [6d84e3dc] Finished in 0.378 seconds with exit status 0 (successful).
+ DEBUG [45f0a697] Running /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null as deploy@107.170.38.156
+ DEBUG [45f0a697] Command: /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null
+ DEBUG [45f0a697] 	5f0aa6ba8e2b85ee740ecfe4fa933f23421daa60
+ DEBUG [45f0a697] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG [42958ea4] Running [ -f /var/www/kristian/repo/HEAD ] as deploy@107.170.38.156
+ DEBUG [42958ea4] Command: [ -f /var/www/kristian/repo/HEAD ]
+ DEBUG [42958ea4] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/kristian/repo
+ DEBUG [2d4015ce] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [2d4015ce] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [2d4015ce] Finished in 0.357 seconds with exit status 0 (successful).
+  INFO [7fa0430f] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@107.170.38.156
+ DEBUG [7fa0430f] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [7fa0430f] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [7cfd84dd] Running /usr/bin/env git remote update --prune as deploy@107.170.38.156
+ DEBUG [7cfd84dd] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7cfd84dd] 	Fetching origin
+  INFO [7cfd84dd] Finished in 0.677 seconds with exit status 0 (successful).
+ DEBUG [eb5681a2] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [eb5681a2] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [eb5681a2] Finished in 0.364 seconds with exit status 0 (successful).
+  INFO [4b048726] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231735 as deploy@107.170.38.156
+ DEBUG [4b048726] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231735 )
+  INFO [4b048726] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [f5febb42] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170505231735 as deploy@107.170.38.156
+ DEBUG [f5febb42] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170505231735 )
+  INFO [f5febb42] Finished in 1.092 seconds with exit status 0 (successful).
+ DEBUG [0c3d9a84] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [0c3d9a84] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [0c3d9a84] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG [d4cc0272] Running /usr/bin/env git rev-list --max-count=1 master as deploy@107.170.38.156
+ DEBUG [d4cc0272] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [d4cc0272] 	d513fed290ca03ef0f4f1a4597e0b53956611c14
+ DEBUG [d4cc0272] Finished in 0.368 seconds with exit status 0 (successful).
+ DEBUG [d4490c82] Running if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [d4490c82] Command: if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi
+ DEBUG [d4490c82] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [d158d770] Running /usr/bin/env echo "d513fed290ca03ef0f4f1a4597e0b53956611c14" >> REVISION as deploy@107.170.38.156
+ DEBUG [d158d770] Command: cd /var/www/kristian/releases/20170505231735 && /usr/bin/env echo "d513fed290ca03ef0f4f1a4597e0b53956611c14" >> REVISION
+  INFO [d158d770] Finished in 0.358 seconds with exit status 0 (successful).
+  INFO [7cb23166] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231735/config as deploy@107.170.38.156
+ DEBUG [7cb23166] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231735/config
+  INFO [7cb23166] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [b909b884] Running [ -L /var/www/kristian/releases/20170505231735/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [b909b884] Command: [ -L /var/www/kristian/releases/20170505231735/config/database.yml ]
+ DEBUG [b909b884] Finished in 0.361 seconds with exit status 1 (failed).
+ DEBUG [4a7d778b] Running [ -f /var/www/kristian/releases/20170505231735/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [4a7d778b] Command: [ -f /var/www/kristian/releases/20170505231735/config/database.yml ]
+ DEBUG [4a7d778b] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO [0217f93a] Running /usr/bin/env rm /var/www/kristian/releases/20170505231735/config/database.yml as deploy@107.170.38.156
+ DEBUG [0217f93a] Command: /usr/bin/env rm /var/www/kristian/releases/20170505231735/config/database.yml
+  INFO [0217f93a] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [76513574] Running /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170505231735/config/database.yml as deploy@107.170.38.156
+ DEBUG [76513574] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170505231735/config/database.yml
+  INFO [76513574] Finished in 4.730 seconds with exit status 0 (successful).
+ DEBUG [522815bd] Running [ -L /var/www/kristian/releases/20170505231735/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [522815bd] Command: [ -L /var/www/kristian/releases/20170505231735/config/secrets.yml ]
+ DEBUG [522815bd] Finished in 0.365 seconds with exit status 1 (failed).
+ DEBUG [51c3c194] Running [ -f /var/www/kristian/releases/20170505231735/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [51c3c194] Command: [ -f /var/www/kristian/releases/20170505231735/config/secrets.yml ]
+ DEBUG [51c3c194] Finished in 0.373 seconds with exit status 0 (successful).
+  INFO [60c33458] Running /usr/bin/env rm /var/www/kristian/releases/20170505231735/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [60c33458] Command: /usr/bin/env rm /var/www/kristian/releases/20170505231735/config/secrets.yml
+  INFO [60c33458] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [6ba6e9f4] Running /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170505231735/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [6ba6e9f4] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170505231735/config/secrets.yml
+  INFO [6ba6e9f4] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [369a6384] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231735 /var/www/kristian/releases/20170505231735/tmp /var/www/kristian/releases/20170505231735/public as deploy@107.170.38.156
+ DEBUG [369a6384] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231735 /var/www/kristian/releases/20170505231735/tmp /var/www/kristian/releases/20170505231735/public
+  INFO [369a6384] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [9811b0a4] Running [ -L /var/www/kristian/releases/20170505231735/log ] as deploy@107.170.38.156
+ DEBUG [9811b0a4] Command: [ -L /var/www/kristian/releases/20170505231735/log ]
+ DEBUG [9811b0a4] Finished in 0.362 seconds with exit status 1 (failed).
+ DEBUG [5aed81da] Running [ -d /var/www/kristian/releases/20170505231735/log ] as deploy@107.170.38.156
+ DEBUG [5aed81da] Command: [ -d /var/www/kristian/releases/20170505231735/log ]
+ DEBUG [5aed81da] Finished in 0.351 seconds with exit status 0 (successful).
+  INFO [bea010b8] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170505231735/log as deploy@107.170.38.156
+ DEBUG [bea010b8] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170505231735/log
+  INFO [bea010b8] Finished in 0.387 seconds with exit status 0 (successful).
+  INFO [bb8ee951] Running /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170505231735/log as deploy@107.170.38.156
+ DEBUG [bb8ee951] Command: /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170505231735/log
+  INFO [bb8ee951] Finished in 0.357 seconds with exit status 0 (successful).
+ DEBUG [861894d3] Running [ -L /var/www/kristian/releases/20170505231735/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [861894d3] Command: [ -L /var/www/kristian/releases/20170505231735/tmp/pids ]
+ DEBUG [861894d3] Finished in 0.352 seconds with exit status 1 (failed).
+ DEBUG [6d6f030c] Running [ -d /var/www/kristian/releases/20170505231735/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [6d6f030c] Command: [ -d /var/www/kristian/releases/20170505231735/tmp/pids ]
+ DEBUG [6d6f030c] Finished in 0.353 seconds with exit status 1 (failed).
+  INFO [5cae016f] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170505231735/tmp/pids as deploy@107.170.38.156
+ DEBUG [5cae016f] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170505231735/tmp/pids
+  INFO [5cae016f] Finished in 0.350 seconds with exit status 0 (successful).
+ DEBUG [45a5e5b2] Running [ -L /var/www/kristian/releases/20170505231735/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [45a5e5b2] Command: [ -L /var/www/kristian/releases/20170505231735/tmp/cache ]
+ DEBUG [45a5e5b2] Finished in 0.348 seconds with exit status 1 (failed).
+ DEBUG [6db0292e] Running [ -d /var/www/kristian/releases/20170505231735/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [6db0292e] Command: [ -d /var/www/kristian/releases/20170505231735/tmp/cache ]
+ DEBUG [6db0292e] Finished in 0.361 seconds with exit status 1 (failed).
+  INFO [2bc1b472] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170505231735/tmp/cache as deploy@107.170.38.156
+ DEBUG [2bc1b472] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170505231735/tmp/cache
+  INFO [2bc1b472] Finished in 0.397 seconds with exit status 0 (successful).
+ DEBUG [719f517f] Running [ -L /var/www/kristian/releases/20170505231735/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [719f517f] Command: [ -L /var/www/kristian/releases/20170505231735/tmp/sockets ]
+ DEBUG [719f517f] Finished in 0.390 seconds with exit status 1 (failed).
+ DEBUG [14614441] Running [ -d /var/www/kristian/releases/20170505231735/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [14614441] Command: [ -d /var/www/kristian/releases/20170505231735/tmp/sockets ]
+ DEBUG [14614441] Finished in 0.392 seconds with exit status 1 (failed).
+  INFO [ccfdffe5] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170505231735/tmp/sockets as deploy@107.170.38.156
+ DEBUG [ccfdffe5] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170505231735/tmp/sockets
+  INFO [ccfdffe5] Finished in 0.385 seconds with exit status 0 (successful).
+ DEBUG [0aaede02] Running [ -L /var/www/kristian/releases/20170505231735/public/system ] as deploy@107.170.38.156
+ DEBUG [0aaede02] Command: [ -L /var/www/kristian/releases/20170505231735/public/system ]
+ DEBUG [0aaede02] Finished in 0.381 seconds with exit status 1 (failed).
+ DEBUG [e2078641] Running [ -d /var/www/kristian/releases/20170505231735/public/system ] as deploy@107.170.38.156
+ DEBUG [e2078641] Command: [ -d /var/www/kristian/releases/20170505231735/public/system ]
+ DEBUG [e2078641] Finished in 0.382 seconds with exit status 1 (failed).
+  INFO [f0f2ab24] Running /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170505231735/public/system as deploy@107.170.38.156
+ DEBUG [f0f2ab24] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170505231735/public/system
+  INFO [f0f2ab24] Finished in 0.408 seconds with exit status 0 (successful).
+ DEBUG [3c2c3863] Running [ -L /var/www/kristian/releases/20170505231735/public/assets ] as deploy@107.170.38.156
+ DEBUG [3c2c3863] Command: [ -L /var/www/kristian/releases/20170505231735/public/assets ]
+ DEBUG [3c2c3863] Finished in 0.405 seconds with exit status 1 (failed).
+ DEBUG [f7923116] Running [ -d /var/www/kristian/releases/20170505231735/public/assets ] as deploy@107.170.38.156
+ DEBUG [f7923116] Command: [ -d /var/www/kristian/releases/20170505231735/public/assets ]
+ DEBUG [f7923116] Finished in 0.395 seconds with exit status 1 (failed).
+  INFO [c81ae93b] Running /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170505231735/public/assets as deploy@107.170.38.156
+ DEBUG [c81ae93b] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170505231735/public/assets
+  INFO [c81ae93b] Finished in 0.384 seconds with exit status 0 (successful).
+ DEBUG [aaeab426] Running if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [aaeab426] Command: if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi
+ DEBUG [aaeab426] Finished in 0.381 seconds with exit status 0 (successful).
+ DEBUG [fc4cae95] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle as deploy@107.170.38.156
+ DEBUG [fc4cae95] Command: cd /var/www/kristian/releases/20170505231735 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle
+ DEBUG [fc4cae95] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [fc4cae95] 	The following gems are missing
+ DEBUG [fc4cae95] 	 * net-ssh (4.1.0)
+ DEBUG [fc4cae95] 	 * net-scp (1.2.1)
+ DEBUG [fc4cae95] 	 * sshkit (1.13.1)
+ DEBUG [fc4cae95] 	 * airbrussh (1.1.2)
+ DEBUG [fc4cae95] 	 * coderay (1.1.1)
+ DEBUG [fc4cae95] 	 * better_errors (2.1.1)
+ DEBUG [fc4cae95] 	 * debug_inspector (0.0.2)
+ DEBUG [fc4cae95] 	 * binding_of_caller (0.7.2)
+ DEBUG [fc4cae95] 	 * byebug (9.0.6)
+ DEBUG [fc4cae95] 	 * capistrano (3.8.0)
+ DEBUG [fc4cae95] 	 * capistrano-bundler (1.2.0)
+ DEBUG [fc4cae95] 	 * capistrano-rails (1.2.3)
+ DEBUG [fc4cae95] 	 * capistrano-rvm (0.1.2)
+ DEBUG [fc4cae95] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [fc4cae95] 	 * daemons (1.2.4)
+ DEBUG [fc4cae95] 	 * eventmachine (1.0.9.1)
+ DEBUG [fc4cae95] 	 * rack-protection (1.5.3)
+ DEBUG [fc4cae95] 	 * sinatra (1.4.7)
+ DEBUG [fc4cae95] 	 * thin (1.5.1)
+ DEBUG [fc4cae95] 	 * skinny (0.2.4)
+ DEBUG [fc4cae95] 	 * mailcatcher (0.6.5)
+ DEBUG [fc4cae95] 	 * rack-cors (0.4.1)
+ DEBUG [fc4cae95] 	 * spring (2.0.0)
+ DEBUG [fc4cae95] 	 * web-console (2.3.0)
+ DEBUG [fc4cae95] 	Install missing gems with `bundle install`
+ DEBUG [fc4cae95] Finished in 1.822 seconds with exit status 1 (failed).
+  INFO [5cb7581c] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet as deploy@107.170.38.156
+ DEBUG [5cb7581c] Command: cd /var/www/kristian/releases/20170505231735 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet
+  INFO [5cb7581c] Finished in 8.257 seconds with exit status 0 (successful).
+ DEBUG [acc5cc10] Running if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [acc5cc10] Command: if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi
+ DEBUG [acc5cc10] Finished in 0.385 seconds with exit status 0 (successful).
+  INFO [4dd9d1d5] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@107.170.38.156
+ DEBUG [4dd9d1d5] Command: cd /var/www/kristian/releases/20170505231735 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+  INFO [4dd9d1d5] Finished in 6.857 seconds with exit status 0 (successful).
+ DEBUG [2c6aa9d6] Running if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [2c6aa9d6] Command: if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi
+ DEBUG [2c6aa9d6] Finished in 0.394 seconds with exit status 0 (successful).
+  INFO [5f4a4b8d] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231735/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [5f4a4b8d] Command: cd /var/www/kristian/releases/20170505231735 && /usr/bin/env mkdir -p /var/www/kristian/releases/20170505231735/assets_manifest_backup
+  INFO [5f4a4b8d] Finished in 0.389 seconds with exit status 0 (successful).
+ DEBUG [f5ef81c3] Running /usr/bin/env ls /var/www/kristian/releases/20170505231735/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [f5ef81c3] Command: cd /var/www/kristian/releases/20170505231735 && /usr/bin/env ls /var/www/kristian/releases/20170505231735/public/assets/.sprockets-manifest*
+ DEBUG [f5ef81c3] 	/var/www/kristian/releases/20170505231735/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [f5ef81c3] Finished in 0.386 seconds with exit status 0 (successful).
+ DEBUG [5bbb2df5] Running /usr/bin/env ls /var/www/kristian/releases/20170505231735/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [5bbb2df5] Command: cd /var/www/kristian/releases/20170505231735 && /usr/bin/env ls /var/www/kristian/releases/20170505231735/public/assets/.sprockets-manifest*
+ DEBUG [5bbb2df5] 	/var/www/kristian/releases/20170505231735/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [5bbb2df5] Finished in 0.390 seconds with exit status 0 (successful).
+  INFO [08562ac5] Running /usr/bin/env cp /var/www/kristian/releases/20170505231735/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170505231735/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [08562ac5] Command: cd /var/www/kristian/releases/20170505231735 && /usr/bin/env cp /var/www/kristian/releases/20170505231735/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170505231735/assets_manifest_backup
+  INFO [08562ac5] Finished in 0.462 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [bd06b4b6] Running if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [bd06b4b6] Command: if test ! -d /var/www/kristian/releases/20170505231735; then echo "Directory does not exist '/var/www/kristian/releases/20170505231735'" 1>&2; false; fi
+ DEBUG [bd06b4b6] Finished in 0.832 seconds with exit status 0 (successful).
+  INFO [6b34770b] Running /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate as deploy@107.170.38.156
+ DEBUG [6b34770b] Command: cd /var/www/kristian/releases/20170505231735 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [6b34770b] 	rake aborted!
+ DEBUG [6b34770b] 	StandardError: An error has occurred, all later migrations canceled:
+
+Mysql2::Error: Cannot add foreign key constraint: ALTER TABLE `carts` ADD CONSTRAINT `fk_rails_be65ea83bd`
+FOREIGN KEY (`buyer_id`)
+  REFERENCES `buyers` (`id`)
+ DEBUG [6b34770b] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:80:in `_query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:80:in `block in query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:79:in `handle_interrupt'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:79:in `query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:305:in `block in execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_adapter.rb:472:in `block in log'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_adapter.rb:466:in `log'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:305:in `execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:231:in `execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:762:in `add_foreign_key'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:217:in `block in create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:216:in `each_pair'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:216:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:468:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:665:in `block in method_missing'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `block in say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:654:in `method_missing'
+/var/www/kristian/releases/20170505231735/db/migrate/20170501180206_create_carts.rb:3:in `change'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:608:in `exec_migration'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:592:in `block (2 levels) in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:591:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:292:in `with_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:590:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:768:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:998:in `block in execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:1046:in `ddl_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:997:in `execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:959:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `each'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [6b34770b] 	ActiveRecord::StatementInvalid: Mysql2::Error: Cannot add foreign key constraint: ALTER TABLE `carts` ADD CONSTRAINT `fk_rails_be65ea83bd`
+FOREIGN KEY (`buyer_id`)
+  REFERENCES `buyers` (`id`)
+ DEBUG [6b34770b] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:80:in `_query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:80:in `block in query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:79:in `handle_interrupt'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:79:in `query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:305:in `block in execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_adapter.rb:472:in `block in log'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_adapter.rb:466:in `log'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:305:in `execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:231:in `execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:762:in `add_foreign_key'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:217:in `block in create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:216:in `each_pair'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:216:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:468:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:665:in `block in method_missing'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `block in say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:654:in `method_missing'
+/var/www/kristian/releases/20170505231735/db/migrate/20170501180206_create_carts.rb:3:in `change'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:608:in `exec_migration'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:592:in `block (2 levels) in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:591:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:292:in `with_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:590:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:768:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:998:in `block in execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:1046:in `ddl_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:997:in `execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:959:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `each'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [6b34770b] 	Mysql2::Error: Cannot add foreign key constraint
+ DEBUG [6b34770b] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:80:in `_query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:80:in `block in query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:79:in `handle_interrupt'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:79:in `query'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:305:in `block in execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_adapter.rb:472:in `block in log'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.5/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_adapter.rb:466:in `log'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:305:in `execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:231:in `execute'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:762:in `add_foreign_key'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:217:in `block in create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:216:in `each_pair'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/schema_statements.rb:216:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:468:in `create_table'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:665:in `block in method_missing'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `block in say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:634:in `say_with_time'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:654:in `method_missing'
+/var/www/kristian/releases/20170505231735/db/migrate/20170501180206_create_carts.rb:3:in `change'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:608:in `exec_migration'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:592:in `block (2 levels) in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:591:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:292:in `with_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:590:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:768:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:998:in `block in execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:1046:in `ddl_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:997:in `execute_migration_in_transaction'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:959:in `block in migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `each'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:955:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [6b34770b] 	Tasks: TOP => db:migrate
+ DEBUG [6b34770b] 	(See full trace by running task with --trace)
+ DEBUG [6b34770b] 	== 20161115125834 DeviseCreateMembers: migrating ==============================
+-- create_table(:members)
+   -> 0.0131s
+-- add_index(:members, :email, {:unique=>true})
+   -> 0.0089s
+-- add_index(:members, :reset_password_token, {:unique=>true})
+   -> 0.0104s
+== 20161115125834 DeviseCreateMembers: migrated (0.0326s) =====================
+
+== 20161115125855 DeviseCreateAdmins: migrating ===============================
+-- create_table(:admins)
+   -> 0.0136s
+-- add_index(:admins, :email, {:unique=>true})
+   -> 0.0088s
+-- add_index(:admins, :reset_password_token, {:unique=>true})
+   -> 0.0120s
+== 20161115125855 DeviseCreateAdmins: migrated (0.0348s) ======================
+
+== 20161115131731 CreateCategories: migrating =================================
+-- create_table(:categories)
+   -> 0.0148s
+== 20161115131731 CreateCategories: migrated (0.0149s) ========================
+
+== 20161115213836 CreateAds: migrating ========================================
+-- create_table(:ads)
+   -> 0.1052s
+== 20161115213836 CreateAds: migrated (0.1054s) ===============================
+
+== 20161126115255 AddNameAndRoleToAdmin: migrating ============================
+-- add_column(:admins, :name, :string)
+   -> 0.0303s
+-- add_column(:admins, :role, :integer)
+   -> 0.0371s
+== 20161126115255 AddNameAndRoleToAdmin: migrated (0.0677s) ===================
+
+== 20170116220625 AddPriceCentsToAds: migrating ===============================
+-- add_column(:ads, :price_cents, :integer, {:default=>0})
+   -> 0.0357s
+== 20170116220625 AddPriceCentsToAds: migrated (0.0359s) ======================
+
+== 20170116225624 AddAttachmentPictureToAds: migrating ========================
+-- change_table(:ads)
+   -> 0.1550s
+== 20170116225624 AddAttachmentPictureToAds: migrated (0.1552s) ===============
+
+== 20170131230550 AddFinishDateToAd: migrating ================================
+-- add_column(:ads, :finish_date, :date)
+   -> 0.0358s
+== 20170131230550 AddFinishDateToAd: migrated (0.0359s) =======================
+
+== 20170302223330 AddDescriptionsToAd: migrating ==============================
+-- add_column(:ads, :description_md, :text)
+   -> 0.0237s
+-- add_column(:ads, :description_short, :text)
+   -> 0.0275s
+== 20170302223330 AddDescriptionsToAd: migrated (0.0515s) =====================
+
+== 20170303001259 AddAdsCountToCategory: migrating ============================
+-- add_column(:categories, :ads_count, :integer, {:default=>0})
+   -> 0.0225s
+== 20170303001259 AddAdsCountToCategory: migrated (0.0226s) ===================
+
+== 20170304120539 CreateFriendlyIdSlugs: migrating ============================
+-- create_table(:friendly_id_slugs)
+   -> 0.0115s
+-- add_index(:friendly_id_slugs, :sluggable_id)
+   -> 0.0194s
+-- add_index(:friendly_id_slugs, [:slug, :sluggable_type], {:length=>{:slug=>140, :sluggable_type=>50}})
+   -> 0.0138s
+-- add_index(:friendly_id_slugs, [:slug, :sluggable_type, :scope], {:length=>{:slug=>70, :sluggable_type=>50, :scope=>70}, :unique=>true})
+   -> 0.0140s
+-- add_index(:friendly_id_slugs, :sluggable_type)
+   -> 0.0227s
+== 20170304120539 CreateFriendlyIdSlugs: migrated (0.0818s) ===================
+
+== 20170304120834 AddSlugToCategory: migrating ================================
+-- add_column(:categories, :slug, :string)
+   -> 0.0246s
+-- add_index(:categories, :slug, {:unique=>true})
+   -> 0.0127s
+== 20170304120834 AddSlugToCategory: migrated (0.0377s) =======================
+
+== 20170308220618 CreateComments: migrating ===================================
+-- create_table(:comments)
+   -> 0.0853s
+== 20170308220618 CreateComments: migrated (0.0854s) ==========================
+
+== 20170315215423 CreateRatingCaches: migrating ===============================
+-- create_table(:rating_caches)
+   -> 0.0116s
+-- add_index(:rating_caches, [:cacheable_id, :cacheable_type])
+   -> 0.0121s
+== 20170315215423 CreateRatingCaches: migrated (0.0240s) ======================
+
+== 20170315215424 CreateRates: migrating ======================================
+-- create_table(:rates)
+   -> 0.0115s
+-- add_index(:rates, :rater_id)
+   -> 0.0121s
+-- add_index(:rates, [:rateable_id, :rateable_type])
+   -> 0.0126s
+== 20170315215424 CreateRates: migrated (0.0365s) =============================
+
+== 20170315215425 CreateAverageCaches: migrating ==============================
+-- create_table(:average_caches)
+   -> 0.0116s
+== 20170315215425 CreateAverageCaches: migrated (0.0117s) =====================
+
+== 20170315215426 CreateOverallAverages: migrating ============================
+-- create_table(:overall_averages)
+   -> 0.0113s
+== 20170315215426 CreateOverallAverages: migrated (0.0114s) ===================
+
+== 20170316234045 CreateProfileMembers: migrating =============================
+-- create_table(:profile_members)
+   -> 0.0604s
+== 20170316234045 CreateProfileMembers: migrated (0.0606s) ====================
+
+== 20170501143113 AddStatusToAd: migrating ====================================
+-- add_column(:ads, :status, :integer, {:default=>0})
+   -> 0.0256s
+== 20170501143113 AddStatusToAd: migrated (0.0257s) ===========================
+
+== 20170501180206 CreateCarts: migrating ======================================
+-- create_table(:carts)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-05-05 23:30:23 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [d3edeaf0] Running [ -d ~/.rvm ] as deploy@107.170.38.156
+ DEBUG [d3edeaf0] Command: [ -d ~/.rvm ]
+ DEBUG [d3edeaf0] Finished in 2.438 seconds with exit status 1 (failed).
+ DEBUG [43b30799] Running [ -d /usr/local/rvm ] as deploy@107.170.38.156
+ DEBUG [43b30799] Command: [ -d /usr/local/rvm ]
+ DEBUG [43b30799] Finished in 0.397 seconds with exit status 0 (successful).
+ DEBUG [1f913fe2] Running /usr/local/rvm/bin/rvm version as deploy@107.170.38.156
+ DEBUG [1f913fe2] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [1f913fe2] 	rvm 1.29.1 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [1f913fe2] Finished in 0.825 seconds with exit status 0 (successful).
+ DEBUG [b0496b66] Running /usr/local/rvm/bin/rvm current as deploy@107.170.38.156
+ DEBUG [b0496b66] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [b0496b66] 	ruby-2.3.4
+ DEBUG [b0496b66] Finished in 0.715 seconds with exit status 0 (successful).
+ DEBUG [e30c4704] Running /usr/local/rvm/bin/rvm default do ruby --version as deploy@107.170.38.156
+ DEBUG [e30c4704] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [e30c4704] 	ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ DEBUG [e30c4704] Finished in 0.806 seconds with exit status 0 (successful).
+  INFO [fbc24ee0] Running /usr/bin/env mkdir -p /tmp as deploy@107.170.38.156
+ DEBUG [fbc24ee0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [fbc24ee0] Finished in 0.386 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Kristian-production-vagrant.sh 100.0%
+  INFO [be536124] Running /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh as deploy@107.170.38.156
+ DEBUG [be536124] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Kristian-production-vagrant.sh
+  INFO [be536124] Finished in 0.386 seconds with exit status 0 (successful).
+  INFO [7a0b8b30] Running /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD as deploy@107.170.38.156
+ DEBUG [7a0b8b30] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/KristianAlves/classifica.git HEAD )
+ DEBUG [7a0b8b30] 	d513fed290ca03ef0f4f1a4597e0b53956611c14	HEAD
+  INFO [7a0b8b30] Finished in 0.691 seconds with exit status 0 (successful).
+  INFO [ffe312f0] Running /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases as deploy@107.170.38.156
+ DEBUG [ffe312f0] Command: /usr/bin/env mkdir -p /var/www/kristian/shared /var/www/kristian/releases
+  INFO [ffe312f0] Finished in 0.456 seconds with exit status 0 (successful).
+  INFO [9e295313] Running /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets as deploy@107.170.38.156
+ DEBUG [9e295313] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/log /var/www/kristian/shared/tmp/pids /var/www/kristian/shared/tmp/cache /var/www/kristian/shared/tmp/sockets /var/www/kristian/shared/public/system /var/www/kristian/shared/public/assets
+  INFO [9e295313] Finished in 0.388 seconds with exit status 0 (successful).
+  INFO [ddf0e494] Running /usr/bin/env mkdir -p /var/www/kristian/shared/config as deploy@107.170.38.156
+ DEBUG [ddf0e494] Command: /usr/bin/env mkdir -p /var/www/kristian/shared/config
+  INFO [ddf0e494] Finished in 0.393 seconds with exit status 0 (successful).
+ DEBUG [a5bf1b14] Running [ -f /var/www/kristian/shared/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [a5bf1b14] Command: [ -f /var/www/kristian/shared/config/database.yml ]
+ DEBUG [a5bf1b14] Finished in 0.387 seconds with exit status 0 (successful).
+ DEBUG [ad2d5bcf] Running [ -f /var/www/kristian/shared/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [ad2d5bcf] Command: [ -f /var/www/kristian/shared/config/secrets.yml ]
+ DEBUG [ad2d5bcf] Finished in 0.384 seconds with exit status 0 (successful).
+ DEBUG [322385c8] Running [ -f /var/www/kristian/current/REVISION ] as deploy@107.170.38.156
+ DEBUG [322385c8] Command: [ -f /var/www/kristian/current/REVISION ]
+ DEBUG [322385c8] Finished in 0.386 seconds with exit status 0 (successful).
+ DEBUG [d4cf5bc3] Running /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null as deploy@107.170.38.156
+ DEBUG [d4cf5bc3] Command: /usr/bin/env cat /var/www/kristian/current/REVISION 2>/dev/null
+ DEBUG [d4cf5bc3] 	5f0aa6ba8e2b85ee740ecfe4fa933f23421daa60
+ DEBUG [d4cf5bc3] Finished in 0.385 seconds with exit status 0 (successful).
+ DEBUG [25509710] Running [ -f /var/www/kristian/repo/HEAD ] as deploy@107.170.38.156
+ DEBUG [25509710] Command: [ -f /var/www/kristian/repo/HEAD ]
+ DEBUG [25509710] Finished in 0.388 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/kristian/repo
+ DEBUG [25536ee9] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [25536ee9] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [25536ee9] Finished in 0.384 seconds with exit status 0 (successful).
+  INFO [5affd8f5] Running /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git as deploy@107.170.38.156
+ DEBUG [5affd8f5] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/KristianAlves/classifica.git )
+  INFO [5affd8f5] Finished in 0.381 seconds with exit status 0 (successful).
+  INFO [2f94c115] Running /usr/bin/env git remote update --prune as deploy@107.170.38.156
+ DEBUG [2f94c115] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [2f94c115] 	Fetching origin
+  INFO [2f94c115] Finished in 0.673 seconds with exit status 0 (successful).
+ DEBUG [889a9c7f] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [889a9c7f] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [889a9c7f] Finished in 0.388 seconds with exit status 0 (successful).
+  INFO [5d1b3a61] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505233034 as deploy@107.170.38.156
+ DEBUG [5d1b3a61] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/kristian/releases/20170505233034 )
+  INFO [5d1b3a61] Finished in 0.385 seconds with exit status 0 (successful).
+  INFO [ef4b0c73] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170505233034 as deploy@107.170.38.156
+ DEBUG [ef4b0c73] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/kristian/releases/20170505233034 )
+  INFO [ef4b0c73] Finished in 1.007 seconds with exit status 0 (successful).
+ DEBUG [c1e67acb] Running if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [c1e67acb] Command: if test ! -d /var/www/kristian/repo; then echo "Directory does not exist '/var/www/kristian/repo'" 1>&2; false; fi
+ DEBUG [c1e67acb] Finished in 0.386 seconds with exit status 0 (successful).
+ DEBUG [bb9f56c3] Running /usr/bin/env git rev-list --max-count=1 master as deploy@107.170.38.156
+ DEBUG [bb9f56c3] Command: cd /var/www/kristian/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Kristian-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [bb9f56c3] 	d513fed290ca03ef0f4f1a4597e0b53956611c14
+ DEBUG [bb9f56c3] Finished in 0.395 seconds with exit status 0 (successful).
+ DEBUG [394e78f0] Running if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [394e78f0] Command: if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi
+ DEBUG [394e78f0] Finished in 0.381 seconds with exit status 0 (successful).
+  INFO [57fff78e] Running /usr/bin/env echo "d513fed290ca03ef0f4f1a4597e0b53956611c14" >> REVISION as deploy@107.170.38.156
+ DEBUG [57fff78e] Command: cd /var/www/kristian/releases/20170505233034 && /usr/bin/env echo "d513fed290ca03ef0f4f1a4597e0b53956611c14" >> REVISION
+  INFO [57fff78e] Finished in 0.383 seconds with exit status 0 (successful).
+  INFO [8c38bfc3] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505233034/config as deploy@107.170.38.156
+ DEBUG [8c38bfc3] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170505233034/config
+  INFO [8c38bfc3] Finished in 0.386 seconds with exit status 0 (successful).
+ DEBUG [631bdc21] Running [ -L /var/www/kristian/releases/20170505233034/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [631bdc21] Command: [ -L /var/www/kristian/releases/20170505233034/config/database.yml ]
+ DEBUG [631bdc21] Finished in 0.385 seconds with exit status 1 (failed).
+ DEBUG [5c7a87d1] Running [ -f /var/www/kristian/releases/20170505233034/config/database.yml ] as deploy@107.170.38.156
+ DEBUG [5c7a87d1] Command: [ -f /var/www/kristian/releases/20170505233034/config/database.yml ]
+ DEBUG [5c7a87d1] Finished in 0.383 seconds with exit status 0 (successful).
+  INFO [77b52d11] Running /usr/bin/env rm /var/www/kristian/releases/20170505233034/config/database.yml as deploy@107.170.38.156
+ DEBUG [77b52d11] Command: /usr/bin/env rm /var/www/kristian/releases/20170505233034/config/database.yml
+  INFO [77b52d11] Finished in 0.387 seconds with exit status 0 (successful).
+  INFO [3a89383e] Running /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170505233034/config/database.yml as deploy@107.170.38.156
+ DEBUG [3a89383e] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/database.yml /var/www/kristian/releases/20170505233034/config/database.yml
+  INFO [3a89383e] Finished in 0.392 seconds with exit status 0 (successful).
+ DEBUG [77292549] Running [ -L /var/www/kristian/releases/20170505233034/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [77292549] Command: [ -L /var/www/kristian/releases/20170505233034/config/secrets.yml ]
+ DEBUG [77292549] Finished in 0.386 seconds with exit status 1 (failed).
+ DEBUG [40711078] Running [ -f /var/www/kristian/releases/20170505233034/config/secrets.yml ] as deploy@107.170.38.156
+ DEBUG [40711078] Command: [ -f /var/www/kristian/releases/20170505233034/config/secrets.yml ]
+ DEBUG [40711078] Finished in 0.387 seconds with exit status 0 (successful).
+  INFO [62b4047e] Running /usr/bin/env rm /var/www/kristian/releases/20170505233034/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [62b4047e] Command: /usr/bin/env rm /var/www/kristian/releases/20170505233034/config/secrets.yml
+  INFO [62b4047e] Finished in 0.390 seconds with exit status 0 (successful).
+  INFO [8787074c] Running /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170505233034/config/secrets.yml as deploy@107.170.38.156
+ DEBUG [8787074c] Command: /usr/bin/env ln -s /var/www/kristian/shared/config/secrets.yml /var/www/kristian/releases/20170505233034/config/secrets.yml
+  INFO [8787074c] Finished in 0.387 seconds with exit status 0 (successful).
+  INFO [0d901fbe] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505233034 /var/www/kristian/releases/20170505233034/tmp /var/www/kristian/releases/20170505233034/public as deploy@107.170.38.156
+ DEBUG [0d901fbe] Command: /usr/bin/env mkdir -p /var/www/kristian/releases/20170505233034 /var/www/kristian/releases/20170505233034/tmp /var/www/kristian/releases/20170505233034/public
+  INFO [0d901fbe] Finished in 0.393 seconds with exit status 0 (successful).
+ DEBUG [398e91e6] Running [ -L /var/www/kristian/releases/20170505233034/log ] as deploy@107.170.38.156
+ DEBUG [398e91e6] Command: [ -L /var/www/kristian/releases/20170505233034/log ]
+ DEBUG [398e91e6] Finished in 0.389 seconds with exit status 1 (failed).
+ DEBUG [fcb59dcd] Running [ -d /var/www/kristian/releases/20170505233034/log ] as deploy@107.170.38.156
+ DEBUG [fcb59dcd] Command: [ -d /var/www/kristian/releases/20170505233034/log ]
+ DEBUG [fcb59dcd] Finished in 0.393 seconds with exit status 0 (successful).
+  INFO [368bb7eb] Running /usr/bin/env rm -rf /var/www/kristian/releases/20170505233034/log as deploy@107.170.38.156
+ DEBUG [368bb7eb] Command: /usr/bin/env rm -rf /var/www/kristian/releases/20170505233034/log
+  INFO [368bb7eb] Finished in 0.397 seconds with exit status 0 (successful).
+  INFO [7f3fa958] Running /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170505233034/log as deploy@107.170.38.156
+ DEBUG [7f3fa958] Command: /usr/bin/env ln -s /var/www/kristian/shared/log /var/www/kristian/releases/20170505233034/log
+  INFO [7f3fa958] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [db0a1fb9] Running [ -L /var/www/kristian/releases/20170505233034/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [db0a1fb9] Command: [ -L /var/www/kristian/releases/20170505233034/tmp/pids ]
+ DEBUG [db0a1fb9] Finished in 0.404 seconds with exit status 1 (failed).
+ DEBUG [4f8ad5bf] Running [ -d /var/www/kristian/releases/20170505233034/tmp/pids ] as deploy@107.170.38.156
+ DEBUG [4f8ad5bf] Command: [ -d /var/www/kristian/releases/20170505233034/tmp/pids ]
+ DEBUG [4f8ad5bf] Finished in 0.389 seconds with exit status 1 (failed).
+  INFO [4598a792] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170505233034/tmp/pids as deploy@107.170.38.156
+ DEBUG [4598a792] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/pids /var/www/kristian/releases/20170505233034/tmp/pids
+  INFO [4598a792] Finished in 0.393 seconds with exit status 0 (successful).
+ DEBUG [26596ea7] Running [ -L /var/www/kristian/releases/20170505233034/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [26596ea7] Command: [ -L /var/www/kristian/releases/20170505233034/tmp/cache ]
+ DEBUG [26596ea7] Finished in 0.388 seconds with exit status 1 (failed).
+ DEBUG [727a4084] Running [ -d /var/www/kristian/releases/20170505233034/tmp/cache ] as deploy@107.170.38.156
+ DEBUG [727a4084] Command: [ -d /var/www/kristian/releases/20170505233034/tmp/cache ]
+ DEBUG [727a4084] Finished in 0.392 seconds with exit status 1 (failed).
+  INFO [3a375b89] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170505233034/tmp/cache as deploy@107.170.38.156
+ DEBUG [3a375b89] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/cache /var/www/kristian/releases/20170505233034/tmp/cache
+  INFO [3a375b89] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [91aeec0b] Running [ -L /var/www/kristian/releases/20170505233034/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [91aeec0b] Command: [ -L /var/www/kristian/releases/20170505233034/tmp/sockets ]
+ DEBUG [91aeec0b] Finished in 0.402 seconds with exit status 1 (failed).
+ DEBUG [f653c62e] Running [ -d /var/www/kristian/releases/20170505233034/tmp/sockets ] as deploy@107.170.38.156
+ DEBUG [f653c62e] Command: [ -d /var/www/kristian/releases/20170505233034/tmp/sockets ]
+ DEBUG [f653c62e] Finished in 0.381 seconds with exit status 1 (failed).
+  INFO [4d8cf1d2] Running /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170505233034/tmp/sockets as deploy@107.170.38.156
+ DEBUG [4d8cf1d2] Command: /usr/bin/env ln -s /var/www/kristian/shared/tmp/sockets /var/www/kristian/releases/20170505233034/tmp/sockets
+  INFO [4d8cf1d2] Finished in 0.385 seconds with exit status 0 (successful).
+ DEBUG [ed905775] Running [ -L /var/www/kristian/releases/20170505233034/public/system ] as deploy@107.170.38.156
+ DEBUG [ed905775] Command: [ -L /var/www/kristian/releases/20170505233034/public/system ]
+ DEBUG [ed905775] Finished in 0.407 seconds with exit status 1 (failed).
+ DEBUG [822517b5] Running [ -d /var/www/kristian/releases/20170505233034/public/system ] as deploy@107.170.38.156
+ DEBUG [822517b5] Command: [ -d /var/www/kristian/releases/20170505233034/public/system ]
+ DEBUG [822517b5] Finished in 0.386 seconds with exit status 1 (failed).
+  INFO [81ed712f] Running /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170505233034/public/system as deploy@107.170.38.156
+ DEBUG [81ed712f] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/system /var/www/kristian/releases/20170505233034/public/system
+  INFO [81ed712f] Finished in 0.415 seconds with exit status 0 (successful).
+ DEBUG [c5f390e6] Running [ -L /var/www/kristian/releases/20170505233034/public/assets ] as deploy@107.170.38.156
+ DEBUG [c5f390e6] Command: [ -L /var/www/kristian/releases/20170505233034/public/assets ]
+ DEBUG [c5f390e6] Finished in 0.404 seconds with exit status 1 (failed).
+ DEBUG [45ee5b85] Running [ -d /var/www/kristian/releases/20170505233034/public/assets ] as deploy@107.170.38.156
+ DEBUG [45ee5b85] Command: [ -d /var/www/kristian/releases/20170505233034/public/assets ]
+ DEBUG [45ee5b85] Finished in 0.385 seconds with exit status 1 (failed).
+  INFO [65977af8] Running /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170505233034/public/assets as deploy@107.170.38.156
+ DEBUG [65977af8] Command: /usr/bin/env ln -s /var/www/kristian/shared/public/assets /var/www/kristian/releases/20170505233034/public/assets
+  INFO [65977af8] Finished in 0.406 seconds with exit status 0 (successful).
+ DEBUG [91555b7c] Running if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [91555b7c] Command: if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi
+ DEBUG [91555b7c] Finished in 0.381 seconds with exit status 0 (successful).
+ DEBUG [1a46ee5f] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle as deploy@107.170.38.156
+ DEBUG [1a46ee5f] Command: cd /var/www/kristian/releases/20170505233034 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/kristian/shared/bundle
+ DEBUG [1a46ee5f] 	Your Gemfile lists the gem rails-erd (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [1a46ee5f] 	The following gems are missing
+ DEBUG [1a46ee5f] 	 * net-ssh (4.1.0)
+ DEBUG [1a46ee5f] 	 * net-scp (1.2.1)
+ DEBUG [1a46ee5f] 	 * sshkit (1.13.1)
+ DEBUG [1a46ee5f] 	 * airbrussh (1.1.2)
+ DEBUG [1a46ee5f] 	 * coderay (1.1.1)
+ DEBUG [1a46ee5f] 	 * better_errors (2.1.1)
+ DEBUG [1a46ee5f] 	 * debug_inspector (0.0.2)
+ DEBUG [1a46ee5f] 	 * binding_of_caller (0.7.2)
+ DEBUG [1a46ee5f] 	 * byebug (9.0.6)
+ DEBUG [1a46ee5f] 	 * capistrano (3.8.0)
+ DEBUG [1a46ee5f] 	 * capistrano-bundler (1.2.0)
+ DEBUG [1a46ee5f] 	 * capistrano-rails (1.2.3)
+ DEBUG [1a46ee5f] 	 * capistrano-rvm (0.1.2)
+ DEBUG [1a46ee5f] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [1a46ee5f] 	 * daemons (1.2.4)
+ DEBUG [1a46ee5f] 	 * eventmachine (1.0.9.1)
+ DEBUG [1a46ee5f] 	 * rack-protection (1.5.3)
+ DEBUG [1a46ee5f] 	 * sinatra (1.4.7)
+ DEBUG [1a46ee5f] 	 * thin (1.5.1)
+ DEBUG [1a46ee5f] 	 * skinny (0.2.4)
+ DEBUG [1a46ee5f] 	 * mailcatcher (0.6.5)
+ DEBUG [1a46ee5f] 	 * rack-cors (0.4.1)
+ DEBUG [1a46ee5f] 	 * spring (2.0.0)
+ DEBUG [1a46ee5f] 	 * web-console (2.3.0)
+ DEBUG [1a46ee5f] 	Install missing gems with `bundle install`
+ DEBUG [1a46ee5f] Finished in 1.659 seconds with exit status 1 (failed).
+  INFO [73bfbebf] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet as deploy@107.170.38.156
+ DEBUG [73bfbebf] Command: cd /var/www/kristian/releases/20170505233034 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/kristian/shared/bundle --without development test --deployment --quiet
+  INFO [73bfbebf] Finished in 6.749 seconds with exit status 0 (successful).
+ DEBUG [2eca80fe] Running if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [2eca80fe] Command: if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi
+ DEBUG [2eca80fe] Finished in 0.413 seconds with exit status 0 (successful).
+  INFO [b05fa500] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as deploy@107.170.38.156
+ DEBUG [b05fa500] Command: cd /var/www/kristian/releases/20170505233034 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+  INFO [b05fa500] Finished in 5.399 seconds with exit status 0 (successful).
+ DEBUG [df7b2e09] Running if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [df7b2e09] Command: if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi
+ DEBUG [df7b2e09] Finished in 0.383 seconds with exit status 0 (successful).
+  INFO [f6f8d73f] Running /usr/bin/env mkdir -p /var/www/kristian/releases/20170505233034/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [f6f8d73f] Command: cd /var/www/kristian/releases/20170505233034 && /usr/bin/env mkdir -p /var/www/kristian/releases/20170505233034/assets_manifest_backup
+  INFO [f6f8d73f] Finished in 0.386 seconds with exit status 0 (successful).
+ DEBUG [3ab2d228] Running /usr/bin/env ls /var/www/kristian/releases/20170505233034/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [3ab2d228] Command: cd /var/www/kristian/releases/20170505233034 && /usr/bin/env ls /var/www/kristian/releases/20170505233034/public/assets/.sprockets-manifest*
+ DEBUG [3ab2d228] 	/var/www/kristian/releases/20170505233034/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [3ab2d228] Finished in 0.401 seconds with exit status 0 (successful).
+ DEBUG [690e71f1] Running /usr/bin/env ls /var/www/kristian/releases/20170505233034/public/assets/.sprockets-manifest* as deploy@107.170.38.156
+ DEBUG [690e71f1] Command: cd /var/www/kristian/releases/20170505233034 && /usr/bin/env ls /var/www/kristian/releases/20170505233034/public/assets/.sprockets-manifest*
+ DEBUG [690e71f1] 	/var/www/kristian/releases/20170505233034/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json
+ DEBUG [690e71f1] Finished in 0.402 seconds with exit status 0 (successful).
+  INFO [f9293784] Running /usr/bin/env cp /var/www/kristian/releases/20170505233034/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170505233034/assets_manifest_backup as deploy@107.170.38.156
+ DEBUG [f9293784] Command: cd /var/www/kristian/releases/20170505233034 && /usr/bin/env cp /var/www/kristian/releases/20170505233034/public/assets/.sprockets-manifest-a93c02fce4ea55d891222c0f82a0967c.json /var/www/kristian/releases/20170505233034/assets_manifest_backup
+  INFO [f9293784] Finished in 0.410 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [91ab035c] Running if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi as deploy@107.170.38.156
+ DEBUG [91ab035c] Command: if test ! -d /var/www/kristian/releases/20170505233034; then echo "Directory does not exist '/var/www/kristian/releases/20170505233034'" 1>&2; false; fi
+ DEBUG [91ab035c] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [ac519889] Running /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate as deploy@107.170.38.156
+ DEBUG [ac519889] Command: cd /var/www/kristian/releases/20170505233034 && ( export RAILS_ENV="production" ; /usr/local/rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [ac519889] 	rake aborted!
+ DEBUG [ac519889] 	ActiveRecord::NoDatabaseError: Unknown database 'classifica'
+ DEBUG [ac519889] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `rescue in mysql2_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:10:in `mysql2_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:87:in `connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:916:in `initialize'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `new'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [ac519889] 	Mysql2::Error: Unknown database 'classifica'
+ DEBUG [ac519889] 	/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:70:in `connect'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/mysql2-0.3.21/lib/mysql2/client.rb:70:in `initialize'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/connection_handling.rb:87:in `connection'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:916:in `initialize'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `new'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:823:in `up'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/migration.rb:801:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/tasks/database_tasks.rb:137:in `migrate'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.5/lib/active_record/railties/databases.rake:44:in `block (2 levels) in <top (required)>'
+/var/www/kristian/shared/bundle/ruby/2.3.0/gems/rake-11.3.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli/exec.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:335:in `exec'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:20:in `dispatch'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/cli.rb:11:in `start'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:32:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/lib/bundler/friendly_errors.rb:121:in `with_friendly_errors'
+/usr/local/rvm/gems/ruby-2.3.4/gems/bundler-1.14.6/exe/bundle:24:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `load'
+/usr/local/rvm/gems/ruby-2.3.4/bin/bundle:22:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [ac519889] 	Tasks: TOP => db:migrate
+ DEBUG [ac519889] 	(See full trace by running task with --trace)
