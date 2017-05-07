@@ -12,7 +12,7 @@ class Site::CartController < SiteController
 
   def create
     ad = Ad.find(params[:ad_id])
-    @cart = Cart.create(ad_id: ad.id, buyer_id: current_member.id, description_id: ad.title, amount: ad.price)
+    @cart = Cart.create(ad_id: ad.id, buyer_id: current_member.id, description: ad.title, amount: ad.price)
     redirect_to site_cart_index_path
   end
 

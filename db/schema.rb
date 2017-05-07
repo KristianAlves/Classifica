@@ -65,17 +65,16 @@ ActiveRecord::Schema.define(version: 20170501180206) do
 
   create_table "carts", force: :cascade do |t|
     t.integer  "ad_id"
-    t.integer  "buyer_id"
-    t.integer  "description_id"
+    t.string   "description"
     t.float    "amount"
-    t.integer  "quantity",       default: 1
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "quantity",    default: 1
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "buyer_id"
   end
 
   add_index "carts", ["ad_id"], name: "index_carts_on_ad_id"
   add_index "carts", ["buyer_id"], name: "index_carts_on_buyer_id"
-  add_index "carts", ["description_id"], name: "index_carts_on_description_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "description", limit: 60
