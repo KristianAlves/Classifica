@@ -58,9 +58,9 @@
 
                 <div id= "home-detail" class="col-md-9">
 
-                    <%# if controller_path == 'site/home' %>
-                        <%#= render partial: 'layouts/site_shared/carousel' %>
-                    <%# end %>
+                    <% if controller_path == 'site/home' %>
+                        <%= render partial: 'layouts/site_shared/carousel' %>
+                    <% end %>
 
                     <div class="row">
                         <%= yield %>
